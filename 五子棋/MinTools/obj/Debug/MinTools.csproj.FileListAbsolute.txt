@@ -1,0 +1,10 @@
+E:\韩松伯\C#PC\局域网五子棋\MinTools\bin\Debug\MinTools.dll
+E:\韩松伯\C#PC\局域网五子棋\MinTools\bin\Debug\MinTools.pdb
+E:\韩松伯\C#PC\局域网五子棋\MinTools\obj\Debug\MinTools.csprojResolveAssemblyReference.cache
+E:\韩松伯\C#PC\局域网五子棋\MinTools\obj\Debug\MinTools.dll
+E:\韩松伯\C#PC\局域网五子棋\MinTools\obj\Debug\MinTools.pdb
+C:\Users\dcw027\Desktop\五子棋\MinTools\bin\Debug\MinTools.dll
+C:\Users\dcw027\Desktop\五子棋\MinTools\bin\Debug\MinTools.pdb
+C:\Users\dcw027\Desktop\五子棋\MinTools\obj\Debug\MinTools.csprojResolveAssemblyReference.cache
+C:\Users\dcw027\Desktop\五子棋\MinTools\obj\Debug\MinTools.dll
+C:\Users\dcw027\Desktop\五子棋\MinTools\obj\Debug\MinTools.pdb

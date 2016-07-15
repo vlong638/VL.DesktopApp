@@ -1,0 +1,14 @@
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\bin\Debug\Gobang.exe
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\bin\Debug\Gobang.pdb
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\bin\Debug\MinTools.dll
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\bin\Debug\Network.dll
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\bin\Debug\MinTools.pdb
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\bin\Debug\Network.pdb
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\obj\Debug\网络五子棋.csprojResolveAssemblyReference.cache
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\obj\Debug\Gobang.LinkForm.resources
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\obj\Debug\Gobang.MainForm.resources
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\obj\Debug\Gobang.Properties.Resources.resources
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\obj\Debug\网络五子棋.csproj.GenerateResource.Cache
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\obj\Debug\Gobang.exe
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\obj\Debug\Gobang.pdb
+E:\韩松伯\C#PC\局域网五子棋\局域网五子棋\obj\Debug\Gobang.LocalIPForm.resources
