@@ -26,3 +26,17 @@ C:\Users\dcw027\Desktop\五子棋\局域网五子棋\obj\Debug\Gobang.LinkForm.r
 C:\Users\dcw027\Desktop\五子棋\局域网五子棋\obj\Debug\Gobang.MainForm.resources
 C:\Users\dcw027\Desktop\五子棋\局域网五子棋\obj\Debug\Gobang.Properties.Resources.resources
 C:\Users\dcw027\Desktop\五子棋\局域网五子棋\obj\Debug\局域网五子棋.csproj.GenerateResource.Cache
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\bin\Debug\Gobang.exe
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\bin\Debug\Gobang.pdb
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\bin\Debug\MinTools.dll
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\bin\Debug\Network.dll
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\bin\Debug\MinTools.pdb
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\bin\Debug\Network.pdb
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\obj\Debug\局域网五子棋.csprojResolveAssemblyReference.cache
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\obj\Debug\Gobang.LocalIPForm.resources
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\obj\Debug\Gobang.LinkForm.resources
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\obj\Debug\Gobang.MainForm.resources
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\obj\Debug\Gobang.Properties.Resources.resources
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\obj\Debug\局域网五子棋.csproj.GenerateResource.Cache
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\obj\Debug\Gobang.exe
+D:\GitProjects\VL.DesktopApp\五子棋\局域网五子棋\obj\Debug\Gobang.pdb

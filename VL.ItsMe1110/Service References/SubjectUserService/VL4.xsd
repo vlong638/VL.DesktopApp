@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VL.Common.Protocol.IService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VL.Common.Protocol.IService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="DependencyResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DependencyDetails" nillable="true" type="tns:ArrayOfDependencyDetail" />
+      <xs:element minOccurs="0" name="DependencyResults" nillable="true" type="tns:ArrayOfDependencyResult" />
+      <xs:element minOccurs="0" name="IsAllDependenciesAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DependencyResult" nillable="true" type="tns:DependencyResult" />
+  <xs:complexType name="ArrayOfDependencyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DependencyDetail" nillable="true" type="tns:DependencyDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDependencyDetail" nillable="true" type="tns:ArrayOfDependencyDetail" />
+  <xs:complexType name="DependencyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DependencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DependencyType" type="tns:DependencyType" />
+      <xs:element minOccurs="0" name="IsDependencyAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DependencyDetail" nillable="true" type="tns:DependencyDetail" />
+  <xs:simpleType name="DependencyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Config" />
+      <xs:enumeration value="Database" />
+      <xs:enumeration value="Service" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DependencyType" nillable="true" type="tns:DependencyType" />
+  <xs:complexType name="ArrayOfDependencyResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DependencyResult" nillable="true" type="tns:DependencyResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDependencyResult" nillable="true" type="tns:ArrayOfDependencyResult" />
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messages" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
+</xs:schema>
