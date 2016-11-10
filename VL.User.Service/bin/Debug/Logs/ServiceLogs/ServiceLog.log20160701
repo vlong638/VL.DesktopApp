@@ -1,0 +1,67 @@
+2016-07-01 10:56:55:---------------------服务的依赖项检测--开始---------------------
+2016-07-01 10:56:56:单元<UserService>依赖检测未通过,错误详情:
+配置文件加载失败,配置文件:ProtocolConfig.config
+错误详情System.NotImplementedException: 缺少关于IsSQLLogAvailable的配置
+   在 VL.Common.Configurator.Objects.ConfigEntities.KeyValueConfigItem`1.SetValue(IEnumerable`1 elements)
+   在 VL.Common.Protocol.ProtocolConfig.Load(XDocument doc)
+   在 VL.Common.Configurator.Objects.ConfigEntities.XMLConfigEntity.Load()
+   在 VL.Common.Protocol.IService.ServiceContext.CheckAvailabilityOfConfigForService(FileConfigEntity configEntity)
+
+数据库连接失败,数据库配置名称:User
+错误详情System.NotImplementedException: 未配置有效的数据库类型
+   在 VL.Common.DAS.Utilities.DbConfigItem.GetDbSession()
+   在 VL.Common.Protocol.IService.ServiceContext.CheckAvailabilityOfDbSessionForService(DbConfigItem dbConfigItem)
+
+2016-07-01 10:56:56:---------------------服务的依赖项检测--结束---------------------
+2016-07-01 10:57:00:---------------------服务的依赖项检测--开始---------------------
+2016-07-01 10:57:00:单元<UserService>依赖检测未通过,错误详情:
+配置文件加载失败,配置文件:ProtocolConfig.config
+错误详情System.NotImplementedException: 缺少关于IsSQLLogAvailable的配置
+   在 VL.Common.Configurator.Objects.ConfigEntities.KeyValueConfigItem`1.SetValue(IEnumerable`1 elements)
+   在 VL.Common.Protocol.ProtocolConfig.Load(XDocument doc)
+   在 VL.Common.Configurator.Objects.ConfigEntities.XMLConfigEntity.Load()
+   在 VL.Common.Protocol.IService.ServiceContext.CheckAvailabilityOfConfigForService(FileConfigEntity configEntity)
+
+数据库连接失败,数据库配置名称:User
+错误详情System.NotImplementedException: 未配置有效的数据库类型
+   在 VL.Common.DAS.Utilities.DbConfigItem.GetDbSession()
+   在 VL.Common.Protocol.IService.ServiceContext.CheckAvailabilityOfDbSessionForService(DbConfigItem dbConfigItem)
+
+2016-07-01 10:57:00:---------------------服务的依赖项检测--结束---------------------
+2016-07-01 10:58:14:---------------------服务的依赖项检测--开始---------------------
+2016-07-01 10:58:14:单元<UserService>依赖检测未通过,错误详情:
+配置文件不存在,配置文件:ProtocolConfig.config
+已创建默认的配置文件,请在配置后重试,文件路径:D:\GitProjects\VL.Business\VL.User.Service\bin\Debug\Configs\ProtocolConfig.config
+
+配置文件不存在,配置文件:DbConnections.config
+已创建默认的配置文件,请在配置后重试,文件路径:D:\GitProjects\VL.Business\VL.User.Service\bin\Debug\Configs\DbConnections.config
+
+数据库连接失败,数据库配置名称:User
+错误详情System.NotImplementedException: 未配置有效的数据库类型
+   在 VL.Common.DAS.Utilities.DbConfigItem.GetDbSession()
+   在 VL.Common.Protocol.IService.ServiceContext.CheckAvailabilityOfDbSessionForService(DbConfigItem dbConfigItem)
+
+数据库连接失败,数据库配置名称:OracleSample
+错误详情System.NotImplementedException: 未配置有效的数据库连接字符串
+   在 VL.Common.DAS.Utilities.DbConfigItem.GetDbSession()
+   在 VL.Common.Protocol.IService.ServiceContext.CheckAvailabilityOfDbSessionForService(DbConfigItem dbConfigItem)
+
+数据库连接失败,数据库配置名称:MySQLSample
+错误详情System.NotImplementedException: 未配置有效的数据库连接字符串
+   在 VL.Common.DAS.Utilities.DbConfigItem.GetDbSession()
+   在 VL.Common.Protocol.IService.ServiceContext.CheckAvailabilityOfDbSessionForService(DbConfigItem dbConfigItem)
+
+数据库连接失败,数据库配置名称:MSSQLSample
+错误详情System.NotImplementedException: 未配置有效的数据库连接字符串
+   在 VL.Common.DAS.Utilities.DbConfigItem.GetDbSession()
+   在 VL.Common.Protocol.IService.ServiceContext.CheckAvailabilityOfDbSessionForService(DbConfigItem dbConfigItem)
+
+2016-07-01 10:58:14:---------------------服务的依赖项检测--结束---------------------
+2016-07-01 10:58:16:---------------------服务的依赖项检测--开始---------------------
+2016-07-01 10:58:16:单元<UserService>依赖检测未通过,错误详情:
+数据库连接失败,数据库配置名称:User
+错误详情System.NotImplementedException: 未配置有效的数据库类型
+   在 VL.Common.DAS.Utilities.DbConfigItem.GetDbSession()
+   在 VL.Common.Protocol.IService.ServiceContext.CheckAvailabilityOfDbSessionForService(DbConfigItem dbConfigItem)
+
+2016-07-01 10:58:16:---------------------服务的依赖项检测--结束---------------------

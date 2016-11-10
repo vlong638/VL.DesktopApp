@@ -8,3 +8,8 @@ C:\Users\dcw027\Desktop\五子棋\MinTools\bin\Debug\MinTools.pdb
 C:\Users\dcw027\Desktop\五子棋\MinTools\obj\Debug\MinTools.csprojResolveAssemblyReference.cache
 C:\Users\dcw027\Desktop\五子棋\MinTools\obj\Debug\MinTools.dll
 C:\Users\dcw027\Desktop\五子棋\MinTools\obj\Debug\MinTools.pdb
+D:\GitProjects\VL.DesktopApp\五子棋\MinTools\bin\Debug\MinTools.dll
+D:\GitProjects\VL.DesktopApp\五子棋\MinTools\bin\Debug\MinTools.pdb
+D:\GitProjects\VL.DesktopApp\五子棋\MinTools\obj\Debug\MinTools.csprojResolveAssemblyReference.cache
+D:\GitProjects\VL.DesktopApp\五子棋\MinTools\obj\Debug\MinTools.dll
+D:\GitProjects\VL.DesktopApp\五子棋\MinTools\obj\Debug\MinTools.pdb

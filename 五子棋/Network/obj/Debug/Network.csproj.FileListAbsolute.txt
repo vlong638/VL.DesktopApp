@@ -12,3 +12,10 @@ C:\Users\dcw027\Desktop\五子棋\Network\bin\Debug\MinTools.pdb
 C:\Users\dcw027\Desktop\五子棋\Network\obj\Debug\Network.csprojResolveAssemblyReference.cache
 C:\Users\dcw027\Desktop\五子棋\Network\obj\Debug\Network.dll
 C:\Users\dcw027\Desktop\五子棋\Network\obj\Debug\Network.pdb
+D:\GitProjects\VL.DesktopApp\五子棋\Network\bin\Debug\Network.dll
+D:\GitProjects\VL.DesktopApp\五子棋\Network\bin\Debug\Network.pdb
+D:\GitProjects\VL.DesktopApp\五子棋\Network\bin\Debug\MinTools.dll
+D:\GitProjects\VL.DesktopApp\五子棋\Network\bin\Debug\MinTools.pdb
+D:\GitProjects\VL.DesktopApp\五子棋\Network\obj\Debug\Network.csprojResolveAssemblyReference.cache
+D:\GitProjects\VL.DesktopApp\五子棋\Network\obj\Debug\Network.dll
+D:\GitProjects\VL.DesktopApp\五子棋\Network\obj\Debug\Network.pdb
