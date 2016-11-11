@@ -1,4 +1,4 @@
-﻿using VL.Common.Protocol.IService;
+﻿using VL.Common.Protocol;
 using VL.User.Objects.Entities;
 using VL.User.Service.Configs;
 using VL.User.Service.Utilities;
@@ -16,9 +16,14 @@ namespace VL.User.Service.Services
         public DependencyResult CheckNodeReferences()
         {
             return ServiceBase.CheckNodeReferences();
-        } 
+        }
         #endregion
 
+        /// <summary>
+        /// 创建用户
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public Report CreateUser(TUser user)
         {
             return ServiceBase.ServiceContext.ServiceDelegator.HandleTransactionEvent(DbConfigOfUser.DbName, (session) =>
@@ -26,7 +31,7 @@ namespace VL.User.Service.Services
                  return user.Create(session);
              });
         }
-        public Report AuthenticateUser(TUser user)
+        public Report AuthenticateUser(TUser user, bool rememberMe, bool shouldLockout = false)
         {
             return ServiceBase.ServiceContext.ServiceDelegator.HandleTransactionEvent(DbConfigOfUser.DbName, (session) =>
             {

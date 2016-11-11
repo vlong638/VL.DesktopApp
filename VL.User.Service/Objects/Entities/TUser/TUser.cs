@@ -1,9 +1,8 @@
-using System.Runtime.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using VL.Common.ORM.Objects;
-using VL.User.Objects.Enums;
+using System.Runtime.Serialization;
+using VL.Common.ORM;
 
 namespace VL.User.Objects.Entities
 {

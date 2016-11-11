@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
-using VL.Common.Protocol.IService;
+using VL.Common.Protocol;
 using VL.User.Objects.Entities;
 
 namespace VL.User.Service.Services

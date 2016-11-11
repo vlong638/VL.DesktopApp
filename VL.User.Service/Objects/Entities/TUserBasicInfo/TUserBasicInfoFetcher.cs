@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using VL.Common.DAS.Objects;
-using VL.Common.ORM.Utilities.QueryBuilders;
-using VL.Common.Protocol.IService;
+using VL.Common.DAS;
+using VL.Common.ORM;
+using VL.Common.Protocol;
 
 namespace VL.User.Objects.Entities
 {
@@ -11,7 +11,7 @@ namespace VL.User.Objects.Entities
         #region Methods
         public static bool FetchTUser(this TUserBasicInfo tUserBasicInfo, DbSession session)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             SelectBuilder builder = new SelectBuilder();
             if (tUserBasicInfo.UserName == "")
             {
@@ -26,7 +26,7 @@ namespace VL.User.Objects.Entities
                 builder.ComponentWhere.Add(new ComponentValueOfWhere(TUserProperties.UserName, tUserBasicInfo.UserName, LocateType.Equal));
             }
             query.SelectBuilders.Add(builder);
-            tUserBasicInfo.User = IORMProvider.GetQueryOperator(session).Select<TUser>(session, query);
+            tUserBasicInfo.User = session.GetQueryOperator().Select<TUser>(session, query);
             if (tUserBasicInfo.User == null)
             {
                 throw new NotImplementedException(string.Format("1..* 关联未查询到匹配数据, Parent:{0}; Child: {1}", nameof(TUserBasicInfo), nameof(TUser)));

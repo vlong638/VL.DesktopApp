@@ -53,34 +53,22 @@
       <HintPath>..\packages\Oracle.ManagedDataAccess.12.1.2400\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\VL.Common.Protocol.1.0.1611101515.1\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Core.1.0.1611111732.1\lib\net452\System.Runtime.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="VL.Common.Configurator, Version=1.1.6064.30635, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Configurator.1.1.1608081701.1\lib\net452\VL.Common.Configurator.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VL.Common.DAS, Version=1.0.6064.26264, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.DAS.1.0.1608081438.1\lib\net452\VL.Common.DAS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VL.Common.Logger, Version=1.0.5946.30246, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Logger.1.0.1604121655.1\lib\net452\VL.Common.Logger.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VL.Common.ORM, Version=1.0.6127.29448, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.ORM.1.0.1610101703.1\lib\net452\VL.Common.ORM.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VL.Common.Protocol, Version=1.0.6158.27448, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Protocol.1.0.1611101515.1\lib\net452\VL.Common.Protocol.dll</HintPath>
+    <Reference Include="VL.Common.Core, Version=1.0.6159.31565, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611111732.1\lib\net452\VL.Common.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -129,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Objects\备注\多表查询.txt" />
+    <Content Include="Protocol\IService\备注.txt" />
     <Content Include="数据库\创建数据库.sql" />
     <Content Include="数据库\调试.sql" />
     <Content Include="问题记录\多表查询.txt" />

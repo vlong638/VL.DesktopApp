@@ -31,14 +31,10 @@ D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\MySql.Data.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\Newtonsoft.Json.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\Oracle.ManagedDataAccess.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\System.Runtime.Serialization.dll
-D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.Configurator.dll
-D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.DAS.dll
-D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.Logger.dll
-D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.ORM.dll
-D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.Protocol.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\log4net.xml
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\Newtonsoft.Json.xml
-D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.ORM.xml
 D:\GitProjects\VL.DesktopApp\VL.User.Service\obj\Debug\VL.User.Service.csprojResolveAssemblyReference.cache
 D:\GitProjects\VL.DesktopApp\VL.User.Service\obj\Debug\VL.User.Service.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\obj\Debug\VL.User.Service.pdb
+D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\Owin.dll
+D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.Core.dll

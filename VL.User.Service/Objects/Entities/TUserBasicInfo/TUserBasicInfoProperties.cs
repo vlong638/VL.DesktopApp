@@ -1,4 +1,4 @@
-using VL.Common.ORM.Objects;
+using VL.Common.ORM;
 
 namespace VL.User.Objects.Entities
 {

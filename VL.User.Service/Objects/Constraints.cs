@@ -1,4 +1,5 @@
-﻿using VL.Common.Protocol.IService;
+﻿using VL.Common.Protocol;
+using VL.Common.Protocol;
 
 namespace VL.User.Objects
 {

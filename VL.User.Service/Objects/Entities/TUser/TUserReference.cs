@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using VL.Common.ORM.Objects;
+using VL.Common.ORM;
 
 namespace VL.User.Objects.Entities
 {

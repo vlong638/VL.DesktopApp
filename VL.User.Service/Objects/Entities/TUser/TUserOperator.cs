@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using VL.Common.DAS.Objects;
-using VL.Common.ORM.Objects;
-using VL.Common.ORM.Utilities.QueryBuilders;
-using VL.Common.Protocol.IService;
+using VL.Common.DAS;
+using VL.Common.ORM;
+using VL.Common.Protocol;
 
 namespace VL.User.Objects.Entities
 {
@@ -14,20 +13,20 @@ namespace VL.User.Objects.Entities
         #region 写
         public static bool DbDelete(this TUser entity, DbSession session)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TUserProperties.UserName, entity.UserName, LocateType.Equal));
-            return IORMProvider.GetQueryOperator(session).Delete<TUser>(session, query);
+            return session.GetQueryOperator().Delete<TUser>(session, query);
         }
         public static bool DbDelete(this List<TUser> entities, DbSession session)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             var Ids = entities.Select(c =>c.UserName );
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TUserProperties.UserName, Ids, LocateType.In));
-            return IORMProvider.GetQueryOperator(session).Delete<TUser>(session, query);
+            return session.GetQueryOperator().Delete<TUser>(session, query);
         }
         public static bool DbInsert(this TUser entity, DbSession session)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             InsertBuilder builder = new InsertBuilder();
             if (entity.UserName == null)
             {
@@ -41,11 +40,11 @@ namespace VL.User.Objects.Entities
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserProperties.Password, entity.Password));
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserProperties.CreateTime, entity.CreateTime));
             query.InsertBuilders.Add(builder);
-            return IORMProvider.GetQueryOperator(session).Insert<TUser>(session, query);
+            return session.GetQueryOperator().Insert<TUser>(session, query);
         }
         public static bool DbInsert(this List<TUser> entities, DbSession session)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             foreach (var entity in entities)
             {
                 InsertBuilder builder = new InsertBuilder();
@@ -62,11 +61,11 @@ namespace VL.User.Objects.Entities
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserProperties.CreateTime, entity.CreateTime));
                 query.InsertBuilders.Add(builder);
             }
-            return IORMProvider.GetQueryOperator(session).InsertAll<TUser>(session, query);
+            return session.GetQueryOperator().InsertAll<TUser>(session, query);
         }
         public static bool DbUpdate(this TUser entity, DbSession session, params PDMDbProperty[] fields)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             UpdateBuilder builder = new UpdateBuilder();
             builder.ComponentWhere.Add(new ComponentValueOfWhere(TUserProperties.UserName, entity.UserName, LocateType.Equal));
             if (fields==null|| fields.Length==0)
@@ -87,11 +86,11 @@ namespace VL.User.Objects.Entities
                 }
             }
             query.UpdateBuilders.Add(builder);
-            return IORMProvider.GetQueryOperator(session).Update<TUser>(session, query);
+            return session.GetQueryOperator().Update<TUser>(session, query);
         }
         public static bool DbUpdate(this List<TUser> entities, DbSession session, params PDMDbProperty[] fields)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             foreach (var entity in entities)
             {
                 UpdateBuilder builder = new UpdateBuilder();
@@ -115,7 +114,7 @@ namespace VL.User.Objects.Entities
                 }
                 query.UpdateBuilders.Add(builder);
             }
-            return IORMProvider.GetQueryOperator(session).UpdateAll<TUser>(session, query);
+            return session.GetQueryOperator().UpdateAll<TUser>(session, query);
         }
         #endregion
         #region 读
@@ -124,16 +123,16 @@ namespace VL.User.Objects.Entities
         /// </summary>
         public static TUser DbSelect(this TUser entity, DbSession session, SelectBuilder select)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             query.SelectBuilder = select;
-            return IORMProvider.GetQueryOperator(session).Select<TUser>(session, query);
+            return session.GetQueryOperator().Select<TUser>(session, query);
         }
         /// <summary>
         /// 未查询到数据时返回 null
         /// </summary>
         public static TUser DbSelect(this TUser entity, DbSession session, params PDMDbProperty[] fields)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             SelectBuilder builder = new SelectBuilder();
             if (fields.Count() == 0)
             {
@@ -151,14 +150,14 @@ namespace VL.User.Objects.Entities
             }
             builder.ComponentWhere.Add(new ComponentValueOfWhere(TUserProperties.UserName, entity.UserName, LocateType.Equal));
             query.SelectBuilders.Add(builder);
-            return IORMProvider.GetQueryOperator(session).Select<TUser>(session, query);
+            return session.GetQueryOperator().Select<TUser>(session, query);
         }
         /// <summary>
         /// 未查询到数据时返回 null
         /// </summary>
         public static List<TUser> DbSelect(this List<TUser> entities, DbSession session, params PDMDbProperty[] fields)
         {
-            var query = IORMProvider.GetDbQueryBuilder(session);
+            var query = session.GetDbQueryBuilder();
             SelectBuilder builder = new SelectBuilder();
             if (fields.Count() == 0)
             {
@@ -180,7 +179,7 @@ namespace VL.User.Objects.Entities
                 builder.ComponentWhere.Add(new ComponentValueOfWhere(TUserProperties.UserName, Ids, LocateType.In));
             }
             query.SelectBuilders.Add(builder);
-            return IORMProvider.GetQueryOperator(session).SelectAll<TUser>(session, query);
+            return session.GetQueryOperator().SelectAll<TUser>(session, query);
         }
         /// <summary>
         /// 存在相应对象时返回true,缺少对象时返回false

@@ -1,7 +1,7 @@
 using System;
-using VL.Common.DAS.Objects;
-using VL.Common.ORM.Utilities.QueryBuilders;
-using VL.Common.Protocol.IService;
+using VL.Common.DAS;
+using VL.Common.ORM;
+using VL.Common.Protocol;
 
 namespace VL.User.Objects.Entities
 {
@@ -9,9 +9,10 @@ namespace VL.User.Objects.Entities
     {
         static ClassReportHelper ReportHelper { set; get; } = Constraints.ReportHelper.GetClassReportHelper(nameof(TUser));
 
+        #region 创建用户
         enum ECode_Create
         {
-            Default=Report.CodeOfManualStart,
+            Default = Report.CodeOfManualStart,
             用户名不可为空,
             用户已存在,
             密码不可为空,
@@ -24,12 +25,7 @@ namespace VL.User.Objects.Entities
             {
                 return ReportHelper.GetReport(nameof(Create), (int)ECode_Create.用户名不可为空);
             }
-            var query= IORMProvider.GetDbQueryBuilder(session).SelectBuilder;
-            query.ComponentSelect.Add("1");
-            query.ComponentWhere.Add(TUserProperties.UserName, UserName, LocateType.Equal);
-            var @operator = IORMProvider.GetQueryOperator(session);
-            var value = @operator.SelectAsInt<TUser>(session, query);
-            if (value!=null)
+            if (CheckExistance(session))
             {
                 return ReportHelper.GetReport(nameof(Create), (int)ECode_Create.用户已存在);
             }
@@ -41,31 +37,57 @@ namespace VL.User.Objects.Entities
                 return new Report(Report.CodeOfSuccess, "");
             else
                 return ReportHelper.GetReport(nameof(Create), (int)ECode_Create.操作数据库失败);
-        }
+        } 
+        #endregion
+
+        #region 用户验证
         enum ECode_Authenticate
         {
             Default = Report.CodeOfManualStart,
-            用户名_空值检测,
-            密码_空值检测,
+            用户名不可为空,
+            用户不存在,
+            密码不可为空,
             操作数据库失败,
         }
         public Report Authenticate(DbSession session)
         {
             if (string.IsNullOrEmpty(this.UserName))
             {
-                return ReportHelper.GetReport(nameof(Create), (int)ECode_Create.用户名不可为空);
+                return ReportHelper.GetReport(nameof(Create), (int)ECode_Authenticate.用户名不可为空);
+            }
+            if (!CheckExistance(session))
+            {
+                return ReportHelper.GetReport(nameof(Create), (int)ECode_Authenticate.用户不存在);
             }
             if (string.IsNullOrEmpty(this.Password))
             {
-                return ReportHelper.GetReport(nameof(Create), (int)ECode_Create.密码不可为空);
+                return ReportHelper.GetReport(nameof(Create), (int)ECode_Authenticate.密码不可为空);
             }
-            var builder = IORMProvider.GetDbQueryBuilder(session).SelectBuilder;
-            builder.ComponentWhere.Add(TUserProperties.UserName, this.UserName, LocateType.Equal);
-            builder.ComponentWhere.Add(TUserProperties.UserName, this.Password, LocateType.Equal);
-            if (this.DbSelect(session, builder) !=null)
+            var query = session.GetDbQueryBuilder().SelectBuilder;
+            query.ComponentSelect.Add("1");
+            query.ComponentWhere.Add(TUserProperties.UserName, this.UserName, LocateType.Equal);
+            query.ComponentWhere.Add(TUserProperties.Password, this.Password, LocateType.Equal);
+            if (session.GetQueryOperator().SelectAsInt<TUser>(session, query) != null)
                 return new Report(Report.CodeOfSuccess, "");
             else
-                return ReportHelper.GetReport(nameof(Create), (int)ECode_Create.操作数据库失败);
+                return ReportHelper.GetReport(nameof(Create), (int)ECode_Authenticate.操作数据库失败);
         }
+        #endregion
+
+        #region 辅助方法
+        /// <summary>
+        /// 检测用户是否存在
+        /// </summary>
+        /// <param name="session"></param>
+        /// <returns></returns>
+        private bool CheckExistance(DbSession session)
+        {
+            var query = session.GetDbQueryBuilder().SelectBuilder;
+            query.ComponentSelect.Add("1");
+            query.ComponentWhere.Add(TUserProperties.UserName, UserName, LocateType.Equal);
+            var value = session.GetQueryOperator().SelectAsInt<TUser>(session, query);
+            return value != null;
+        } 
+        #endregion
     }
 }

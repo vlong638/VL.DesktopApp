@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using VL.Common.Logger.Utilities;
-using VL.Common.Protocol.IService;
+﻿using System.Collections.Generic;
+using VL.Common.Protocol;
 using VL.User.Objects.Entities;
 using VL.User.Service.Configs;
 using VL.User.Service.Utilities;
