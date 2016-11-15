@@ -20,10 +20,6 @@ namespace VL.ItsMe1110
         }
         protected void Application_PostAuthenticateRequest(object sender, System.EventArgs e)
         {
-
-
-
-
             var formsIdentity = HttpContext.Current.User.Identity as FormsIdentity;
             if (formsIdentity != null && formsIdentity.IsAuthenticated && formsIdentity.AuthenticationType == "Forms")
             {

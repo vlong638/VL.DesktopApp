@@ -16,9 +16,6 @@ namespace VL.ItsMe1110.Custom.Authentications
         /// <summary>
         /// 将用户信息写入Cookie
         /// </summary>
-        /// <param name="userName"></param>
-        /// <param name="user"></param>
-        /// <param name="rememberMe"></param>
         public static void SetAuthCookie( TUser user, bool rememberMe)
         {
             if (user == null)
@@ -54,8 +51,6 @@ namespace VL.ItsMe1110.Custom.Authentications
         /// <summary>
         /// 从Request的Cookie读取Principal
         /// </summary>
-        /// <param name="request"></param>
-        /// <returns></returns>
         public static VLPrincipal TryParsePrincipal(HttpRequest request)
         {
             if (request==null)
@@ -84,6 +79,12 @@ namespace VL.ItsMe1110.Custom.Authentications
             }
             return null;
         }
-
+        /// <summary>
+        /// 清空Cookie
+        /// </summary>
+        public static void LogOff()
+        {
+            FormsAuthentication.SignOut();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Security.Principal;
 using System.Threading.Tasks;
 using System.Web;
@@ -27,7 +28,7 @@ namespace VL.ItsMe1110.Controllers
             }
         }
 
-        #region Login
+        #region 登录
         [HttpGet]
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
@@ -108,7 +109,7 @@ namespace VL.ItsMe1110.Controllers
         }
         #endregion
 
-        #region Register
+        #region 注册
         [HttpGet]
         [AllowAnonymous]
         public ActionResult Register()
@@ -150,7 +151,17 @@ namespace VL.ItsMe1110.Controllers
                 }
             }
             return View(model);
-        } 
+        }
+        #endregion
+
+        #region 注销
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogOff()
+        {
+            VLAuthentication.LogOff();
+            return RedirectToAction(nameof(HomeController.Index), PageName_Home);
+        }
         #endregion
     }
 }
