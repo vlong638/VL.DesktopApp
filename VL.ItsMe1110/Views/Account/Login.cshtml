@@ -29,6 +29,19 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    @Html.LabelFor(m => m.ValidateCode, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.ValidateCode, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ValidateCode, "", new { @class = "text-danger" })
+                        <img id="GL_StandardCode" style="cursor: pointer;" src="@Url.Action("GetImg", "ValidateCode")?t=@DateTime.Now.Ticks" title="看不清，点击换一张" />
+                        @*$("#GL_StandardCode").click(function () {
+                        var newSrc = "@Url.Action("GetImg", "ValidateCode")" + "?t=" + (new Date()).getTime();
+                        this.src=newSrc;
+                        return false;
+                        });*@
+                    </div>
+                </div>
+                <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
                         <div class="checkbox">
                             @Html.CheckBoxFor(m => m.RememberMe)

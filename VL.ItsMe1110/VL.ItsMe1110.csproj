@@ -186,14 +186,17 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\ValidateCodeController.cs" />
     <Compile Include="Custom\Authentications\VLAuthorizeAttribute.cs" />
-    <Compile Include="Custom\Test_Attribute\CustomAuthAttribute.cs" />
+    <Compile Include="Custom\0.Test_Attribute\CustomAuthAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\0.BaseController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Custom\Authentications\VLAuthentication.cs" />
     <Compile Include="Custom\Authentications\VLPrincipal.cs" />
+    <Compile Include="Custom\VerficationCodes\MD5Helper.cs" />
+    <Compile Include="Custom\VerficationCodes\ValidateCode.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -256,6 +259,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ValidateCode\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

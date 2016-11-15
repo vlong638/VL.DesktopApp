@@ -47,6 +47,13 @@ namespace VL.ItsMe1110.Controllers
                 return View(model);
             }
 
+            //验证码
+            var validCode = VLAuthentication.TryParseValidCode(HttpContext.Request.Cookies);
+            if (validCode!=model.ValidateCode)
+            {
+                ModelState.AddModelError("", "验证码错误。");
+                return View(model);
+            }
             // 这不会计入到为执行帐户锁定而统计的登录失败次数中
             // 若要在多次输入错误密码的情况下触发帐户锁定，请更改为 shouldLockout: true
             var user = new TUser() { UserName = model.UserName, Password = model.Password };

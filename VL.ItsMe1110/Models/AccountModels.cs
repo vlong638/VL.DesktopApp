@@ -19,6 +19,9 @@ namespace VL.ItsMe1110.Models
 
         [Display(Name = "记住我?")]
         public bool RememberMe { get; set; }
+
+        [Display(Name = "验证码")]
+        public string ValidateCode{ get; set; }
     }
     public class RegisterViewModel
     {
