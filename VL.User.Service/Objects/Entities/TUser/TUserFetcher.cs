@@ -33,6 +33,15 @@ namespace VL.User.Objects.Entities
             }
             return true;
         }
+        public static bool FetchUserRoles(this TUser tUser, DbSession session)
+        {
+            var query = session.GetDbQueryBuilder();
+            SelectBuilder builder = new SelectBuilder();
+            builder.ComponentWhere.Add(new ComponentValueOfWhere(TUserRoleProperties.UserName, tUser.UserName, LocateType.Equal));
+            query.SelectBuilders.Add(builder);
+            tUser.UserRoles = session.GetQueryOperator().SelectAll<TUserRole>(session, query);
+            return tUser.UserRoles.Count > 0;
+        }
         #endregion
     }
 }

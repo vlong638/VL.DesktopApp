@@ -123,8 +123,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="VL.Common.Constraints, Version=1.0.6159.31950, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Constraints.1.0.1611111747.1\lib\net452\VL.Common.Constraints.dll</HintPath>
+    <Reference Include="VL.Common.Constraints, Version=1.0.6163.20798, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Constraints.1.0.1611151133.1\lib\net452\VL.Common.Constraints.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -186,11 +186,14 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
-    <Compile Include="Attributes\CustomAuthAttribute.cs" />
+    <Compile Include="Custom\Authentications\VLAuthorizeAttribute.cs" />
+    <Compile Include="Custom\Test_Attribute\CustomAuthAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\0.BaseController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Custom\Authentications\VLAuthentication.cs" />
+    <Compile Include="Custom\Authentications\VLPrincipal.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,6 +211,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\SubjectUserService\VL.ItsMe1110.SubjectUserService.Report.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\SubjectUserService\VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\SubjectUserService\VL.xsd">
@@ -238,6 +244,9 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <None Include="Service References\SubjectUserService\VL6.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

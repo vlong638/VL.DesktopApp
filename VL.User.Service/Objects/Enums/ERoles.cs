@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 namespace VL.User.Objects.Enums
 {
     [DataContract]
-    public enum EGender
+    public enum ERoles
     {
         /// <summary>
         /// 未指定
@@ -11,14 +11,19 @@ namespace VL.User.Objects.Enums
         [EnumMember]
         None = 0,
         /// <summary>
-        /// 男
+        /// 管理员
         /// </summary>
         [EnumMember]
-        Man = 1,
+        Administrator = 1,
         /// <summary>
-        /// 女
+        /// 用户
         /// </summary>
         [EnumMember]
-        Woman = 2,
+        User = 2,
+        /// <summary>
+        /// 游客
+        /// </summary>
+        [EnumMember]
+        Guest = 3,
     }
 }

@@ -33,7 +33,6 @@ namespace VL.User.Objects.Entities
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.UserName));
             }
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.UserName, entity.UserName));
-            builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.Gender, entity.Gender));
             if (entity.Birthday.HasValue)
             {
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.Birthday, entity.Birthday.Value));
@@ -66,7 +65,6 @@ namespace VL.User.Objects.Entities
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.UserName));
             }
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.UserName, entity.UserName));
-                builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.Gender, entity.Gender));
                 if (entity.Birthday.HasValue)
                 {
                     builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.Birthday, entity.Birthday.Value));
@@ -97,7 +95,6 @@ namespace VL.User.Objects.Entities
             if (fields==null|| fields.Length==0)
             {
                 builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.UserName, entity.UserName));
-                builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Gender, entity.Gender));
                 builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Birthday, entity.Birthday));
                 builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Mobile, entity.Mobile));
                 builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Email, entity.Email));
@@ -105,10 +102,6 @@ namespace VL.User.Objects.Entities
             }
             else
             {
-                if (fields.Contains(TUserBasicInfoProperties.Gender))
-                {
-                    builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Gender, entity.Gender));
-                }
                 if (fields.Contains(TUserBasicInfoProperties.Birthday))
                 {
                     builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Birthday, entity.Birthday));
@@ -139,7 +132,6 @@ namespace VL.User.Objects.Entities
                 if (fields==null|| fields.Length==0)
                 {
                     builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.UserName, entity.UserName));
-                    builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Gender, entity.Gender));
                     builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Birthday, entity.Birthday));
                     builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Mobile, entity.Mobile));
                     builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Email, entity.Email));
@@ -147,10 +139,6 @@ namespace VL.User.Objects.Entities
                 }
                 else
                 {
-                    if (fields.Contains(TUserBasicInfoProperties.Gender))
-                    {
-                        builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Gender, entity.Gender));
-                    }
                     if (fields.Contains(TUserBasicInfoProperties.Birthday))
                     {
                         builder.ComponentSet.Add(new ComponentValueOfSet(TUserBasicInfoProperties.Birthday, entity.Birthday));
@@ -193,7 +181,6 @@ namespace VL.User.Objects.Entities
             if (fields.Count() == 0)
             {
                 builder.ComponentSelect.Add(TUserBasicInfoProperties.UserName);
-                builder.ComponentSelect.Add(TUserBasicInfoProperties.Gender);
                 builder.ComponentSelect.Add(TUserBasicInfoProperties.Birthday);
                 builder.ComponentSelect.Add(TUserBasicInfoProperties.Mobile);
                 builder.ComponentSelect.Add(TUserBasicInfoProperties.Email);
@@ -221,7 +208,6 @@ namespace VL.User.Objects.Entities
             if (fields.Count() == 0)
             {
                 builder.ComponentSelect.Add(TUserBasicInfoProperties.UserName);
-                builder.ComponentSelect.Add(TUserBasicInfoProperties.Gender);
                 builder.ComponentSelect.Add(TUserBasicInfoProperties.Birthday);
                 builder.ComponentSelect.Add(TUserBasicInfoProperties.Mobile);
                 builder.ComponentSelect.Add(TUserBasicInfoProperties.Email);
@@ -255,7 +241,6 @@ namespace VL.User.Objects.Entities
             }
             if (fields.Count() == 0)
             {
-                entity.Gender = result.Gender;
                 entity.Birthday = result.Birthday;
                 entity.Mobile = result.Mobile;
                 entity.Email = result.Email;
@@ -263,10 +248,6 @@ namespace VL.User.Objects.Entities
             }
             else
             {
-                if (fields.Contains(TUserBasicInfoProperties.Gender))
-                {
-                    entity.Gender = result.Gender;
-                }
                 if (fields.Contains(TUserBasicInfoProperties.Birthday))
                 {
                     entity.Birthday = result.Birthday;

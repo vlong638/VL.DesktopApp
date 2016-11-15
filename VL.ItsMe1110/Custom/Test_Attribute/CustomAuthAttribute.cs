@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace VL.ItsMe1110.Attributes
+namespace VL.ItsMe1110.Custom.Test_Attribute
 {
     /// <summary>
     /// 用于测试AuthorizeAttribute

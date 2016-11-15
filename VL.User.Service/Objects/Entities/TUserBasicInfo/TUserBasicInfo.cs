@@ -14,8 +14,6 @@ namespace VL.User.Objects.Entities
         [DataMember]
         public String UserName { get; set; }
         [DataMember]
-        public ESample Gender { get; set; }
-        [DataMember]
         public DateTime? Birthday { get; set; }
         [DataMember]
         public Int16? Mobile { get; set; }
@@ -42,10 +40,6 @@ namespace VL.User.Objects.Entities
         public override void Init(IDataReader reader)
         {
             this.UserName = Convert.ToString(reader[nameof(this.UserName)]);
-            if (reader[nameof(this.Gender)] != DBNull.Value)
-            {
-                this.Gender = (ESample)Enum.Parse(typeof(ESample), reader[nameof(this.Gender)].ToString());
-            }
             if (reader[nameof(this.Birthday)] != DBNull.Value)
             {
                 this.Birthday = Convert.ToDateTime(reader[nameof(this.Birthday)]);
@@ -68,13 +62,6 @@ namespace VL.User.Objects.Entities
             if (fields.Contains(nameof(UserName)))
             {
                 this.UserName = Convert.ToString(reader[nameof(this.UserName)]);
-            }
-            if (fields.Contains(nameof(Gender)))
-            {
-                if (reader[nameof(this.Gender)] != DBNull.Value)
-                {
-                    this.Gender = (ESample)Enum.Parse(typeof(ESample), reader[nameof(this.Gender)].ToString());
-                }
             }
             if (fields.Contains(nameof(Birthday)))
             {

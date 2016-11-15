@@ -318,6 +318,7 @@ namespace VL.ItsMe1110.SubjectUserService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Protocol")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1))]
     public partial class Report : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -375,6 +376,46 @@ namespace VL.ItsMe1110.SubjectUserService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOfESignInStatustcv8SCZ1", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Protocol")]
+    [System.SerializableAttribute()]
+    public partial class ReportOfESignInStatustcv8SCZ1 : VL.ItsMe1110.SubjectUserService.Report {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private VL.ItsMe1110.SubjectUserService.ESignInStatus DataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public VL.ItsMe1110.SubjectUserService.ESignInStatus Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((this.DataField.Equals(value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ESignInStatus", Namespace="http://schemas.datacontract.org/2004/07/VL.User.Objects.Enums")]
+    public enum ESignInStatus : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Success = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LockedOut = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RequiresVerification = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Failure = 4,
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SubjectUserService.ISubjectUserService")]
     public interface ISubjectUserService {
@@ -398,10 +439,16 @@ namespace VL.ItsMe1110.SubjectUserService {
         System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> CreateUserAsync(VL.ItsMe1110.SubjectUserService.TUser user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/AuthenticateUser", ReplyAction="http://tempuri.org/ISubjectUserService/AuthenticateUserResponse")]
-        VL.ItsMe1110.SubjectUserService.Report AuthenticateUser(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout);
+        VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1 AuthenticateUser(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/AuthenticateUser", ReplyAction="http://tempuri.org/ISubjectUserService/AuthenticateUserResponse")]
-        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> AuthenticateUserAsync(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout);
+        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1> AuthenticateUserAsync(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/CheckUserInRole", ReplyAction="http://tempuri.org/ISubjectUserService/CheckUserInRoleResponse")]
+        VL.ItsMe1110.SubjectUserService.Report CheckUserInRole(VL.ItsMe1110.SubjectUserService.TUser user, System.Collections.Generic.List<string> roles);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/CheckUserInRole", ReplyAction="http://tempuri.org/ISubjectUserService/CheckUserInRoleResponse")]
+        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> CheckUserInRoleAsync(VL.ItsMe1110.SubjectUserService.TUser user, System.Collections.Generic.List<string> roles);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -455,12 +502,20 @@ namespace VL.ItsMe1110.SubjectUserService {
             return base.Channel.CreateUserAsync(user);
         }
         
-        public VL.ItsMe1110.SubjectUserService.Report AuthenticateUser(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout) {
+        public VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1 AuthenticateUser(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout) {
             return base.Channel.AuthenticateUser(user, rememberMe, shouldLockout);
         }
         
-        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> AuthenticateUserAsync(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout) {
+        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1> AuthenticateUserAsync(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout) {
             return base.Channel.AuthenticateUserAsync(user, rememberMe, shouldLockout);
+        }
+        
+        public VL.ItsMe1110.SubjectUserService.Report CheckUserInRole(VL.ItsMe1110.SubjectUserService.TUser user, System.Collections.Generic.List<string> roles) {
+            return base.Channel.CheckUserInRole(user, roles);
+        }
+        
+        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> CheckUserInRoleAsync(VL.ItsMe1110.SubjectUserService.TUser user, System.Collections.Generic.List<string> roles) {
+            return base.Channel.CheckUserInRoleAsync(user, roles);
         }
     }
 }

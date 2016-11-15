@@ -1,6 +1,7 @@
 ﻿using System.ServiceModel;
 using VL.Common.Protocol;
 using VL.User.Objects.Entities;
+using VL.User.Objects.Enums;
 
 namespace VL.User.Service.Services
 {
@@ -12,6 +13,8 @@ namespace VL.User.Service.Services
         Report CreateUser(TUser user);
 
         [OperationContract]
-        Report AuthenticateUser(TUser user, bool rememberMe, bool shouldLockout);
+        Report<ESignInStatus> AuthenticateUser(TUser user, bool rememberMe, bool shouldLockout);
+        [OperationContract]
+        Report CheckUserInRole(TUser user, string[] roles);
     }
 }

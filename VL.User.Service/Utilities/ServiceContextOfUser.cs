@@ -2,7 +2,6 @@
 using VL.Common.DAS;
 using VL.Common.Logger;
 using VL.Common.Protocol;
-using VL.Common.Protocol;
 using VL.User.Service.Configs;
 
 namespace VL.User.Service.Utilities

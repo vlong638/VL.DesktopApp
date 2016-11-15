@@ -38,3 +38,4 @@ D:\GitProjects\VL.DesktopApp\VL.User.Service\obj\Debug\VL.User.Service.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\obj\Debug\VL.User.Service.pdb
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\Owin.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.Core.dll
+D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.Constraints.dll

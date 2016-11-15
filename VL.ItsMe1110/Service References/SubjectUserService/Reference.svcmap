@@ -28,12 +28,13 @@
   <Metadata>
     <MetadataFile FileName="VL.xsd" MetadataType="Schema" ID="089a3363-37c0-4707-a739-cc59f065ce06" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd1" />
     <MetadataFile FileName="VL1.xsd" MetadataType="Schema" ID="8acdbfe6-6c25-4c8c-b30a-a73be4838a6d" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd5" />
-    <MetadataFile FileName="VL2.xsd" MetadataType="Schema" ID="76066069-b92f-4416-97eb-91a980590dc7" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd4" />
+    <MetadataFile FileName="VL5.xsd" MetadataType="Schema" ID="fa1d15b5-608d-4abd-8168-b000f67c56db" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd3" />
     <MetadataFile FileName="VL3.xsd" MetadataType="Schema" ID="a4013c66-3cdd-481c-a499-64464b10a035" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd0" />
     <MetadataFile FileName="VL.disco" MetadataType="Disco" ID="9dda8f84-b46b-48ab-890e-a5826939dc89" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?disco" />
     <MetadataFile FileName="VL4.xsd" MetadataType="Schema" ID="b6eb0786-03f7-48fa-8f71-dca2f7cd64bc" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd2" />
+    <MetadataFile FileName="VL2.xsd" MetadataType="Schema" ID="76066069-b92f-4416-97eb-91a980590dc7" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd4" />
     <MetadataFile FileName="SubjectUserService.wsdl" MetadataType="Wsdl" ID="91c5ccb2-74bf-4d1e-bad4-083ec406796a" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?wsdl" />
-    <MetadataFile FileName="VL5.xsd" MetadataType="Schema" ID="fa1d15b5-608d-4abd-8168-b000f67c56db" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd3" />
+    <MetadataFile FileName="VL6.xsd" MetadataType="Schema" ID="5358801f-e93a-4dfa-ab7e-b6c70798ff15" SourceId="1" SourceUrl="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd6" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
