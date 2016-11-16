@@ -195,6 +195,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Custom\Authentications\VLAuthentication.cs" />
     <Compile Include="Custom\Authentications\VLPrincipal.cs" />
+    <Compile Include="Custom\Emails\MailHelper.cs" />
     <Compile Include="Custom\VerficationCodes\MD5Helper.cs" />
     <Compile Include="Custom\VerficationCodes\ValidateCode.cs" />
     <Compile Include="Global.asax.cs">

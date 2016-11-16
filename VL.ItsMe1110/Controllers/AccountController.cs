@@ -177,5 +177,8 @@ namespace VL.ItsMe1110.Controllers
             return RedirectToAction(nameof(HomeController.Index), PageName_Home);
         }
         #endregion
+
+        #region 邮箱验证
+        #endregion
     }
 }
