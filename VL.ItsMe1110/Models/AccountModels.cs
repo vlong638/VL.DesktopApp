@@ -40,5 +40,8 @@ namespace VL.ItsMe1110.Models
         [Compare(nameof(Password), ErrorMessage = "密码和确认密码不匹配。")]
         public string ConfirmPassword { get; set; }
 
+        [Display(Name = "验证码")]
+        public string ValidateCode { get; set; }
+
     }
 }

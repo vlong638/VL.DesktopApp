@@ -8,13 +8,15 @@ namespace VL.ItsMe1110
 {
     public class BundleConfig
     {
+        public const string JQueryBundle = "~/bundles/jquery";
+        public const string JQueryValidateBundle = "~/bundles/jqueryval";
         // 有关绑定的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            bundles.Add(new ScriptBundle(JQueryBundle).Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+            bundles.Add(new ScriptBundle(JQueryValidateBundle).Include(
                         "~/Scripts/jquery.validate*"));
 
             // 使用要用于开发和学习的 Modernizr 的开发版本。然后，当你做好

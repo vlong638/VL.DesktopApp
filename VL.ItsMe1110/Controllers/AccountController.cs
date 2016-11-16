@@ -46,14 +46,14 @@ namespace VL.ItsMe1110.Controllers
             {
                 return View(model);
             }
-
             //验证码
             var validCode = VLAuthentication.TryParseValidCode(HttpContext.Request.Cookies);
-            if (validCode!=model.ValidateCode)
+            if (validCode != model.ValidateCode.ToUpper())
             {
                 ModelState.AddModelError("", "验证码错误。");
                 return View(model);
             }
+
             // 这不会计入到为执行帐户锁定而统计的登录失败次数中
             // 若要在多次输入错误密码的情况下触发帐户锁定，请更改为 shouldLockout: true
             var user = new TUser() { UserName = model.UserName, Password = model.Password };
@@ -105,10 +105,10 @@ namespace VL.ItsMe1110.Controllers
                     case ESignInStatus.Failure:
                     default:
                         AddMessages(result.Code, new KeyValueCollection {
-                            new KeyValue(4, "用户名不可为空") ,
-                            new KeyValue(5, "用户不存在") ,
-                            new KeyValue(6, "密码不可为空") ,
-                            new KeyValue(7, "操作数据库失败") ,
+                            new KeyValue(11, "用户名不可为空") ,
+                            new KeyValue(12, "用户不存在") ,
+                            new KeyValue(13, "密码不可为空") ,
+                            new KeyValue(14, "操作数据库失败") ,
                         });
                         return View(model);
                 }
@@ -131,31 +131,38 @@ namespace VL.ItsMe1110.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var user = new TUser()
-                {
-                    UserName = model.UserName,
-                    Password = model.Password,
-                    CreateTime = DateTime.Now,
-                };
-                var result = await SubjectUserService.CreateUserAsync(user);
-                if (result.Code == CProtocol.CReport.CSuccess)
-                {
-                    GenericIdentity identity = new GenericIdentity(user.UserName);
-                    GenericPrincipal principal = new GenericPrincipal(identity, new string[] { nameof(WindowsBuiltInRole.User) });
-                    HttpContext.User = principal;
-                    return RedirectToAction(nameof(HomeController.Index), HomeController.PageName_Home);
-                }
-                else
-                {
-                    AddMessages(result.Code, new KeyValueCollection {
-                        new KeyValue(4, "用户名不可为空") ,
-                        new KeyValue(5, "用户已存在") ,
-                        new KeyValue(6, "密码不可为空") ,
-                        new KeyValue(7, "操作数据库失败") ,
+                return View(model);
+            }
+            //验证码
+            var validCode = VLAuthentication.TryParseValidCode(HttpContext.Request.Cookies);
+            if (validCode != model.ValidateCode.ToUpper())
+            {
+                ModelState.AddModelError("", "验证码错误。");
+                return View(model);
+            }
+
+            var user = new TUser()
+            {
+                UserName = model.UserName,
+                Password = model.Password,
+                CreateTime = DateTime.Now,
+            };
+            var result = await SubjectUserService.CreateUserAsync(user);
+            if (result.Code == CProtocol.CReport.CSuccess)
+            {
+                VLAuthentication.SetAuthCookie(user, false);
+                return RedirectToAction(nameof(HomeController.Index), HomeController.PageName_Home);
+            }
+            else
+            {
+                AddMessages(result.Code, new KeyValueCollection {
+                        new KeyValue(11, "用户名不可为空") ,
+                        new KeyValue(12, "用户已存在") ,
+                        new KeyValue(13, "密码不可为空") ,
+                        new KeyValue(14, "操作数据库失败") ,
                     });
-                }
             }
             return View(model);
         }

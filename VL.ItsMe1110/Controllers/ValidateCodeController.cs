@@ -22,7 +22,7 @@ namespace VL.ItsMe1110.Controllers
             int fontsize = 20;
             string code = string.Empty;
             byte[] bytes = ValidateCode.CreateValidateGraphic(out code, codeLength, width, height, fontsize);
-            VLAuthentication.SetValidCodeCookie(code);
+            VLAuthentication.SetValidCodeCookie(code.ToUpper());
             //Session["code"] = code;
             return File(bytes, @"image/jpeg");
         }
