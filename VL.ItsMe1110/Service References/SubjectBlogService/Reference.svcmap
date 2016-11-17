@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e54cfab3-d167-464e-9e2c-e20832a007f5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+      <CollectionMapping TypeName="System.Collections.Specialized.OrderedDictionary" Category="Dictionary" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="VL.Common.Constraints" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8003/VL.Blog.Service.Services.SubjectBlogService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VL.xsd" MetadataType="Schema" ID="95ebd769-5264-4b45-a540-d8220535ca85" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd1" />
+    <MetadataFile FileName="VL.disco" MetadataType="Disco" ID="ba9b92c9-7d54-4cdc-be88-c4a065811bfe" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?disco" />
+    <MetadataFile FileName="VL1.xsd" MetadataType="Schema" ID="fd5610fc-1bad-4e5b-a6d9-14e1ce2b6a20" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SubjectBlogService.wsdl" MetadataType="Wsdl" ID="155337a5-45ab-40a2-a737-f7d4b724f1a3" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?wsdl" />
+    <MetadataFile FileName="VL2.xsd" MetadataType="Schema" ID="6f9c8ef5-2dd7-487b-9850-70df03bf4687" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd5" />
+    <MetadataFile FileName="VL3.xsd" MetadataType="Schema" ID="6b6ba527-d29f-4244-b074-4f3d4e4d4aac" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd4" />
+    <MetadataFile FileName="VL4.xsd" MetadataType="Schema" ID="cfa680f8-6242-4e22-9c18-e4b6d82ac562" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd0" />
+    <MetadataFile FileName="VL6.xsd" MetadataType="Schema" ID="af24ef0a-982a-474b-807e-39c7971b0c6e" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd6" />
+    <MetadataFile FileName="VL5.xsd" MetadataType="Schema" ID="a6302b15-bb93-4ec9-bd05-f25bc7f9b8c7" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

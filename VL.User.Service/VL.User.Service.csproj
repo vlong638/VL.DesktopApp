@@ -61,24 +61,23 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611151135.1\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Core.1.0.1611170905.1\lib\net452\System.Runtime.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="VL.Common.Constraints, Version=1.0.6163.20798, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Constraints.1.0.1611151133.1\lib\net452\VL.Common.Constraints.dll</HintPath>
+    <Reference Include="VL.Common.Constraints, Version=1.0.6164.32108, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Constraints.1.0.1611161753.1\lib\net452\VL.Common.Constraints.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="VL.Common.Core, Version=1.0.6163.20847, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611151135.1\lib\net452\VL.Common.Core.dll</HintPath>
+    <Reference Include="VL.Common.Core, Version=1.0.6165.16255, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611170905.1\lib\net452\VL.Common.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configs\DbConfigOfUser.cs" />
-    <Compile Include="Objects\Constraints.cs" />
     <Compile Include="Objects\DomainEntities\TUser.cs" />
     <Compile Include="Objects\DomainEntities\TUserBasicInfo.cs" />
     <Compile Include="Objects\Entities\TUserBasicInfo\TUserBasicInfo.cs" />
@@ -117,16 +116,11 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <EmbeddedResource Include="log4net.config">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <None Include="log4net.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="lib\net452\System.Runtime.Serialization.dll" />
     <Content Include="Objects\备注\多表查询.txt" />
-    <Content Include="Protocol\IService\备注.txt" />
     <Content Include="数据库\创建数据库.sql" />
     <Content Include="数据库\调试.sql" />
     <Content Include="问题记录\多表查询.txt" />

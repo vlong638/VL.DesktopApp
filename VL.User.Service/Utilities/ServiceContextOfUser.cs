@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using VL.Common.Constraints.Protocol;
 using VL.Common.DAS;
 using VL.Common.Logger;
 using VL.Common.Protocol;
@@ -8,6 +9,8 @@ namespace VL.User.Service.Utilities
 {
     public class ServiceContextOfUser : ServiceContext
     {
+        public static ModuleReportHelper ReportHelper { set; get; } = new ModuleReportHelper(nameof(VL.User));
+
         public ServiceContextOfUser() : base()
         {
         }
@@ -17,7 +20,7 @@ namespace VL.User.Service.Utilities
 
         public override string GetUnitName()
         {
-            return nameof(VL.User.Service);
+            return nameof(VL.User);
         }
 
         protected override DbConfigEntity GetDefaultDatabaseConfig()
@@ -32,7 +35,6 @@ namespace VL.User.Service.Utilities
         {
             return LoggerProvider.GetLog4netLogger("ServiceLog");
         }
-
         protected override List<DependencyResult> InitOthers()
         {
             return new List<DependencyResult>();

@@ -1,19 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using VL.Common.Constraints;
+using VL.Common.Constraints.Protocol;
 using VL.Common.DAS;
 using VL.Common.ORM;
 using VL.Common.Protocol;
 using VL.User.Objects.Enums;
+using VL.User.Service.Utilities;
 
 namespace VL.User.Objects.Entities
 {
     public partial class TUser
     {
-        static ClassReportHelper ReportHelper { set; get; } = Constraints.ReportHelper.GetClassReportHelper(nameof(TUser));
+        static ClassReportHelper ReportHelper { set; get; } = ServiceContextOfUser.ReportHelper.GetClassReportHelper(nameof(TUser));
 
-        #region 创建用户
+        #region Create
         enum ECode_Create
         {
             Default = CProtocol.CReport.CManualStart,
@@ -24,13 +25,14 @@ namespace VL.User.Objects.Entities
         }
         public Report Create(DbSession session)
         {
-            this.CreateTime = DateTime.Now;
             if (string.IsNullOrEmpty(this.UserName))
                 return ReportHelper.GetReport(nameof(Create), (int)ECode_Create.用户名不可为空);
             if (CheckExistance(session))
                 return ReportHelper.GetReport(nameof(Create), (int)ECode_Create.用户已存在);
             if (string.IsNullOrEmpty(this.Password))
                 return ReportHelper.GetReport(nameof(Create), (int)ECode_Create.密码不可为空);
+
+            this.CreateTime = DateTime.Now;
             if (this.DbInsert(session))
                 return new Report(CProtocol.CReport.CSuccess);
             else
@@ -38,7 +40,7 @@ namespace VL.User.Objects.Entities
         }
         #endregion
 
-        #region 用户验证
+        #region Regist
         enum ECode_Authenticate
         {
             Default = CProtocol.CReport.CManualStart,
@@ -58,6 +60,7 @@ namespace VL.User.Objects.Entities
             //ESignInStatus.RequiresVerification
             if (string.IsNullOrEmpty(this.Password))
                 return ReportHelper.GetReport(ESignInStatus.Failure, nameof(Create), (int)ECode_Authenticate.密码不可为空);
+
             var query = session.GetDbQueryBuilder().SelectBuilder;
             query.ComponentSelect.Add("1");
             query.ComponentWhere.Add(TUserProperties.UserName, this.UserName, LocateType.Equal);
@@ -69,7 +72,7 @@ namespace VL.User.Objects.Entities
         }
         #endregion
 
-        #region 用户角色验证
+        #region InRole
         public Report IsInRole(DbSession session, string[] roles)
         {
             this.FetchUserRoles(session);
@@ -93,7 +96,6 @@ namespace VL.User.Objects.Entities
 
 
         #endregion
-
 
         #region 辅助方法
         /// <summary>

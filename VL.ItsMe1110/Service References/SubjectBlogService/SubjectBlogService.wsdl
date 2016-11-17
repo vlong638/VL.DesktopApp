@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SubjectBlogService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Constraints.Protocol" />
+      <xsd:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VL.Blog.Objects.Entities" />
+      <xsd:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.ORM" />
+      <xsd:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Protocol" />
+      <xsd:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISubjectBlogService_CheckAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAlive" />
+  </wsdl:message>
+  <wsdl:message name="ISubjectBlogService_CheckAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubjectBlogService_CheckNodeReferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckNodeReferences" />
+  </wsdl:message>
+  <wsdl:message name="ISubjectBlogService_CheckNodeReferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckNodeReferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISubjectBlogService_CreateBlog_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlog" />
+  </wsdl:message>
+  <wsdl:message name="ISubjectBlogService_CreateBlog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBlogResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISubjectBlogService">
+    <wsdl:operation name="CheckAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFServiceNode/CheckAlive" message="tns:ISubjectBlogService_CheckAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFServiceNode/CheckAliveResponse" message="tns:ISubjectBlogService_CheckAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckNodeReferences">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences" message="tns:ISubjectBlogService_CheckNodeReferences_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse" message="tns:ISubjectBlogService_CheckNodeReferences_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBlog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubjectBlogService/CreateBlog" message="tns:ISubjectBlogService_CreateBlog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubjectBlogService/CreateBlogResponse" message="tns:ISubjectBlogService_CreateBlog_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISubjectBlogService" type="tns:ISubjectBlogService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckAlive">
+      <soap:operation soapAction="http://tempuri.org/IWCFServiceNode/CheckAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckNodeReferences">
+      <soap:operation soapAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBlog">
+      <soap:operation soapAction="http://tempuri.org/ISubjectBlogService/CreateBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SubjectBlogService">
+    <wsdl:port name="BasicHttpBinding_ISubjectBlogService" binding="tns:BasicHttpBinding_ISubjectBlogService">
+      <soap:address location="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

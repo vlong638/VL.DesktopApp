@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using VL.Common.Constraints.Protocol;
 using VL.Common.Protocol;
 using VL.User.Objects.Entities;
 using VL.User.Service.Configs;

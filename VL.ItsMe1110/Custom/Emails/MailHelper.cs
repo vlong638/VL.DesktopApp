@@ -31,7 +31,7 @@ namespace VL.ItsMe1110.Custom.Emails
                 client.SendAsync(msg, userState);
                 //发送成功
             }
-            catch (Exception ex)
+            catch //(Exception ex)
             {
                 //发送邮件出错
             }

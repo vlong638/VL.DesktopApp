@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Security.Principal;
 using System.Web.Security;
+using VL.Common.Constraints.Protocol;
 using VL.ItsMe1110.SubjectUserService;
 
 namespace VL.ItsMe1110.Custom.Authentications
@@ -26,11 +27,12 @@ namespace VL.ItsMe1110.Custom.Authentications
         {
             var client = new SubjectUserServiceClient();
             var result = client.CheckUserInRole(User, role.Split(',').ToList());
-            return result.Code == Common.Constraints.CProtocol.CReport.CSuccess;
+            return result.Code == CProtocol.CReport.CSuccess;
         }
         public bool IsInUser(string user)
         {
-            return false;
+            var users = user.Split(',');
+            return users.Contains(User.UserName);
         }
     }
 }

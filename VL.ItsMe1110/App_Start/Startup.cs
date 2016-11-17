@@ -1,7 +1,6 @@
 ﻿using Microsoft.Owin;
 using Owin;
 using System;
-using VL.ItsMe1110.SubjectUserService;
 
 [assembly: OwinStartupAttribute(typeof(VL.ItsMe1110.Startup))]
 namespace VL.ItsMe1110
@@ -20,11 +19,16 @@ namespace VL.ItsMe1110
         public void ConfigureAuth(IAppBuilder app)
         {
             #region 配置用户服务
-            var result = new SubjectUserServiceClient().CheckNodeReferences();
+            var result = new SubjectUserService.SubjectUserServiceClient().CheckNodeReferences();
             if (!result.IsAllDependenciesAvailable)
             {
                 throw new NotImplementedException(result.Message);
-            } 
+            }
+            result = new SubjectBlogService.SubjectBlogServiceClient().CheckNodeReferences();
+            if (!result.IsAllDependenciesAvailable)
+            {
+                throw new NotImplementedException(result.Message);
+            }
             #endregion
 
             #region 允许使用第三方登录提供程序登录

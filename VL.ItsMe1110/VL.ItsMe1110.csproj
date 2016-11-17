@@ -101,7 +101,10 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611161505.1\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -123,8 +126,12 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="VL.Common.Constraints, Version=1.0.6163.20798, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Constraints.1.0.1611151133.1\lib\net452\VL.Common.Constraints.dll</HintPath>
+    <Reference Include="VL.Common.Constraints, Version=1.0.6164.32108, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Constraints.1.0.1611161753.1\lib\net452\VL.Common.Constraints.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VL.Common.Core, Version=1.0.6164.27170, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611161505.1\lib\net452\VL.Common.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -160,10 +167,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="lib\net452\System.Runtime.Serialization.dll" />
     <Content Include="Properties\DataSources\VL.Common.Protocol.IService.DependencyResult.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Protocol.IService.Report.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Protocol.DependencyResult.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Protocol.Report.datasource" />
+    <Content Include="log4net.config" />
+    <Content Include="Properties\DataSources\VL.Common.Constraints.Protocol.DependencyResult.datasource" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -171,11 +181,72 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Service References\ObjectBlogService\ObjectBlogService.wsdl" />
+    <Content Include="Service References\ObjectBlogService\VL.ItsMe1110.ObjectBlogService.TBlog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ObjectBlogService\VL.ItsMe1110.ObjectBlogService.TBlogDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\ObjectBlogService\VL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectBlogService\VL1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectBlogService\VL2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectBlogService\VL3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ObjectBlogService\VL4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubjectBlogService\SubjectBlogService.wsdl" />
+    <None Include="Service References\ObjectBlogService\VL.disco" />
+    <None Include="Service References\ObjectBlogService\configuration91.svcinfo" />
+    <None Include="Service References\ObjectBlogService\configuration.svcinfo" />
+    <None Include="Service References\ObjectBlogService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\SubjectBlogService\VL.ItsMe1110.SubjectBlogService.Report.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\SubjectBlogService\VL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubjectBlogService\VL1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubjectBlogService\VL2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubjectBlogService\VL3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubjectBlogService\VL4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubjectBlogService\VL5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SubjectBlogService\VL6.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\SubjectUserService\SubjectUserService.wsdl" />
     <None Include="Service References\SubjectUserService\VL.disco" />
     <None Include="Service References\SubjectUserService\configuration91.svcinfo" />
     <None Include="Service References\SubjectUserService\configuration.svcinfo" />
     <None Include="Service References\SubjectUserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SubjectBlogService\VL.disco" />
+    <None Include="Service References\SubjectBlogService\configuration91.svcinfo" />
+    <None Include="Service References\SubjectBlogService\configuration.svcinfo" />
+    <None Include="Service References\SubjectBlogService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -186,6 +257,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ValidateCodeController.cs" />
     <Compile Include="Custom\Authentications\VLAuthorizeAttribute.cs" />
     <Compile Include="Custom\0.Test_Attribute\CustomAuthAttribute.cs" />
@@ -203,6 +275,16 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ObjectBlogService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SubjectBlogService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SubjectUserService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -211,9 +293,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Service References\SubjectUserService\VL.ItsMe1110.SubjectUserService.DependencyResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\SubjectUserService\VL.ItsMe1110.SubjectUserService.Report.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -251,6 +330,10 @@
     <None Include="Service References\SubjectUserService\VL6.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Blog\Index.cshtml" />
+    <None Include="Service References\SubjectUserService\VL7.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -266,6 +349,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ObjectBlogService\" />
+    <WCFMetadataStorage Include="Service References\SubjectBlogService\" />
     <WCFMetadataStorage Include="Service References\SubjectUserService\" />
   </ItemGroup>
   <PropertyGroup>

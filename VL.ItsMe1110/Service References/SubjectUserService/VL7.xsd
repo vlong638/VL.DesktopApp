@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VL.User.Objects.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VL.User.Objects.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="ESignInStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="LockedOut" />
+      <xs:enumeration value="RequiresVerification" />
+      <xs:enumeration value="Failure">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ESignInStatus" nillable="true" type="tns:ESignInStatus" />
+</xs:schema>
