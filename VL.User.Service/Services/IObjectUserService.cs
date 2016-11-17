@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
+using VL.Common.Object.Protocol;
+using VL.Common.Object.VL.User;
 using VL.Common.Protocol;
-using VL.User.Objects.Entities;
 
 namespace VL.User.Service.Services
 {
@@ -10,5 +11,7 @@ namespace VL.User.Service.Services
     {
         [OperationContract]
         Report<List<TUser>> GetAllUsers();
+        [OperationContract]
+        Report CheckUserInRole(TUser user, List<ERole> roles);
     }
 }

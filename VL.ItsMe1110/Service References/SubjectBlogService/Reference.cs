@@ -9,203 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace VL.ItsMe1110.SubjectBlogService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IPDMTBase", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.ORM")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.ItsMe1110.SubjectBlogService.TBlog))]
-    public partial class IPDMTBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TBlog", Namespace="http://schemas.datacontract.org/2004/07/VL.Blog.Objects.Entities")]
-    [System.SerializableAttribute()]
-    public partial class TBlog : VL.ItsMe1110.SubjectBlogService.IPDMTBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid BlogIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BreviaryContentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreatedTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime LastEditTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TitleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserNameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid BlogId {
-            get {
-                return this.BlogIdField;
-            }
-            set {
-                if ((this.BlogIdField.Equals(value) != true)) {
-                    this.BlogIdField = value;
-                    this.RaisePropertyChanged("BlogId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BreviaryContent {
-            get {
-                return this.BreviaryContentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BreviaryContentField, value) != true)) {
-                    this.BreviaryContentField = value;
-                    this.RaisePropertyChanged("BreviaryContent");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreatedTime {
-            get {
-                return this.CreatedTimeField;
-            }
-            set {
-                if ((this.CreatedTimeField.Equals(value) != true)) {
-                    this.CreatedTimeField = value;
-                    this.RaisePropertyChanged("CreatedTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime LastEditTime {
-            get {
-                return this.LastEditTimeField;
-            }
-            set {
-                if ((this.LastEditTimeField.Equals(value) != true)) {
-                    this.LastEditTimeField = value;
-                    this.RaisePropertyChanged("LastEditTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Title {
-            get {
-                return this.TitleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
-                    this.TitleField = value;
-                    this.RaisePropertyChanged("Title");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserName {
-            get {
-                return this.UserNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
-                    this.UserNameField = value;
-                    this.RaisePropertyChanged("UserName");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Protocol")]
-    [System.SerializableAttribute()]
-    public partial class Report : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<string> MessagesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<string> Messages {
-            get {
-                return this.MessagesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
-                    this.MessagesField = value;
-                    this.RaisePropertyChanged("Messages");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SubjectBlogService.ISubjectBlogService")]
@@ -218,16 +22,16 @@ namespace VL.ItsMe1110.SubjectBlogService {
         System.Threading.Tasks.Task<bool> CheckAliveAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences", ReplyAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse")]
-        VL.Common.Constraints.Protocol.DependencyResult CheckNodeReferences();
+        VL.Common.Object.Protocol.DependencyResult CheckNodeReferences();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences", ReplyAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse")]
-        System.Threading.Tasks.Task<VL.Common.Constraints.Protocol.DependencyResult> CheckNodeReferencesAsync();
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.DependencyResult> CheckNodeReferencesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectBlogService/CreateBlog", ReplyAction="http://tempuri.org/ISubjectBlogService/CreateBlogResponse")]
-        VL.ItsMe1110.SubjectBlogService.Report CreateBlog(VL.ItsMe1110.SubjectBlogService.TBlog blog, string content);
+        VL.Common.Object.Protocol.Report CreateBlog(VL.Common.Object.VL.Blog.TBlog blog, string content);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectBlogService/CreateBlog", ReplyAction="http://tempuri.org/ISubjectBlogService/CreateBlogResponse")]
-        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectBlogService.Report> CreateBlogAsync(VL.ItsMe1110.SubjectBlogService.TBlog blog, string content);
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> CreateBlogAsync(VL.Common.Object.VL.Blog.TBlog blog, string content);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -265,19 +69,19 @@ namespace VL.ItsMe1110.SubjectBlogService {
             return base.Channel.CheckAliveAsync();
         }
         
-        public VL.Common.Constraints.Protocol.DependencyResult CheckNodeReferences() {
+        public VL.Common.Object.Protocol.DependencyResult CheckNodeReferences() {
             return base.Channel.CheckNodeReferences();
         }
         
-        public System.Threading.Tasks.Task<VL.Common.Constraints.Protocol.DependencyResult> CheckNodeReferencesAsync() {
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.DependencyResult> CheckNodeReferencesAsync() {
             return base.Channel.CheckNodeReferencesAsync();
         }
         
-        public VL.ItsMe1110.SubjectBlogService.Report CreateBlog(VL.ItsMe1110.SubjectBlogService.TBlog blog, string content) {
+        public VL.Common.Object.Protocol.Report CreateBlog(VL.Common.Object.VL.Blog.TBlog blog, string content) {
             return base.Channel.CreateBlog(blog, content);
         }
         
-        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectBlogService.Report> CreateBlogAsync(VL.ItsMe1110.SubjectBlogService.TBlog blog, string content) {
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> CreateBlogAsync(VL.Common.Object.VL.Blog.TBlog blog, string content) {
             return base.Channel.CreateBlogAsync(blog, content);
         }
     }

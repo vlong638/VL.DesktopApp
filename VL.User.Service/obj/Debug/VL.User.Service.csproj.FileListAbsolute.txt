@@ -20,8 +20,6 @@ D:\GitProjects\VL.Business\VL.User.Service\obj\Debug\VL.User.Service.dll
 D:\GitProjects\VL.Business\VL.User.Service\obj\Debug\VL.User.Service.pdb
 D:\GitProjects\VL.Business\VL.User.Service\bin\Debug\Configs\ProtocolConfig.config
 D:\GitProjects\VL.Business\VL.User.Service\bin\Debug\Configs\DbConnections.config
-D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\Configs\DbConnections.config
-D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\Configs\ProtocolConfig.config
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.User.Service.dll.config
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.User.Service.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.User.Service.pdb
@@ -37,4 +35,5 @@ D:\GitProjects\VL.DesktopApp\VL.User.Service\obj\Debug\VL.User.Service.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\obj\Debug\VL.User.Service.pdb
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\Owin.dll
 D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.Core.dll
-D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.Constraints.dll
+D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\System.ServiceModel.dll
+D:\GitProjects\VL.DesktopApp\VL.User.Service\bin\Debug\VL.Common.Object.dll

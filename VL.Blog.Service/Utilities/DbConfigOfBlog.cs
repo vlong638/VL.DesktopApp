@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using VL.Common.DAS;
 
-namespace VL.User.Service.Configs
+namespace VL.User.Service.Utilities
 {
     public class DbConfigOfBlog : DbConfigEntity
     {
@@ -11,11 +11,6 @@ namespace VL.User.Service.Configs
 
         public DbConfigOfBlog(string fileName) : base(fileName)
         {
-        }
-
-        public override IEnumerable<XElement> ToXElements()
-        {
-            throw new NotImplementedException();
         }
 
         protected override List<DbConfigItem> GetDbConfigItems()

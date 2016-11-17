@@ -1,8 +1,9 @@
 using System.Runtime.Serialization;
 using System;
 using System.Collections.Generic;
-using System.Data;
+using VL.Common.Constraints.ORM;
 using VL.Common.ORM;
+using System.Data;
 using VL.User.Objects.Enums;
 
 namespace VL.User.Objects.Entities
@@ -14,14 +15,14 @@ namespace VL.User.Objects.Entities
         [DataMember]
         public String UserName { get; set; }
         [DataMember]
-        public ERoles RoleId { get; set; }
+        public ERole RoleId { get; set; }
         #endregion
 
         #region Constructors
         public TUserRole()
         {
         }
-        public TUserRole(String userName, ERoles roleId)
+        public TUserRole(String userName, ERole roleId)
         {
             UserName = userName;
             RoleId = roleId;
@@ -35,7 +36,7 @@ namespace VL.User.Objects.Entities
         public override void Init(IDataReader reader)
         {
             this.UserName = Convert.ToString(reader[nameof(this.UserName)]);
-            this.RoleId = (ERoles)Enum.Parse(typeof(ERoles), reader[nameof(this.RoleId)].ToString());
+            this.RoleId = (ERole)Enum.Parse(typeof(ERole), reader[nameof(this.RoleId)].ToString());
         }
         public override void Init(IDataReader reader, List<string> fields)
         {
@@ -45,7 +46,7 @@ namespace VL.User.Objects.Entities
             }
             if (fields.Contains(nameof(RoleId)))
             {
-                this.RoleId = (ERoles)Enum.Parse(typeof(ERoles), reader[nameof(this.RoleId)].ToString());
+                this.RoleId = (ERole)Enum.Parse(typeof(ERole), reader[nameof(this.RoleId)].ToString());
             }
         }
         [DataMember]

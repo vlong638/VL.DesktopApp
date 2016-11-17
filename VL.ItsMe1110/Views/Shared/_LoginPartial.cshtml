@@ -9,6 +9,10 @@
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
         </ul>
+        if (User.Identity.Name == "vlong638")
+        {
+            <li>@Html.ActionLink("博客管理", "Index", "Blog", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        }
     }
 }
 else

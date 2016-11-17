@@ -1,8 +1,8 @@
-﻿using VL.Common.Constraints.Protocol;
+﻿using System.Collections.Generic;
+using VL.Common.Object.Protocol;
+using VL.Common.Object.VL.User;
 using VL.Common.Protocol;
-using VL.User.Objects.Entities;
-using VL.User.Objects.Enums;
-using VL.User.Service.Configs;
+using VL.User.Business;
 using VL.User.Service.Utilities;
 
 namespace VL.User.Service.Services
@@ -45,19 +45,6 @@ namespace VL.User.Service.Services
             return ServiceBase.ServiceContext.ServiceDelegator.HandleTransactionEvent<ESignInStatus>(DbConfigOfUser.DbName, (session) =>
             {
                 return user.Authenticate(session);
-            });
-        }
-        /// <summary>
-        /// 检测用户角色
-        /// </summary>
-        /// <param name="user"></param>
-        /// <param name="roles"></param>
-        /// <returns></returns>
-        public Report CheckUserInRole(TUser user, string[] roles)
-        {
-            return ServiceBase.ServiceContext.ServiceDelegator.HandleTransactionEvent(DbConfigOfUser.DbName, (session) =>
-            {
-                return user.IsInRole(session, roles);
             });
         }
     }

@@ -1,13 +1,8 @@
-﻿using Microsoft.AspNet.Identity;
-using System;
-using System.Security.Principal;
+﻿using System;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
-using VL.Common.Constraints;
-using VL.Common.Constraints.Protocol;
-using VL.ItsMe1107.Controllers;
+using VL.Common.Object.Protocol;
+using VL.Common.Object.VL.User;
 using VL.ItsMe1110.Custom.Authentications;
 using VL.ItsMe1110.Models;
 using VL.ItsMe1110.SubjectUserService;

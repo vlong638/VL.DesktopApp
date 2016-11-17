@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Constraints.Protocol" />
-  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VL.Blog.Objects.Entities" />
-  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Protocol" />
+  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" />
+  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" />
   <xs:element name="CheckAlive">
     <xs:complexType>
       <xs:sequence />
@@ -23,14 +22,14 @@
   <xs:element name="CheckNodeReferencesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Constraints.Protocol" minOccurs="0" name="CheckNodeReferencesResult" nillable="true" type="q1:DependencyResult" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="CheckNodeReferencesResult" nillable="true" type="q1:DependencyResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateBlog">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Blog.Objects.Entities" minOccurs="0" name="blog" nillable="true" type="q2:TBlog" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" minOccurs="0" name="blog" nillable="true" type="q2:TBlog" />
         <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -38,7 +37,7 @@
   <xs:element name="CreateBlogResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VL.Common.Protocol" minOccurs="0" name="CreateBlogResult" nillable="true" type="q3:Report" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="CreateBlogResult" nillable="true" type="q3:Report" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

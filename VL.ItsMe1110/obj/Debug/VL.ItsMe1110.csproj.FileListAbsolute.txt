@@ -109,6 +109,6 @@ D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\Microsoft.AspNet.Identity.Core.xml
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\Microsoft.AspNet.Identity.Owin.xml
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\Microsoft.Owin.Security.Cookies.xml
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\Microsoft.Owin.Security.OAuth.xml
-D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\VL.Common.Constraints.dll
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\System.Runtime.Serialization.dll
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\VL.Common.Core.dll
+D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\VL.Common.Object.dll

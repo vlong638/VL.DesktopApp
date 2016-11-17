@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using VL.ItsMe1110.Controllers;
 
-namespace VL.ItsMe1107.Controllers
+namespace VL.ItsMe1110.Controllers
 {
     public class HomeController : BaseController
     {

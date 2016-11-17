@@ -73,28 +73,21 @@ namespace VL.User.Objects.Entities
         #endregion
 
         #region InRole
-        public Report IsInRole(DbSession session, string[] roles)
+        public Report IsInRole(DbSession session, List<ERole> roles)
         {
             this.FetchUserRoles(session);
-            if (UserRoles.Count == 0)
+            if (this.UserRoles.Count == 0)
             {
-                if (roles.Contains(ERoles.Guest.ToString()))
+                if (roles.Contains(ERole.Guest))
                     return new Report(CProtocol.CReport.CSuccess);
                 else
                     return new Report(CProtocol.CReport.CError);
             }
-            List<int> roleIds = new List<int>();
-            foreach (var role in roles)
-            {
-                roleIds.Add((int)((ERoles)Enum.Parse(typeof(ERoles), role)));
-            }
-            if (UserRoles.FirstOrDefault(c => roleIds.Contains((int)c.RoleId)) != null)
+            if (this.UserRoles.FirstOrDefault(c => roles.Contains(c.RoleId)) != null)
                 return new Report(CProtocol.CReport.CSuccess);
             else
                 return new Report(CProtocol.CReport.CError);
         }
-
-
         #endregion
 
         #region ¸¨Öú·½·¨

@@ -9,196 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace VL.ItsMe1110.SubjectUserService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IPDMTBase", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.ORM")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.ItsMe1110.SubjectUserService.TUser))]
-    public partial class IPDMTBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TUser", Namespace="http://schemas.datacontract.org/2004/07/VL.User.Objects.Entities")]
-    [System.SerializableAttribute()]
-    public partial class TUser : VL.ItsMe1110.SubjectUserService.IPDMTBase {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CreateTimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserNameField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CreateTime {
-            get {
-                return this.CreateTimeField;
-            }
-            set {
-                if ((this.CreateTimeField.Equals(value) != true)) {
-                    this.CreateTimeField = value;
-                    this.RaisePropertyChanged("CreateTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password {
-            get {
-                return this.PasswordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
-                    this.PasswordField = value;
-                    this.RaisePropertyChanged("Password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserName {
-            get {
-                return this.UserNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
-                    this.UserNameField = value;
-                    this.RaisePropertyChanged("UserName");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Protocol")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1))]
-    public partial class Report : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<string> MessagesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<string> Messages {
-            get {
-                return this.MessagesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
-                    this.MessagesField = value;
-                    this.RaisePropertyChanged("Messages");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOfESignInStatustcv8SCZ1", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Protocol")]
-    [System.SerializableAttribute()]
-    public partial class ReportOfESignInStatustcv8SCZ1 : VL.ItsMe1110.SubjectUserService.Report {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private VL.ItsMe1110.SubjectUserService.ESignInStatus DataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public VL.ItsMe1110.SubjectUserService.ESignInStatus Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((this.DataField.Equals(value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
-                }
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ESignInStatus", Namespace="http://schemas.datacontract.org/2004/07/VL.User.Objects.Enums")]
-    public enum ESignInStatus : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Success = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LockedOut = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RequiresVerification = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Failure = 4,
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SubjectUserService.ISubjectUserService")]
@@ -211,28 +22,23 @@ namespace VL.ItsMe1110.SubjectUserService {
         System.Threading.Tasks.Task<bool> CheckAliveAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences", ReplyAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse")]
-        VL.Common.Constraints.Protocol.DependencyResult CheckNodeReferences();
+        VL.Common.Object.Protocol.DependencyResult CheckNodeReferences();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences", ReplyAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse")]
-        System.Threading.Tasks.Task<VL.Common.Constraints.Protocol.DependencyResult> CheckNodeReferencesAsync();
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.DependencyResult> CheckNodeReferencesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/CreateUser", ReplyAction="http://tempuri.org/ISubjectUserService/CreateUserResponse")]
-        VL.ItsMe1110.SubjectUserService.Report CreateUser(VL.ItsMe1110.SubjectUserService.TUser user);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VL.Common.Object.Protocol.Report<VL.Common.Object.VL.User.ESignInStatus>))]
+        VL.Common.Object.Protocol.Report CreateUser(VL.Common.Object.VL.User.TUser user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/CreateUser", ReplyAction="http://tempuri.org/ISubjectUserService/CreateUserResponse")]
-        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> CreateUserAsync(VL.ItsMe1110.SubjectUserService.TUser user);
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> CreateUserAsync(VL.Common.Object.VL.User.TUser user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/AuthenticateUser", ReplyAction="http://tempuri.org/ISubjectUserService/AuthenticateUserResponse")]
-        VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1 AuthenticateUser(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout);
+        VL.Common.Object.Protocol.Report<VL.Common.Object.VL.User.ESignInStatus> AuthenticateUser(VL.Common.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/AuthenticateUser", ReplyAction="http://tempuri.org/ISubjectUserService/AuthenticateUserResponse")]
-        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1> AuthenticateUserAsync(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/CheckUserInRole", ReplyAction="http://tempuri.org/ISubjectUserService/CheckUserInRoleResponse")]
-        VL.ItsMe1110.SubjectUserService.Report CheckUserInRole(VL.ItsMe1110.SubjectUserService.TUser user, System.Collections.Generic.List<string> roles);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/CheckUserInRole", ReplyAction="http://tempuri.org/ISubjectUserService/CheckUserInRoleResponse")]
-        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> CheckUserInRoleAsync(VL.ItsMe1110.SubjectUserService.TUser user, System.Collections.Generic.List<string> roles);
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.User.ESignInStatus>> AuthenticateUserAsync(VL.Common.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -270,36 +76,28 @@ namespace VL.ItsMe1110.SubjectUserService {
             return base.Channel.CheckAliveAsync();
         }
         
-        public VL.Common.Constraints.Protocol.DependencyResult CheckNodeReferences() {
+        public VL.Common.Object.Protocol.DependencyResult CheckNodeReferences() {
             return base.Channel.CheckNodeReferences();
         }
         
-        public System.Threading.Tasks.Task<VL.Common.Constraints.Protocol.DependencyResult> CheckNodeReferencesAsync() {
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.DependencyResult> CheckNodeReferencesAsync() {
             return base.Channel.CheckNodeReferencesAsync();
         }
         
-        public VL.ItsMe1110.SubjectUserService.Report CreateUser(VL.ItsMe1110.SubjectUserService.TUser user) {
+        public VL.Common.Object.Protocol.Report CreateUser(VL.Common.Object.VL.User.TUser user) {
             return base.Channel.CreateUser(user);
         }
         
-        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> CreateUserAsync(VL.ItsMe1110.SubjectUserService.TUser user) {
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> CreateUserAsync(VL.Common.Object.VL.User.TUser user) {
             return base.Channel.CreateUserAsync(user);
         }
         
-        public VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1 AuthenticateUser(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout) {
+        public VL.Common.Object.Protocol.Report<VL.Common.Object.VL.User.ESignInStatus> AuthenticateUser(VL.Common.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout) {
             return base.Channel.AuthenticateUser(user, rememberMe, shouldLockout);
         }
         
-        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.ReportOfESignInStatustcv8SCZ1> AuthenticateUserAsync(VL.ItsMe1110.SubjectUserService.TUser user, bool rememberMe, bool shouldLockout) {
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.User.ESignInStatus>> AuthenticateUserAsync(VL.Common.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout) {
             return base.Channel.AuthenticateUserAsync(user, rememberMe, shouldLockout);
-        }
-        
-        public VL.ItsMe1110.SubjectUserService.Report CheckUserInRole(VL.ItsMe1110.SubjectUserService.TUser user, System.Collections.Generic.List<string> roles) {
-            return base.Channel.CheckUserInRole(user, roles);
-        }
-        
-        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> CheckUserInRoleAsync(VL.ItsMe1110.SubjectUserService.TUser user, System.Collections.Generic.List<string> roles) {
-            return base.Channel.CheckUserInRoleAsync(user, roles);
         }
     }
 }

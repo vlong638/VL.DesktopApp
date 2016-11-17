@@ -29,6 +29,11 @@ namespace VL.ItsMe1110
             {
                 throw new NotImplementedException(result.Message);
             }
+            result = new ObjectBlogService.ObjectBlogServiceClient().CheckNodeReferences();
+            if (!result.IsAllDependenciesAvailable)
+            {
+                throw new NotImplementedException(result.Message);
+            }
             #endregion
 
             #region 允许使用第三方登录提供程序登录

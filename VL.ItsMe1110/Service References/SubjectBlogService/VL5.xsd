@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VL.Common.Constraints.Protocol" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VL.Common.Constraints.Protocol" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="DependencyResult">
     <xs:sequence>
       <xs:element minOccurs="0" name="DependencyDetails" nillable="true" type="tns:ArrayOfDependencyDetail" />
@@ -39,4 +40,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDependencyResult" nillable="true" type="tns:ArrayOfDependencyResult" />
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messages" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
 </xs:schema>

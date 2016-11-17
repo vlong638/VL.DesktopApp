@@ -12,7 +12,16 @@ namespace VL.ItsMe1110.Custom.Authentications
         {
             var user = httpContext.User as VLPrincipal;
             if (user != null)
-                return user.IsInRole(Roles) || user.IsInUser(Users);
+            {
+                if (!string.IsNullOrEmpty(Users)&& user.IsInUser(Users.Split(',').ToList()))
+                {
+                    return true;
+                }
+                if (!string.IsNullOrEmpty(Roles) && user.IsInRole(Roles))
+                {
+                    return true;
+                }
+            }
             return false;
         }
 

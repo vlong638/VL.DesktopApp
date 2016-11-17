@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
 using System.Security.Principal;
 using System.Web.Security;
-using VL.Common.Constraints.Protocol;
-using VL.ItsMe1110.SubjectUserService;
+using VL.Common.Object.Protocol;
+using VL.Common.Object.VL.User;
 
 namespace VL.ItsMe1110.Custom.Authentications
 {
@@ -25,13 +25,19 @@ namespace VL.ItsMe1110.Custom.Authentications
 
         public bool IsInRole(string role)
         {
-            var client = new SubjectUserServiceClient();
-            var result = client.CheckUserInRole(User, role.Split(',').ToList());
+            List<ERole> roles = new List<ERole>();
+            foreach (var r in role.Split(','))
+            {
+                ERole eRole;
+                Enum.TryParse(role, out eRole);
+                roles.Add(eRole);
+            }
+            var client = new ObjectUserService.ObjectUserServiceClient();
+            var result = client.CheckUserInRole(User, roles);
             return result.Code == CProtocol.CReport.CSuccess;
         }
-        public bool IsInUser(string user)
+        public bool IsInUser(List<string> users)
         {
-            var users = user.Split(',');
             return users.Contains(User.UserName);
         }
     }

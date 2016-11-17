@@ -61,66 +61,50 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611170905.1\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Object.1.0.1611171625.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611171634.1\lib\net452\System.ServiceModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="VL.Common.Constraints, Version=1.0.6164.32108, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Constraints.1.0.1611161753.1\lib\net452\VL.Common.Constraints.dll</HintPath>
+    <Reference Include="VL.Common.Core, Version=1.0.6165.29815, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611171634.1\lib\net452\VL.Common.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="VL.Common.Core, Version=1.0.6165.16255, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611170905.1\lib\net452\VL.Common.Core.dll</HintPath>
+    <Reference Include="VL.Common.Object, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Object.1.0.1611171625.0\lib\net452\VL.Common.Object.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configs\DbConfigOfUser.cs" />
-    <Compile Include="Objects\DomainEntities\TUser.cs" />
-    <Compile Include="Objects\DomainEntities\TUserBasicInfo.cs" />
-    <Compile Include="Objects\Entities\TUserBasicInfo\TUserBasicInfo.cs" />
-    <Compile Include="Objects\Entities\TUserBasicInfo\TUserBasicInfoFetcher.cs" />
-    <Compile Include="Objects\Entities\TUserBasicInfo\TUserBasicInfoOperator.cs" />
-    <Compile Include="Objects\Entities\TUserBasicInfo\TUserBasicInfoProperties.cs" />
-    <Compile Include="Objects\Entities\TUserBasicInfo\TUserBasicInfoReference.cs" />
-    <Compile Include="Objects\Entities\TUserRole\TUserRole.cs" />
-    <Compile Include="Objects\Entities\TUserRole\TUserRoleOperator.cs" />
-    <Compile Include="Objects\Entities\TUserRole\TUserRoleProperties.cs" />
-    <Compile Include="Objects\Entities\TUser\TUser.cs" />
-    <Compile Include="Objects\Entities\TUser\TUserFetcher.cs" />
-    <Compile Include="Objects\Entities\TUser\TUserOperator.cs" />
-    <Compile Include="Objects\Entities\TUser\TUserProperties.cs" />
-    <Compile Include="Objects\Entities\TUser\TUserReference.cs" />
-    <Compile Include="Objects\Enums\ERoles.cs" />
-    <Compile Include="Objects\Enums\ESample.cs" />
-    <Compile Include="Objects\Enums\ESignInStatus.cs" />
-    <Compile Include="Objects\SubResults\AuthenticateResult.cs" />
-    <Compile Include="Objects\SubResults\CreateUserResult.cs" />
-    <Compile Include="Services\ISubjectUserService.cs" />
+    <Compile Include="Business\TUserBasicInfo\TUserBasicInfoDomain.cs" />
+    <Compile Include="Business\TUserBasicInfo\TUserBasicInfoFetcher.cs" />
+    <Compile Include="Business\TUserBasicInfo\TUserBasicInfoOperator.cs" />
+    <Compile Include="Business\TUserRole\TUserRoleDomain.cs" />
+    <Compile Include="Business\TUserRole\TUserRoleOperator.cs" />
+    <Compile Include="Business\TUser\TUserDomain.cs" />
+    <Compile Include="Business\TUser\TUserFetcher.cs" />
+    <Compile Include="Business\TUser\TUserOperator.cs" />
     <Compile Include="Services\IObjectUserService.cs" />
-    <Compile Include="Services\ObjectUserOperator.cs" />
+    <Compile Include="Services\ISubjectUserService.cs" />
+    <Compile Include="Services\ObjectUserService.cs" />
     <Compile Include="Services\SubjectUserService.cs" />
+    <Compile Include="Utilities\DbConfigOfUser.cs" />
+    <Compile Include="Utilities\ServiceContextOfUser.cs" />
     <Compile Include="问题记录\WCF不支持属性间引用.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\ServiceContextOfUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Configs\DbConnections.config">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Configs\ProtocolConfig.config">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="log4net.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Objects\备注\多表查询.txt" />
+    <Content Include="lib\net452\System.Runtime.Serialization.dll" />
+    <Content Include="lib\net452\System.ServiceModel.dll" />
     <Content Include="数据库\创建数据库.sql" />
     <Content Include="数据库\调试.sql" />
     <Content Include="问题记录\多表查询.txt" />

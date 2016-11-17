@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
-using VL.Blog.Objects.Entities;
+using VL.Common.Object.Protocol;
+using VL.Common.Object.VL.Blog;
 using VL.Common.Protocol;
 
 namespace VL.Blog.Service.Services

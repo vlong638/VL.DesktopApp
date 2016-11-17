@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" />
+  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="DependencyResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DependencyDetails" nillable="true" type="tns:ArrayOfDependencyDetail" />
+      <xs:element minOccurs="0" name="DependencyResults" nillable="true" type="tns:ArrayOfDependencyResult" />
+      <xs:element minOccurs="0" name="IsAllDependenciesAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DependencyResult" nillable="true" type="tns:DependencyResult" />
+  <xs:complexType name="ArrayOfDependencyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DependencyDetail" nillable="true" type="tns:DependencyDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDependencyDetail" nillable="true" type="tns:ArrayOfDependencyDetail" />
+  <xs:complexType name="DependencyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DependencyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DependencyType" type="tns:DependencyType" />
+      <xs:element minOccurs="0" name="IsDependencyAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DependencyDetail" nillable="true" type="tns:DependencyDetail" />
+  <xs:simpleType name="DependencyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Config" />
+      <xs:enumeration value="Database" />
+      <xs:enumeration value="Service" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DependencyType" nillable="true" type="tns:DependencyType" />
+  <xs:complexType name="ArrayOfDependencyResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DependencyResult" nillable="true" type="tns:DependencyResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDependencyResult" nillable="true" type="tns:ArrayOfDependencyResult" />
+  <xs:complexType name="ReportOfArrayOfTUserD4WZmo3i">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ReportOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfTUser" Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Report">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfTUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportOfArrayOfTUserD4WZmo3i" nillable="true" type="tns:ReportOfArrayOfTUserD4WZmo3i" />
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messages" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
+</xs:schema>

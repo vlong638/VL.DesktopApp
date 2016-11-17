@@ -4,12 +4,10 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Constraints.Protocol" />
-      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VL.User.Objects.Entities" />
-      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.ORM" />
-      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Protocol" />
-      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/VL.User.Objects.Enums" />
+      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" />
+      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" />
+      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.ORM" />
+      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISubjectUserService_CheckAlive_InputMessage">
@@ -36,12 +34,6 @@
   <wsdl:message name="ISubjectUserService_AuthenticateUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
   </wsdl:message>
-  <wsdl:message name="ISubjectUserService_CheckUserInRole_InputMessage">
-    <wsdl:part name="parameters" element="tns:CheckUserInRole" />
-  </wsdl:message>
-  <wsdl:message name="ISubjectUserService_CheckUserInRole_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CheckUserInRoleResponse" />
-  </wsdl:message>
   <wsdl:portType name="ISubjectUserService">
     <wsdl:operation name="CheckAlive">
       <wsdl:input wsaw:Action="http://tempuri.org/IWCFServiceNode/CheckAlive" message="tns:ISubjectUserService_CheckAlive_InputMessage" />
@@ -58,10 +50,6 @@
     <wsdl:operation name="AuthenticateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/ISubjectUserService/AuthenticateUser" message="tns:ISubjectUserService_AuthenticateUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISubjectUserService/AuthenticateUserResponse" message="tns:ISubjectUserService_AuthenticateUser_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CheckUserInRole">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISubjectUserService/CheckUserInRole" message="tns:ISubjectUserService_CheckUserInRole_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISubjectUserService/CheckUserInRoleResponse" message="tns:ISubjectUserService_CheckUserInRole_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISubjectUserService" type="tns:ISubjectUserService">
@@ -95,15 +83,6 @@
     </wsdl:operation>
     <wsdl:operation name="AuthenticateUser">
       <soap:operation soapAction="http://tempuri.org/ISubjectUserService/AuthenticateUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CheckUserInRole">
-      <soap:operation soapAction="http://tempuri.org/ISubjectUserService/CheckUserInRole" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
