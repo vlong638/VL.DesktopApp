@@ -56,33 +56,33 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611171625.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Object.1.0.1611181721.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ServiceModel">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611171634.1\lib\net452\System.ServiceModel.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Core.1.0.1611181743.1\lib\net452\System.ServiceModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="VL.Common.Core, Version=1.0.6165.29815, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611171634.1\lib\net452\VL.Common.Core.dll</HintPath>
+    <Reference Include="VL.Common.Core, Version=1.0.6166.31834, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611181743.1\lib\net452\VL.Common.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="VL.Common.Object, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611171625.0\lib\net452\VL.Common.Object.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Object.1.0.1611181721.0\lib\net452\VL.Common.Object.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\TBlogDetail\TBlogDetailDomain.cs" />
-    <Compile Include="Business\TBlogDetail\TBlogDetailOperator.cs" />
-    <Compile Include="Business\TBlogTagMapper\TBlogTagMapperDomain.cs" />
-    <Compile Include="Business\TBlogTagMapper\TBlogTagMapperOperator.cs" />
-    <Compile Include="Business\TBlog\TBlogDomain.cs" />
-    <Compile Include="Business\TBlog\TBlogOperator.cs" />
-    <Compile Include="Business\TTag\TTagDomain.cs" />
-    <Compile Include="Business\TTag\TTagOperator.cs" />
+    <Compile Include="Business\DAL\TBlogDetail\TBlogDetailOperator.cs" />
+    <Compile Include="Business\DAL\TBlogTagMapper\TBlogTagMapperOperator.cs" />
+    <Compile Include="Business\DAL\TBlog\TBlogOperator.cs" />
+    <Compile Include="Business\DAL\TTag\TTagOperator.cs" />
+    <Compile Include="Business\Domain\TBlogDetailDomain.cs" />
+    <Compile Include="Business\Domain\TBlogDomain.cs" />
+    <Compile Include="Business\Domain\TBlogTagMapperDomain.cs" />
+    <Compile Include="Business\Domain\TTagDomain.cs" />
     <Compile Include="Services\IObjectBlogService.cs" />
     <Compile Include="Services\ISubjectBlogService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,14 +94,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="log4net.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="数据库\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="lib\net452\System.Runtime.Serialization.dll" />
     <Content Include="lib\net452\System.ServiceModel.dll" />
+    <Content Include="数据库\建表.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

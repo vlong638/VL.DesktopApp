@@ -1,0 +1,24 @@
+﻿@model VL.ItsMe1110.Models.BlogListViewModel
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbotron">
+    <h1>篇幅:h1</h1>
+    <p class="lead">
+        篇幅:lead
+        现在空荡荡的
+    </p>
+    <p>
+        <a href="@Url.Action("Edit",new { id=Guid.Empty})" class="btn btn-primary btn-lg">新增 &raquo;</a>
+    </p>
+</div>
+<div class="row">
+    @foreach (var blog in Model.OrderByDescending(c=>c.CreatedTime))
+    {
+        <div class="col-md-4">
+            <h2>@blog.Title</h2>
+            <p>@blog.BreviaryContent</p>
+            <p><a class="btn btn-default" href="@Url.Action("Edit",new { id=blog.BlogId})">编辑 &raquo;</a></p>
+        </div>
+    }
+</div>

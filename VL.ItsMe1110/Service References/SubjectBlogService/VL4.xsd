@@ -26,7 +26,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreateBlog">
+  <xs:element name="EditBlog">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" minOccurs="0" name="blog" nillable="true" type="q2:TBlog" />
@@ -34,10 +34,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="CreateBlogResponse">
+  <xs:element name="EditBlogResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="CreateBlogResult" nillable="true" type="q3:Report" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="EditBlogResult" nillable="true" type="q3:Report" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

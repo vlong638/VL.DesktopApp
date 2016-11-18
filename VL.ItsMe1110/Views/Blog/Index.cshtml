@@ -1,7 +1,25 @@
-﻿@{
+﻿@model VL.ItsMe1110.Models.BlogListViewModel
+@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/_ViewStart.cshtml";
 }
-
-<h2>这里是我的博客主页</h2>
-
+<div class="jumbotron">
+    <h1>篇幅:h1</h1>
+    <p class="lead">
+        篇幅:lead
+        现在空荡荡的
+    </p>
+    <p>
+        <a href="@Url.Action("Edit",new { id=Guid.Empty})" class="btn btn-primary btn-lg">新增 &raquo;</a>
+    </p>
+</div>
+<div class="row">
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    @foreach (var blog in Model.OrderByDescending(c=>c.CreatedTime))
+    {
+        <div class="col-md-4">
+            <h2>@blog.Title</h2>
+            <p>@blog.BreviaryContent</p>
+            <p><a class="btn btn-default" href="@Url.Action("Edit",new { id=blog.BlogId})">编辑 &raquo;</a></p>
+        </div>
+    }
+</div>

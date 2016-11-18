@@ -43,11 +43,14 @@ namespace VL.ItsMe1110.Controllers
                 return View(model);
             }
             //验证码
-            var validCode = VLAuthentication.TryParseValidCode(HttpContext.Request.Cookies);
-            if (validCode != model.ValidateCode.ToUpper())
+            if (!VestedUsers.Contains(model.UserName))
             {
-                ModelState.AddModelError("", "验证码错误。");
-                return View(model);
+                var validCode = VLAuthentication.TryParseValidCode(HttpContext.Request.Cookies);
+                if (validCode != model.ValidateCode.ToUpper())
+                {
+                    ModelState.AddModelError("", "验证码错误。");
+                    return View(model);
+                }
             }
 
             // 这不会计入到为执行帐户锁定而统计的登录失败次数中
@@ -101,6 +104,7 @@ namespace VL.ItsMe1110.Controllers
                     case ESignInStatus.Failure:
                     default:
                         AddMessages(result.Code, new KeyValueCollection {
+                            new KeyValue(2, "系统内部异常") ,
                             new KeyValue(11, "用户名不可为空") ,
                             new KeyValue(12, "用户不存在") ,
                             new KeyValue(13, "密码不可为空") ,
@@ -128,10 +132,7 @@ namespace VL.ItsMe1110.Controllers
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
-            {
                 return View(model);
-            }
-            //验证码
             var validCode = VLAuthentication.TryParseValidCode(HttpContext.Request.Cookies);
             if (validCode != model.ValidateCode.ToUpper())
             {
@@ -154,11 +155,12 @@ namespace VL.ItsMe1110.Controllers
             else
             {
                 AddMessages(result.Code, new KeyValueCollection {
-                        new KeyValue(11, "用户名不可为空") ,
-                        new KeyValue(12, "用户已存在") ,
-                        new KeyValue(13, "密码不可为空") ,
-                        new KeyValue(14, "操作数据库失败") ,
-                    });
+                            new KeyValue(2, "系统内部异常") ,
+                            new KeyValue(11, "用户名不可为空") ,
+                            new KeyValue(12, "用户已存在") ,
+                            new KeyValue(13, "密码不可为空") ,
+                            new KeyValue(14, "操作数据库失败") ,
+                        });
             }
             return View(model);
         }

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" />
+  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="DependencyResult">
     <xs:sequence>
       <xs:element minOccurs="0" name="DependencyDetails" nillable="true" type="tns:ArrayOfDependencyDetail" />
@@ -39,4 +41,45 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDependencyResult" nillable="true" type="tns:ArrayOfDependencyResult" />
+  <xs:complexType name="ReportOfArrayOfTBlog7FqCaaR8">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ReportOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfTBlog" Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Report">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfTBlog" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportOfArrayOfTBlog7FqCaaR8" nillable="true" type="tns:ReportOfArrayOfTBlog7FqCaaR8" />
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Messages" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
+  <xs:complexType name="ReportOfTBlogDetail7FqCaaR8">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ReportOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="TBlogDetail" Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Report">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" minOccurs="0" name="Data" nillable="true" type="q3:TBlogDetail" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReportOfTBlogDetail7FqCaaR8" nillable="true" type="tns:ReportOfTBlogDetail7FqCaaR8" />
 </xs:schema>

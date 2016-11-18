@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ServiceModel;
+using VL.Common.Object.Protocol;
 using VL.Common.Object.VL.Blog;
 using VL.Common.Protocol;
 
@@ -11,8 +12,8 @@ namespace VL.Blog.Service.Services
     public interface IObjectBlogService: IWCFServiceNode
     {
         [OperationContract]
-        List<TBlog> GetAllBlogs();
+        Report<List<TBlog>> GetAllBlogs();
         [OperationContract]
-        TBlogDetail GetBlogDetail(Guid blogId);
+        Report<TBlogDetail> GetBlogDetail(Guid blogId);
     }
 }

@@ -8,8 +8,14 @@ namespace VL.ItsMe1110.Controllers
     {
         public const string PageName_Error = "Error";
         public const string PageName_Lockout = "Lockout";
-        public const string PageName_Home = "Home";
+
         public const string PageName_Account = "Account";
+        public const string PageName_Blog = "Blog";
+        public const string PageName_Home = "Home";
+
+        public static List<string> VestedUsers = VestedUserString.Split(',').ToList();
+        public const string VestedUserString = "vlong638,yyt";
+
 
         #region 辅助方法
 

@@ -27,11 +27,11 @@ namespace VL.ItsMe1110.SubjectBlogService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences", ReplyAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse")]
         System.Threading.Tasks.Task<VL.Common.Object.Protocol.DependencyResult> CheckNodeReferencesAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectBlogService/CreateBlog", ReplyAction="http://tempuri.org/ISubjectBlogService/CreateBlogResponse")]
-        VL.Common.Object.Protocol.Report CreateBlog(VL.Common.Object.VL.Blog.TBlog blog, string content);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectBlogService/EditBlog", ReplyAction="http://tempuri.org/ISubjectBlogService/EditBlogResponse")]
+        VL.Common.Object.Protocol.Report EditBlog(VL.Common.Object.VL.Blog.TBlog blog, string content);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectBlogService/CreateBlog", ReplyAction="http://tempuri.org/ISubjectBlogService/CreateBlogResponse")]
-        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> CreateBlogAsync(VL.Common.Object.VL.Blog.TBlog blog, string content);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectBlogService/EditBlog", ReplyAction="http://tempuri.org/ISubjectBlogService/EditBlogResponse")]
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> EditBlogAsync(VL.Common.Object.VL.Blog.TBlog blog, string content);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -77,12 +77,12 @@ namespace VL.ItsMe1110.SubjectBlogService {
             return base.Channel.CheckNodeReferencesAsync();
         }
         
-        public VL.Common.Object.Protocol.Report CreateBlog(VL.Common.Object.VL.Blog.TBlog blog, string content) {
-            return base.Channel.CreateBlog(blog, content);
+        public VL.Common.Object.Protocol.Report EditBlog(VL.Common.Object.VL.Blog.TBlog blog, string content) {
+            return base.Channel.EditBlog(blog, content);
         }
         
-        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> CreateBlogAsync(VL.Common.Object.VL.Blog.TBlog blog, string content) {
-            return base.Channel.CreateBlogAsync(blog, content);
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> EditBlogAsync(VL.Common.Object.VL.Blog.TBlog blog, string content) {
+            return base.Channel.EditBlogAsync(blog, content);
         }
     }
 }

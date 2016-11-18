@@ -30,6 +30,7 @@
     <MetadataFile FileName="VL1.xsd" MetadataType="Schema" ID="a28f0768-9e56-43a0-b5d9-636eec1411f1" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd0" />
     <MetadataFile FileName="ObjectBlogService.wsdl" MetadataType="Wsdl" ID="84e2e263-e849-420b-a08e-c9b48be5f66c" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?wsdl" />
     <MetadataFile FileName="VL.disco" MetadataType="Disco" ID="8d256071-fc05-4995-a6fd-8aa332164f82" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?disco" />
+    <MetadataFile FileName="VL5.xsd" MetadataType="Schema" ID="d3f53bef-d72d-4043-9746-e59f6d2dfdd3" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd5" />
     <MetadataFile FileName="VL2.xsd" MetadataType="Schema" ID="22c58580-77b8-47eb-90e9-041257df3a62" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd3" />
     <MetadataFile FileName="VL4.xsd" MetadataType="Schema" ID="91ed3604-14b1-4e9f-abb6-245b1b67aafd" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd4" />
     <MetadataFile FileName="VL3.xsd" MetadataType="Schema" ID="52daff1c-339d-45c5-9e4e-cf6525eb30e1" SourceId="1" SourceUrl="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd2" />

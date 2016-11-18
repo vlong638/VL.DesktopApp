@@ -22,11 +22,11 @@
   <wsdl:message name="ISubjectBlogService_CheckNodeReferences_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckNodeReferencesResponse" />
   </wsdl:message>
-  <wsdl:message name="ISubjectBlogService_CreateBlog_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateBlog" />
+  <wsdl:message name="ISubjectBlogService_EditBlog_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditBlog" />
   </wsdl:message>
-  <wsdl:message name="ISubjectBlogService_CreateBlog_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateBlogResponse" />
+  <wsdl:message name="ISubjectBlogService_EditBlog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditBlogResponse" />
   </wsdl:message>
   <wsdl:portType name="ISubjectBlogService">
     <wsdl:operation name="CheckAlive">
@@ -37,9 +37,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences" message="tns:ISubjectBlogService_CheckNodeReferences_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse" message="tns:ISubjectBlogService_CheckNodeReferences_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateBlog">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISubjectBlogService/CreateBlog" message="tns:ISubjectBlogService_CreateBlog_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISubjectBlogService/CreateBlogResponse" message="tns:ISubjectBlogService_CreateBlog_OutputMessage" />
+    <wsdl:operation name="EditBlog">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubjectBlogService/EditBlog" message="tns:ISubjectBlogService_EditBlog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubjectBlogService/EditBlogResponse" message="tns:ISubjectBlogService_EditBlog_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISubjectBlogService" type="tns:ISubjectBlogService">
@@ -62,8 +62,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateBlog">
-      <soap:operation soapAction="http://tempuri.org/ISubjectBlogService/CreateBlog" style="document" />
+    <wsdl:operation name="EditBlog">
+      <soap:operation soapAction="http://tempuri.org/ISubjectBlogService/EditBlog" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

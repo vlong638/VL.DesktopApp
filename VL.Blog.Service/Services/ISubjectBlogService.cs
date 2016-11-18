@@ -12,6 +12,6 @@ namespace VL.Blog.Service.Services
     public interface ISubjectBlogService: IWCFServiceNode
     {
         [OperationContract]
-        Report CreateBlog(TBlog blog,string content);
+        Report EditBlog(TBlog blog,string content);
     }
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" />
-  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" />
   <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.ObjectBlogService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:element name="CheckAlive">
     <xs:complexType>
@@ -35,7 +34,7 @@
   <xs:element name="GetAllBlogsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" minOccurs="0" name="GetAllBlogsResult" nillable="true" type="q2:ArrayOfTBlog" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="GetAllBlogsResult" nillable="true" type="q2:ReportOfArrayOfTBlog7FqCaaR8" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,7 +48,7 @@
   <xs:element name="GetBlogDetailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" minOccurs="0" name="GetBlogDetailResult" nillable="true" type="q4:TBlogDetail" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="GetBlogDetailResult" nillable="true" type="q4:ReportOfTBlogDetail7FqCaaR8" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

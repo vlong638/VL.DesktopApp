@@ -25,18 +25,24 @@ namespace VL.Blog.Service.Services
         }
         #endregion
 
-        public List<TBlog> GetAllBlogs()
+        public Report<List<TBlog>> GetAllBlogs()
         {
-            using (DbSession session = ServiceBase.ServiceContext.GetDbSession(DbConfigOfBlog.DbName))
+            return ServiceBase.ServiceContext.ServiceDelegator.HandleEvent<List<TBlog>>(DbConfigOfBlog.DbName, (session) =>
             {
-                return new List<TBlog>().DbSelect(session);
-            }
+                var data= new List<TBlog>().DbSelect(session);
+                if (data == null)
+                    return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CError);
+                return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CSuccess);
+            });
         }
-        public TBlogDetail GetBlogDetail(Guid blogId)
+        public Report<TBlogDetail> GetBlogDetail(Guid blogId)
         {
             using (DbSession session = ServiceBase.ServiceContext.GetDbSession(DbConfigOfBlog.DbName))
             {
-                return new TBlogDetail(blogId).DbSelect(session);
+                var data = new TBlogDetail(blogId).DbSelect(session);
+                if (data == null)
+                    return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CError);
+                return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CSuccess);
             }
         }
     }

@@ -28,16 +28,16 @@ namespace VL.ItsMe1110.ObjectBlogService {
         System.Threading.Tasks.Task<VL.Common.Object.Protocol.DependencyResult> CheckNodeReferencesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetAllBlogs", ReplyAction="http://tempuri.org/IObjectBlogService/GetAllBlogsResponse")]
-        System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog> GetAllBlogs();
+        VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetAllBlogs();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetAllBlogs", ReplyAction="http://tempuri.org/IObjectBlogService/GetAllBlogsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetAllBlogsAsync();
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetAllBlogsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogDetail", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogDetailResponse")]
-        VL.Common.Object.VL.Blog.TBlogDetail GetBlogDetail(System.Guid blogId);
+        VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail> GetBlogDetail(System.Guid blogId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogDetail", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogDetailResponse")]
-        System.Threading.Tasks.Task<VL.Common.Object.VL.Blog.TBlogDetail> GetBlogDetailAsync(System.Guid blogId);
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail>> GetBlogDetailAsync(System.Guid blogId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,19 +83,19 @@ namespace VL.ItsMe1110.ObjectBlogService {
             return base.Channel.CheckNodeReferencesAsync();
         }
         
-        public System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog> GetAllBlogs() {
+        public VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetAllBlogs() {
             return base.Channel.GetAllBlogs();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetAllBlogsAsync() {
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetAllBlogsAsync() {
             return base.Channel.GetAllBlogsAsync();
         }
         
-        public VL.Common.Object.VL.Blog.TBlogDetail GetBlogDetail(System.Guid blogId) {
+        public VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail> GetBlogDetail(System.Guid blogId) {
             return base.Channel.GetBlogDetail(blogId);
         }
         
-        public System.Threading.Tasks.Task<VL.Common.Object.VL.Blog.TBlogDetail> GetBlogDetailAsync(System.Guid blogId) {
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail>> GetBlogDetailAsync(System.Guid blogId) {
             return base.Channel.GetBlogDetailAsync(blogId);
         }
     }
