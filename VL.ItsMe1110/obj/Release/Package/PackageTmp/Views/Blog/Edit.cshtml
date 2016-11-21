@@ -7,7 +7,14 @@
 @using (Html.BeginForm("Edit", "Blog", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <h4>创建新文章。</h4>
+    if (Model.BlogId == Guid.Empty)
+    {
+        <h4>创建新文章。</h4>
+    }
+    else
+    {
+        <h4>编辑文章。</h4>
+    }
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     @Html.HiddenFor(m => m.BlogId)

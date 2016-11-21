@@ -6,15 +6,15 @@ namespace VL.ItsMe1110.Controllers
 {
     public abstract class BaseController : Controller
     {
-        public const string PageName_Error = "Error";
-        public const string PageName_Lockout = "Lockout";
+        public const string PAGENAME_ERROR = "Error";
+        public const string PAGENAME_LOCKOUT = "Lockout";
 
-        public const string PageName_Account = "Account";
-        public const string PageName_Blog = "Blog";
-        public const string PageName_Home = "Home";
+        public const string PAGENAME_ACCOUNT = "Account";
+        public const string PAGENAME_BLOG = "Blog";
+        public const string PAGENAME_HOME = "Home";
 
-        public static List<string> VestedUsers = VestedUserString.Split(',').ToList();
-        public const string VestedUserString = "vlong638,yyt";
+        public static List<string> VESTEDUSERS = VESTEDUSERSTRING.Split(',').ToList();
+        public const string VESTEDUSERSTRING = "vlong638,yyt";
 
 
         #region 辅助方法
@@ -26,7 +26,7 @@ namespace VL.ItsMe1110.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction(nameof(HomeController.Index), PageName_Home);
+            return RedirectToAction(nameof(HomeController.Index), PAGENAME_HOME);
         }
         #endregion
 

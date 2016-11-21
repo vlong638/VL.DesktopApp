@@ -1,3 +1,4 @@
+Use VL.[VL.Blog]
 select * from TBlog;
 select * from TBlogDetail;
 select * from TTag;

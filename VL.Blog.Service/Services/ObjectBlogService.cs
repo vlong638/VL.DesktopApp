@@ -37,13 +37,13 @@ namespace VL.Blog.Service.Services
         }
         public Report<TBlogDetail> GetBlogDetail(Guid blogId)
         {
-            using (DbSession session = ServiceBase.ServiceContext.GetDbSession(DbConfigOfBlog.DbName))
+            return ServiceBase.ServiceContext.ServiceDelegator.HandleEvent(DbConfigOfBlog.DbName, (session) =>
             {
                 var data = new TBlogDetail(blogId).DbSelect(session);
                 if (data == null)
                     return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CError);
                 return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CSuccess);
-            }
+            });
         }
     }
 }

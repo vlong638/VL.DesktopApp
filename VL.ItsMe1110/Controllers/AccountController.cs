@@ -42,8 +42,7 @@ namespace VL.ItsMe1110.Controllers
             {
                 return View(model);
             }
-            //验证码
-            if (!VestedUsers.Contains(model.UserName))
+            if (!VESTEDUSERS.Contains(model.UserName))
             {
                 var validCode = VLAuthentication.TryParseValidCode(HttpContext.Request.Cookies);
                 if (validCode != model.ValidateCode.ToUpper())
@@ -53,8 +52,6 @@ namespace VL.ItsMe1110.Controllers
                 }
             }
 
-            // 这不会计入到为执行帐户锁定而统计的登录失败次数中
-            // 若要在多次输入错误密码的情况下触发帐户锁定，请更改为 shouldLockout: true
             var user = new TUser() { UserName = model.UserName, Password = model.Password };
             var result = await SubjectUserService.AuthenticateUserAsync(user,
                 rememberMe: model.RememberMe,
@@ -98,7 +95,7 @@ namespace VL.ItsMe1110.Controllers
                         ModelState.AddModelError("", "错误导向。");
                         return View(model);
                     case ESignInStatus.LockedOut:
-                        return View(PageName_Lockout);
+                        return View(PAGENAME_LOCKOUT);
                     case ESignInStatus.RequiresVerification:
                         return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                     case ESignInStatus.Failure:
@@ -150,7 +147,7 @@ namespace VL.ItsMe1110.Controllers
             if (result.Code == CProtocol.CReport.CSuccess)
             {
                 VLAuthentication.SetAuthCookie(user, false);
-                return RedirectToAction(nameof(HomeController.Index), HomeController.PageName_Home);
+                return RedirectToAction(nameof(HomeController.Index), HomeController.PAGENAME_HOME);
             }
             else
             {
@@ -172,7 +169,7 @@ namespace VL.ItsMe1110.Controllers
         public ActionResult LogOff()
         {
             VLAuthentication.LogOff();
-            return RedirectToAction(nameof(HomeController.Index), PageName_Home);
+            return RedirectToAction(nameof(HomeController.Index), PAGENAME_HOME);
         }
         #endregion
 

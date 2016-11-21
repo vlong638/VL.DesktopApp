@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using VL.Common.Object.Protocol;
@@ -42,7 +43,7 @@ namespace VL.ItsMe1110.Controllers
         #endregion
 
         [HttpGet]
-        [VLAuthorize(Users = VestedUserString)]
+        [VLAuthorize(Users = VESTEDUSERSTRING)]
         public ActionResult Index()
         {
             var blogs = ObjectBlogClient.GetAllBlogs();
@@ -62,24 +63,40 @@ namespace VL.ItsMe1110.Controllers
         }
 
         [HttpGet]
-        [VLAuthorize(Users = VestedUserString)]
-        public ActionResult Edit(Guid id)
+        [VLAuthorize(Users = VESTEDUSERSTRING)]
+        public async Task<ActionResult> Edit(Guid id, string title)
         {
-            return View(new BlogEditModel() { BlogId = id });
+            if (id == Guid.Empty)
+            {
+                return View(new BlogEditModel() { BlogId = id });
+            }
+
+            var result = await ObjectBlogClient.GetBlogDetailAsync(id);
+            if (result.Code == CProtocol.CReport.CSuccess)
+            {
+                return View(new BlogEditModel() { BlogId = id, Title = title, Content = result.Data.Content });
+            }
+            else
+            {
+                AddMessages(result.Code, new KeyValueCollection {
+                            new KeyValue(2, "系统内部异常") ,
+                        });
+                return View(new BlogEditModel() { BlogId = id });
+            }
         }
 
         [HttpPost]
-        [VLAuthorize(Users = VestedUserString)]
+        [VLAuthorize(Users = VESTEDUSERSTRING)]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(BlogEditModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
 
-            var result = SubjectBlogClient.EditBlog(new TBlog(model.BlogId) { UserName= User.Identity.Name, Title = model.Title }, model.Content);
+            var result = SubjectBlogClient.EditBlog(new TBlog(model.BlogId) { UserName = User.Identity.Name, Title = model.Title }, model.Content);
             if (result.Code == CProtocol.CReport.CSuccess)
             {
-                return RedirectToAction(nameof(BlogController.Index), HomeController.PageName_Blog);
+                return RedirectToAction(nameof(BlogController.Index), PAGENAME_BLOG);
             }
             else
             {

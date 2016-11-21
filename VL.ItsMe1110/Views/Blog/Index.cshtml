@@ -9,7 +9,7 @@
         现在空荡荡的
     </p>
     <p>
-        <a href="@Url.Action("Edit",new { id=Guid.Empty})" class="btn btn-primary btn-lg">新增 &raquo;</a>
+        <a href="@Url.Action("Edit",new { id=Guid.Empty, title =""})" class="btn btn-primary btn-lg">新增 &raquo;</a>
     </p>
 </div>
 <div class="row">
@@ -19,7 +19,7 @@
         <div class="col-md-4">
             <h2>@blog.Title</h2>
             <p>@blog.BreviaryContent</p>
-            <p><a class="btn btn-default" href="@Url.Action("Edit",new { id=blog.BlogId})">编辑 &raquo;</a></p>
+            <p><a class="btn btn-default" href="@Url.Action("Edit", new { id = blog.BlogId, title = blog.Title })">编辑 &raquo;</a></p>
         </div>
     }
 </div>
