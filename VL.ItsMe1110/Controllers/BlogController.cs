@@ -42,15 +42,16 @@ namespace VL.ItsMe1110.Controllers
         }
         #endregion
 
+        #region 管理
         [HttpGet]
         [VLAuthorize(Users = VESTEDUSERSTRING)]
         public ActionResult Index()
         {
             var blogs = ObjectBlogClient.GetAllBlogs();
-            var model = new BlogListViewModel();
+            var model = new BlogListModel();
             foreach (var blog in blogs.Data)
             {
-                model.Add(new BlogListViewItem()
+                model.Add(new BlogListItem()
                 {
                     BlogId = blog.BlogId,
                     Title = blog.Title,
@@ -105,7 +106,7 @@ namespace VL.ItsMe1110.Controllers
                             new KeyValue(2, "系统内部异常") ,
                             new KeyValue(11, "用户名不可为空") ,
                             new KeyValue(12, "标题不可为空") ,
-                            new KeyValue(13, "内容不可少于十个字符") ,
+                            new KeyValue(13, "内容不可为空") ,
                             new KeyValue(14, "内容新建失败") ,
                             new KeyValue(15, "主体新建失败") ,
                             new KeyValue(16, "内容更新失败") ,
@@ -119,18 +120,78 @@ namespace VL.ItsMe1110.Controllers
         [VLAuthorize(Users = VESTEDUSERSTRING)]
         public async Task<bool> ChangeVisibility(Guid id, bool isVisible)
         {
-            var result = await SubjectBlogClient.ChangeVisibilityAsync(id,isVisible);
+            var result = await SubjectBlogClient.ChangeVisibilityAsync(id, isVisible);
             if (result.Code != CProtocol.CReport.CSuccess)
             {
-                //AddMessages(result.Code, new KeyValueCollection {
-                //            new KeyValue(2, "系统内部异常") ,
-                //            new KeyValue(11, "Id不可为空") ,
-                //            new KeyValue(12, "主体更新失败") ,
-                //        });
                 return false;
             }
             return true;
-            //return RedirectToAction(nameof(BlogController.Index), PAGENAME_BLOG);
         }
+        #endregion
+
+        #region 游客
+        [HttpGet]
+        public async Task<ActionResult> List()
+        {
+            var result = await ObjectBlogClient.GetVisibleBlogsAsync();
+            if (result.Code != CProtocol.CReport.CSuccess)
+            {
+            }
+            var model = new BlogListModel();
+            foreach (var blog in result.Data)
+            {
+                model.Add(new BlogListItem()
+                {
+                    BlogId = blog.BlogId,
+                    Title = blog.Title,
+                    BreviaryContent = blog.BreviaryContent,
+                    CreatedTime = blog.CreatedTime,
+                    LastEditTime = blog.LastEditTime,
+                    IsVisible = blog.IsVisible,
+                });
+            }
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<ActionResult> Detail(Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                ModelState.AddModelError("", "文章Id不可为空");
+                return View(new BlogDetailModel() { BlogId = id });
+            }
+
+            var getDBodyTask = ObjectBlogClient.GetBlogBodyAsync(id);
+            var getDetailTask = ObjectBlogClient.GetBlogDetailAsync(id);
+            var model = new BlogDetailModel();
+            model.BlogId = id;
+            var bodyResult = await getDBodyTask;
+            if (bodyResult.Code == CProtocol.CReport.CSuccess)
+            {
+                model.Title = bodyResult.Data.Title;
+                model.CreatedTime = bodyResult.Data.CreatedTime;
+                model.LastEditTime = bodyResult.Data.LastEditTime;
+                model.UserName = bodyResult.Data.UserName;
+            }
+            else
+            {
+                ModelState.AddModelError("", "加载Body内容出错");
+            }
+            var detailResult = await getDetailTask;
+            if (detailResult.Code == CProtocol.CReport.CSuccess)
+            {
+                model.Content = detailResult.Data.Content;
+            }
+            else
+            {
+                ModelState.AddModelError("", "加载Detail内容出错");
+            }
+            return View(model);
+        }
+        #endregion
+
+        #region 用户
+
+        #endregion
     }
 }

@@ -17,14 +17,14 @@ namespace VL.Blog.Business
         {
             var query = session.GetDbQueryBuilder();
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogDetailProperties.BlogId, entity.BlogId, LocateType.Equal));
-            return session.GetQueryOperator().Delete<TBlogDetail>(session, query);
+            return session.GetQueryOperator().Delete<TBlogDetail>(query);
         }
         public static bool DbDelete(this List<TBlogDetail> entities, DbSession session)
         {
             var query = session.GetDbQueryBuilder();
             var Ids = entities.Select(c =>c.BlogId );
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogDetailProperties.BlogId, Ids, LocateType.In));
-            return session.GetQueryOperator().Delete<TBlogDetail>(session, query);
+            return session.GetQueryOperator().Delete<TBlogDetail>(query);
         }
         public static bool DbInsert(this TBlogDetail entity, DbSession session)
         {
@@ -37,7 +37,7 @@ namespace VL.Blog.Business
             }
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogDetailProperties.Content, entity.Content));
             query.InsertBuilders.Add(builder);
-            return session.GetQueryOperator().Insert<TBlogDetail>(session, query);
+            return session.GetQueryOperator().Insert<TBlogDetail>(query);
         }
         public static bool DbInsert(this List<TBlogDetail> entities, DbSession session)
         {
@@ -53,7 +53,7 @@ namespace VL.Blog.Business
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogDetailProperties.Content, entity.Content));
                 query.InsertBuilders.Add(builder);
             }
-            return session.GetQueryOperator().InsertAll<TBlogDetail>(session, query);
+            return session.GetQueryOperator().InsertAll<TBlogDetail>(query);
         }
         public static bool DbUpdate(this TBlogDetail entity, DbSession session, params PDMDbProperty[] fields)
         {
@@ -72,7 +72,7 @@ namespace VL.Blog.Business
                 }
             }
             query.UpdateBuilders.Add(builder);
-            return session.GetQueryOperator().Update<TBlogDetail>(session, query);
+            return session.GetQueryOperator().Update<TBlogDetail>(query);
         }
         public static bool DbUpdate(this List<TBlogDetail> entities, DbSession session, params PDMDbProperty[] fields)
         {
@@ -94,7 +94,7 @@ namespace VL.Blog.Business
                 }
                 query.UpdateBuilders.Add(builder);
             }
-            return session.GetQueryOperator().UpdateAll<TBlogDetail>(session, query);
+            return session.GetQueryOperator().UpdateAll<TBlogDetail>(query);
         }
         #endregion
         #region 读
@@ -105,7 +105,7 @@ namespace VL.Blog.Business
         {
             var query = session.GetDbQueryBuilder();
             query.SelectBuilder = select;
-            return session.GetQueryOperator().Select<TBlogDetail>(session, query);
+            return session.GetQueryOperator().Select<TBlogDetail>(query);
         }
         /// <summary>
         /// 未查询到数据时返回 null
@@ -129,7 +129,7 @@ namespace VL.Blog.Business
             }
             builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogDetailProperties.BlogId, entity.BlogId, LocateType.Equal));
             query.SelectBuilders.Add(builder);
-            return session.GetQueryOperator().Select<TBlogDetail>(session, query);
+            return session.GetQueryOperator().Select<TBlogDetail>(query);
         }
         /// <summary>
         /// 未查询到数据时返回 null
@@ -157,7 +157,7 @@ namespace VL.Blog.Business
                 builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogDetailProperties.BlogId, Ids, LocateType.In));
             }
             query.SelectBuilders.Add(builder);
-            return session.GetQueryOperator().SelectAll<TBlogDetail>(session, query);
+            return session.GetQueryOperator().SelectAll<TBlogDetail>(query);
         }
         /// <summary>
         /// 存在相应对象时返回true,缺少对象时返回false

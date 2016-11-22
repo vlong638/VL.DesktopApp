@@ -1,0 +1,16 @@
+﻿@model VL.ItsMe1110.Models.BlogListModel
+@{
+    ViewBag.Title = "List";
+}
+<div class="jumbotron">
+    <h1>文章列表</h1>
+    <ul>
+        @foreach (var blog in Model.OrderByDescending(c => c.CreatedTime))
+        {
+            <li>
+                <a href="@Url.Action("Detail", new { id = blog.BlogId })">@blog.Title »</a>
+                <p>@blog.BreviaryContent</p>
+            </li>
+        }
+    </ul>
+</div>

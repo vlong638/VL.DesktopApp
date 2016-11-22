@@ -33,6 +33,12 @@ namespace VL.ItsMe1110.ObjectBlogService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetAllBlogs", ReplyAction="http://tempuri.org/IObjectBlogService/GetAllBlogsResponse")]
         System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetAllBlogsAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogBody", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogBodyResponse")]
+        VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlog> GetBlogBody(System.Guid blogId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogBody", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogBodyResponse")]
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlog>> GetBlogBodyAsync(System.Guid blogId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogDetail", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogDetailResponse")]
         VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail> GetBlogDetail(System.Guid blogId);
         
@@ -95,6 +101,14 @@ namespace VL.ItsMe1110.ObjectBlogService {
         
         public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetAllBlogsAsync() {
             return base.Channel.GetAllBlogsAsync();
+        }
+        
+        public VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlog> GetBlogBody(System.Guid blogId) {
+            return base.Channel.GetBlogBody(blogId);
+        }
+        
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlog>> GetBlogBodyAsync(System.Guid blogId) {
+            return base.Channel.GetBlogBodyAsync(blogId);
         }
         
         public VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail> GetBlogDetail(System.Guid blogId) {

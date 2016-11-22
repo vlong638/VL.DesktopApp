@@ -5,6 +5,7 @@ using VL.Blog.Service.Utilities;
 using VL.Common.DAS;
 using VL.Common.Object.Protocol;
 using VL.Common.Object.VL.Blog;
+using VL.Common.ORM;
 using VL.Common.Protocol;
 using VL.User.Service.Utilities;
 
@@ -35,6 +36,16 @@ namespace VL.Blog.Service.Services
                 return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CSuccess);
             });
         }
+        public Report<TBlog> GetBlogBody(Guid blogId)
+        {
+            return ServiceBase.ServiceContext.ServiceDelegator.HandleEvent(DbConfigOfBlog.DbName, (session) =>
+            {
+                var data = new TBlog(blogId).DbSelect(session);
+                if (data == null)
+                    return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CError);
+                return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CSuccess);
+            });
+        }
         public Report<TBlogDetail> GetBlogDetail(Guid blogId)
         {
             return ServiceBase.ServiceContext.ServiceDelegator.HandleEvent(DbConfigOfBlog.DbName, (session) =>
@@ -47,7 +58,15 @@ namespace VL.Blog.Service.Services
         }
         public Report<List<TBlog>> GetVisibleBlogs()
         {
-            throw new NotImplementedException();
+            return ServiceBase.ServiceContext.ServiceDelegator.HandleEvent(DbConfigOfBlog.DbName, (session) =>
+            {
+                var query = session.GetDbQueryBuilder().SelectBuilder;
+                query.ComponentWhere.Add(TBlogProperties.IsVisible, true, LocateType.Equal);
+                var result = session.GetQueryOperator().SelectAll<TBlog>(query);
+                if (result==null)
+                    return TBlogDomain.ReportHelper.GetReport(result, nameof(GetVisibleBlogs), CProtocol.CReport.CError);
+                return TBlogDomain.ReportHelper.GetReport(result, nameof(GetVisibleBlogs), CProtocol.CReport.CSuccess);
+            });
         }
     }
 }

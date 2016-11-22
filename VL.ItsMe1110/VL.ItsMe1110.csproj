@@ -102,7 +102,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611211453.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Object.1.0.1611221406.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ServiceModel" />
@@ -131,7 +131,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="VL.Common.Object, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611211453.0\lib\net452\VL.Common.Object.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Object.1.0.1611221406.0\lib\net452\VL.Common.Object.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -166,6 +166,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\VLCustom.css" />
     <Content Include="Global.asax" />
     <Content Include="lib\net452\System.Runtime.Serialization.dll" />
     <Content Include="Properties\DataSources\VL.Common.Protocol.IService.DependencyResult.datasource" />
@@ -273,7 +274,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Views\web.config" />
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -352,6 +355,8 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Blog\Index.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
+    <Content Include="Views\Blog\List.cshtml" />
+    <Content Include="Views\Blog\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

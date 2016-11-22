@@ -91,9 +91,6 @@ namespace VL.ItsMe1110.Controllers
             {
                 switch (result.Data)
                 {
-                    case ESignInStatus.Success:
-                        ModelState.AddModelError("", "错误导向。");
-                        return View(model);
                     case ESignInStatus.LockedOut:
                         return View(PAGENAME_LOCKOUT);
                     case ESignInStatus.RequiresVerification:

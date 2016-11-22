@@ -18,14 +18,14 @@ namespace VL.Blog.Business
             var query = session.GetDbQueryBuilder();
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, entity.TagId, LocateType.Equal));
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.BlogId, entity.BlogId, LocateType.Equal));
-            return session.GetQueryOperator().Delete<TBlogTagMapper>(session, query);
+            return session.GetQueryOperator().Delete<TBlogTagMapper>(query);
         }
         public static bool DbDelete(this List<TBlogTagMapper> entities, DbSession session)
         {
             var query = session.GetDbQueryBuilder();
             var Ids = entities.Select(c =>c.TagId );
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, Ids, LocateType.In));
-            return session.GetQueryOperator().Delete<TBlogTagMapper>(session, query);
+            return session.GetQueryOperator().Delete<TBlogTagMapper>(query);
         }
         public static bool DbInsert(this TBlogTagMapper entity, DbSession session)
         {
@@ -34,7 +34,7 @@ namespace VL.Blog.Business
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogTagMapperProperties.TagId, entity.TagId));
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogTagMapperProperties.BlogId, entity.BlogId));
             query.InsertBuilders.Add(builder);
-            return session.GetQueryOperator().Insert<TBlogTagMapper>(session, query);
+            return session.GetQueryOperator().Insert<TBlogTagMapper>(query);
         }
         public static bool DbInsert(this List<TBlogTagMapper> entities, DbSession session)
         {
@@ -46,7 +46,7 @@ namespace VL.Blog.Business
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogTagMapperProperties.BlogId, entity.BlogId));
                 query.InsertBuilders.Add(builder);
             }
-            return session.GetQueryOperator().InsertAll<TBlogTagMapper>(session, query);
+            return session.GetQueryOperator().InsertAll<TBlogTagMapper>(query);
         }
         public static bool DbUpdate(this TBlogTagMapper entity, DbSession session, params PDMDbProperty[] fields)
         {
@@ -61,7 +61,7 @@ namespace VL.Blog.Business
             {
             }
             query.UpdateBuilders.Add(builder);
-            return session.GetQueryOperator().Update<TBlogTagMapper>(session, query);
+            return session.GetQueryOperator().Update<TBlogTagMapper>(query);
         }
         public static bool DbUpdate(this List<TBlogTagMapper> entities, DbSession session, params PDMDbProperty[] fields)
         {
@@ -79,7 +79,7 @@ namespace VL.Blog.Business
                 }
                 query.UpdateBuilders.Add(builder);
             }
-            return session.GetQueryOperator().UpdateAll<TBlogTagMapper>(session, query);
+            return session.GetQueryOperator().UpdateAll<TBlogTagMapper>(query);
         }
         #endregion
         #region 读
@@ -90,7 +90,7 @@ namespace VL.Blog.Business
         {
             var query = session.GetDbQueryBuilder();
             query.SelectBuilder = select;
-            return session.GetQueryOperator().Select<TBlogTagMapper>(session, query);
+            return session.GetQueryOperator().Select<TBlogTagMapper>(query);
         }
         /// <summary>
         /// 未查询到数据时返回 null
@@ -116,7 +116,7 @@ namespace VL.Blog.Business
             builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, entity.TagId, LocateType.Equal));
             builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.BlogId, entity.BlogId, LocateType.Equal));
             query.SelectBuilders.Add(builder);
-            return session.GetQueryOperator().Select<TBlogTagMapper>(session, query);
+            return session.GetQueryOperator().Select<TBlogTagMapper>(query);
         }
         /// <summary>
         /// 未查询到数据时返回 null
@@ -145,7 +145,7 @@ namespace VL.Blog.Business
                 builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, Ids, LocateType.In));
             }
             query.SelectBuilders.Add(builder);
-            return session.GetQueryOperator().SelectAll<TBlogTagMapper>(session, query);
+            return session.GetQueryOperator().SelectAll<TBlogTagMapper>(query);
         }
         /// <summary>
         /// 存在相应对象时返回true,缺少对象时返回false

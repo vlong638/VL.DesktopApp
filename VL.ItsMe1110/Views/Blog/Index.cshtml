@@ -1,7 +1,8 @@
-﻿@model VL.ItsMe1110.Models.BlogListViewModel
+﻿@model VL.ItsMe1110.Models.BlogListModel
 @{
     ViewBag.Title = "Index";
 }
+
 <div class="jumbotron">
     <h1>篇幅:h1</h1>
     <p class="lead">
@@ -18,15 +19,12 @@
         <div class="col-md-4">
             <h2>@blog.Title</h2>
             <p>@blog.BreviaryContent</p>
-            <p><a class="btn btn-default" href="@Url.Action("Edit", new { id = blog.BlogId, title = blog.Title })">编辑 »</a></p>
-            <p>
-                @{
-                    var value = blog.IsVisible ? "隐藏" : "显示";
-                    <a class="visibility btn btn-default" value="@blog.BlogId">@value »</a>
-                }
-            </p>
-        </div>
-                    }
+            <a class="btn btn-default" href="@Url.Action("Edit", new { id = blog.BlogId, title = blog.Title })">编辑 »</a>
+            @{
+                var value = blog.IsVisible ? "隐藏" : "显示";
+                <a class="visibility btn btn-default" value="@blog.BlogId">@value »</a>
+            }
+        </div>}
 </div>
 
 @section Scripts {

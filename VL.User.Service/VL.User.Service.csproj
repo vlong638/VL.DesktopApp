@@ -61,33 +61,33 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611211453.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Object.1.0.1611221406.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ServiceModel">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611211436.1\lib\net452\System.ServiceModel.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Core.1.0.1611221409.1\lib\net452\System.ServiceModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="VL.Common.Core, Version=1.0.6169.26273, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611211436.1\lib\net452\VL.Common.Core.dll</HintPath>
+    <Reference Include="VL.Common.Core, Version=1.0.6170.25497, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611221409.1\lib\net452\VL.Common.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="VL.Common.Object, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611211453.0\lib\net452\VL.Common.Object.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Object.1.0.1611221406.0\lib\net452\VL.Common.Object.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business\TUserBasicInfo\TUserBasicInfoDomain.cs" />
-    <Compile Include="Business\TUserBasicInfo\TUserBasicInfoFetcher.cs" />
-    <Compile Include="Business\TUserBasicInfo\TUserBasicInfoOperator.cs" />
-    <Compile Include="Business\TUserRole\TUserRoleDomain.cs" />
-    <Compile Include="Business\TUserRole\TUserRoleOperator.cs" />
-    <Compile Include="Business\TUser\TUserDomain.cs" />
-    <Compile Include="Business\TUser\TUserFetcher.cs" />
-    <Compile Include="Business\TUser\TUserOperator.cs" />
+    <Compile Include="Business\DAL\TUserBasicInfo\TUserBasicInfoFetcher.cs" />
+    <Compile Include="Business\DAL\TUserBasicInfo\TUserBasicInfoOperator.cs" />
+    <Compile Include="Business\DAL\TUserRole\TUserRoleOperator.cs" />
+    <Compile Include="Business\DAL\TUser\TUserFetcher.cs" />
+    <Compile Include="Business\DAL\TUser\TUserOperator.cs" />
+    <Compile Include="Business\Domain\TUserBasicInfoDomain.cs" />
+    <Compile Include="Business\Domain\TUserDomain.cs" />
+    <Compile Include="Business\Domain\TUserRoleDomain.cs" />
     <Compile Include="Services\IObjectUserService.cs" />
     <Compile Include="Services\ISubjectUserService.cs" />
     <Compile Include="Services\ObjectUserService.cs" />

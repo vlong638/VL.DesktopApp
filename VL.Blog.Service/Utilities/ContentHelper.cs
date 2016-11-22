@@ -12,7 +12,7 @@ namespace VL.Blog.Service.Utilities
         {
             if (content.Length>100)
             {
-                return content.Substring(0, 100) + "...";
+                return content.Substring(0, 97) + "...";
             }
             else
             {

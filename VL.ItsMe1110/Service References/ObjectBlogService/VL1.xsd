@@ -38,17 +38,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetBlogDetail">
+  <xs:element name="GetBlogBody">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="blogId" type="q3:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetBlogBodyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="GetBlogBodyResult" nillable="true" type="q4:ReportOfTBlog7FqCaaR8" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlogDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="blogId" type="q5:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetBlogDetailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="GetBlogDetailResult" nillable="true" type="q4:ReportOfTBlogDetail7FqCaaR8" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="GetBlogDetailResult" nillable="true" type="q6:ReportOfTBlogDetail7FqCaaR8" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -60,7 +74,7 @@
   <xs:element name="GetVisibleBlogsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="GetVisibleBlogsResult" nillable="true" type="q5:ReportOfArrayOfTBlog7FqCaaR8" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="GetVisibleBlogsResult" nillable="true" type="q7:ReportOfArrayOfTBlog7FqCaaR8" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

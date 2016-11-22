@@ -91,7 +91,7 @@
       <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/System.Runtime.Serialization.dll">
-      <publishTime>11/21/2016 14:54:27</publishTime>
+      <publishTime>11/22/2016 14:06:26</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>01/28/2015 04:04:30</publishTime>
@@ -118,10 +118,10 @@
       <publishTime>11/16/2016 15:05:46</publishTime>
     </File>
     <File Include="bin/VL.Common.Object.dll">
-      <publishTime>11/21/2016 14:53:56</publishTime>
+      <publishTime>11/22/2016 14:06:02</publishTime>
     </File>
     <File Include="bin/VL.ItsMe1110.dll">
-      <publishTime>11/21/2016 16:13:26</publishTime>
+      <publishTime>11/22/2016 15:34:03</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>07/17/2013 17:03:52</publishTime>
@@ -157,13 +157,13 @@
       <publishTime>11/10/2016 11:14:57</publishTime>
     </File>
     <File Include="lib/net452/System.Runtime.Serialization.dll">
-      <publishTime>11/21/2016 14:54:27</publishTime>
+      <publishTime>11/22/2016 14:06:26</publishTime>
     </File>
     <File Include="log4net.config">
       <publishTime>11/16/2016 17:49:15</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/21/2016 14:54:27</publishTime>
+      <publishTime>11/22/2016 14:06:26</publishTime>
     </File>
     <File Include="Properties/DataSources/VL.Common.Constraints.Protocol.DependencyResult.datasource">
       <publishTime>11/17/2016 09:07:53</publishTime>
@@ -217,25 +217,31 @@
       <publishTime>11/17/2016 13:59:13</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>11/18/2016 17:33:08</publishTime>
+      <publishTime>11/21/2016 17:05:04</publishTime>
     </File>
     <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
       <publishTime>11/17/2016 13:32:26</publishTime>
+    </File>
+    <File Include="Views/Blog/Detail.cshtml">
+      <publishTime>11/22/2016 14:26:58</publishTime>
     </File>
     <File Include="Views/Blog/Edit.cshtml">
       <publishTime>11/21/2016 09:37:43</publishTime>
     </File>
     <File Include="Views/Blog/Index.cshtml">
-      <publishTime>11/21/2016 15:12:37</publishTime>
+      <publishTime>11/22/2016 14:33:22</publishTime>
+    </File>
+    <File Include="Views/Blog/List.cshtml">
+      <publishTime>11/22/2016 14:29:21</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>11/17/2016 13:33:01</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>11/17/2016 13:33:03</publishTime>
+      <publishTime>11/22/2016 14:32:18</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>11/21/2016 16:08:52</publishTime>
+      <publishTime>11/22/2016 14:13:48</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>11/10/2016 11:25:26</publishTime>
@@ -256,7 +262,7 @@
       <publishTime>11/10/2016 11:25:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/21/2016 16:06:46</publishTime>
+      <publishTime>11/22/2016 14:13:57</publishTime>
     </File>
   </ItemGroup>
 </Project>

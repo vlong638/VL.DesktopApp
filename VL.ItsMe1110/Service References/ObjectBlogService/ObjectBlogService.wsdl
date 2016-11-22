@@ -28,6 +28,12 @@
   <wsdl:message name="IObjectBlogService_GetAllBlogs_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllBlogsResponse" />
   </wsdl:message>
+  <wsdl:message name="IObjectBlogService_GetBlogBody_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogBody" />
+  </wsdl:message>
+  <wsdl:message name="IObjectBlogService_GetBlogBody_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBlogBodyResponse" />
+  </wsdl:message>
   <wsdl:message name="IObjectBlogService_GetBlogDetail_InputMessage">
     <wsdl:part name="parameters" element="tns:GetBlogDetail" />
   </wsdl:message>
@@ -52,6 +58,10 @@
     <wsdl:operation name="GetAllBlogs">
       <wsdl:input wsaw:Action="http://tempuri.org/IObjectBlogService/GetAllBlogs" message="tns:IObjectBlogService_GetAllBlogs_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IObjectBlogService/GetAllBlogsResponse" message="tns:IObjectBlogService_GetAllBlogs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogBody">
+      <wsdl:input wsaw:Action="http://tempuri.org/IObjectBlogService/GetBlogBody" message="tns:IObjectBlogService_GetBlogBody_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IObjectBlogService/GetBlogBodyResponse" message="tns:IObjectBlogService_GetBlogBody_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetBlogDetail">
       <wsdl:input wsaw:Action="http://tempuri.org/IObjectBlogService/GetBlogDetail" message="tns:IObjectBlogService_GetBlogDetail_InputMessage" />
@@ -84,6 +94,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllBlogs">
       <soap:operation soapAction="http://tempuri.org/IObjectBlogService/GetAllBlogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlogBody">
+      <soap:operation soapAction="http://tempuri.org/IObjectBlogService/GetBlogBody" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

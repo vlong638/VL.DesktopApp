@@ -6,7 +6,7 @@ using System.Web;
 
 namespace VL.ItsMe1110.Models
 {
-    public class BlogListViewItem
+    public class BlogListItem
     {
         public Guid BlogId { get; set; } = Guid.Empty;
 
@@ -25,10 +25,10 @@ namespace VL.ItsMe1110.Models
         [Display(Name = "是否可见")]
         public bool IsVisible { get; set; }
     }
-    public class BlogListViewModel : List<BlogListViewItem>
+    public class BlogListModel : List<BlogListItem>
     {
     }
-    public class BlogDetailViewModel
+    public class BlogDetailModel
     {
         public Guid BlogId { get; set; } = Guid.Empty;
 

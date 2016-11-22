@@ -14,6 +14,8 @@ namespace VL.Blog.Service.Services
         [OperationContract]
         Report<List<TBlog>> GetAllBlogs();
         [OperationContract]
+        Report<TBlog> GetBlogBody(Guid blogId);
+        [OperationContract]
         Report<TBlogDetail> GetBlogDetail(Guid blogId);
         [OperationContract]
         Report<List<TBlog>> GetVisibleBlogs();

@@ -17,14 +17,14 @@ namespace VL.Blog.Business
         {
             var query = session.GetDbQueryBuilder();
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogProperties.BlogId, entity.BlogId, LocateType.Equal));
-            return session.GetQueryOperator().Delete<TBlog>(session, query);
+            return session.GetQueryOperator().Delete<TBlog>(query);
         }
         public static bool DbDelete(this List<TBlog> entities, DbSession session)
         {
             var query = session.GetDbQueryBuilder();
             var Ids = entities.Select(c =>c.BlogId );
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogProperties.BlogId, Ids, LocateType.In));
-            return session.GetQueryOperator().Delete<TBlog>(session, query);
+            return session.GetQueryOperator().Delete<TBlog>(query);
         }
         public static bool DbInsert(this TBlog entity, DbSession session)
         {
@@ -34,23 +34,35 @@ namespace VL.Blog.Business
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.UserName));
             }
+            if (entity.UserName.Length > 20)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.UserName), entity.UserName.Length, 20));
+            }
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.UserName, entity.UserName));
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.BlogId, entity.BlogId));
             if (entity.Title == null)
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.Title));
             }
+            if (entity.Title.Length > 50)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.Title), entity.Title.Length, 50));
+            }
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.Title, entity.Title));
             if (entity.BreviaryContent == null)
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.BreviaryContent));
+            }
+            if (entity.BreviaryContent.Length > 100)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.BreviaryContent), entity.BreviaryContent.Length, 100));
             }
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.BreviaryContent, entity.BreviaryContent));
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.CreatedTime, entity.CreatedTime));
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.LastEditTime, entity.LastEditTime));
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.IsVisible, entity.IsVisible));
             query.InsertBuilders.Add(builder);
-            return session.GetQueryOperator().Insert<TBlog>(session, query);
+            return session.GetQueryOperator().Insert<TBlog>(query);
         }
         public static bool DbInsert(this List<TBlog> entities, DbSession session)
         {
@@ -62,16 +74,28 @@ namespace VL.Blog.Business
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.UserName));
             }
+            if (entity.UserName.Length > 20)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.UserName), entity.UserName.Length, 20));
+            }
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.UserName, entity.UserName));
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.BlogId, entity.BlogId));
             if (entity.Title == null)
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.Title));
             }
+            if (entity.Title.Length > 50)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.Title), entity.Title.Length, 50));
+            }
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.Title, entity.Title));
             if (entity.BreviaryContent == null)
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.BreviaryContent));
+            }
+            if (entity.BreviaryContent.Length > 100)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.BreviaryContent), entity.BreviaryContent.Length, 100));
             }
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.BreviaryContent, entity.BreviaryContent));
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.CreatedTime, entity.CreatedTime));
@@ -79,7 +103,7 @@ namespace VL.Blog.Business
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.IsVisible, entity.IsVisible));
                 query.InsertBuilders.Add(builder);
             }
-            return session.GetQueryOperator().InsertAll<TBlog>(session, query);
+            return session.GetQueryOperator().InsertAll<TBlog>(query);
         }
         public static bool DbUpdate(this TBlog entity, DbSession session, params PDMDbProperty[] fields)
         {
@@ -123,7 +147,7 @@ namespace VL.Blog.Business
                 }
             }
             query.UpdateBuilders.Add(builder);
-            return session.GetQueryOperator().Update<TBlog>(session, query);
+            return session.GetQueryOperator().Update<TBlog>(query);
         }
         public static bool DbUpdate(this List<TBlog> entities, DbSession session, params PDMDbProperty[] fields)
         {
@@ -170,7 +194,7 @@ namespace VL.Blog.Business
                 }
                 query.UpdateBuilders.Add(builder);
             }
-            return session.GetQueryOperator().UpdateAll<TBlog>(session, query);
+            return session.GetQueryOperator().UpdateAll<TBlog>(query);
         }
         #endregion
         #region 读
@@ -181,7 +205,7 @@ namespace VL.Blog.Business
         {
             var query = session.GetDbQueryBuilder();
             query.SelectBuilder = select;
-            return session.GetQueryOperator().Select<TBlog>(session, query);
+            return session.GetQueryOperator().Select<TBlog>(query);
         }
         /// <summary>
         /// 未查询到数据时返回 null
@@ -210,7 +234,7 @@ namespace VL.Blog.Business
             }
             builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogProperties.BlogId, entity.BlogId, LocateType.Equal));
             query.SelectBuilders.Add(builder);
-            return session.GetQueryOperator().Select<TBlog>(session, query);
+            return session.GetQueryOperator().Select<TBlog>(query);
         }
         /// <summary>
         /// 未查询到数据时返回 null
@@ -243,7 +267,7 @@ namespace VL.Blog.Business
                 builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogProperties.BlogId, Ids, LocateType.In));
             }
             query.SelectBuilders.Add(builder);
-            return session.GetQueryOperator().SelectAll<TBlog>(session, query);
+            return session.GetQueryOperator().SelectAll<TBlog>(query);
         }
         /// <summary>
         /// 存在相应对象时返回true,缺少对象时返回false
