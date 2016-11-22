@@ -27,7 +27,7 @@ namespace VL.Blog.Service.Services
 
         public Report<List<TBlog>> GetAllBlogs()
         {
-            return ServiceBase.ServiceContext.ServiceDelegator.HandleEvent<List<TBlog>>(DbConfigOfBlog.DbName, (session) =>
+            return ServiceBase.ServiceContext.ServiceDelegator.HandleEvent(DbConfigOfBlog.DbName, (session) =>
             {
                 var data= new List<TBlog>().DbSelect(session);
                 if (data == null)
@@ -44,6 +44,10 @@ namespace VL.Blog.Service.Services
                     return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CError);
                 return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CSuccess);
             });
+        }
+        public Report<List<TBlog>> GetVisibleBlogs()
+        {
+            throw new NotImplementedException();
         }
     }
 }

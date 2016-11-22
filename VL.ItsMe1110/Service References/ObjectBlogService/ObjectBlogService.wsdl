@@ -34,6 +34,12 @@
   <wsdl:message name="IObjectBlogService_GetBlogDetail_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetBlogDetailResponse" />
   </wsdl:message>
+  <wsdl:message name="IObjectBlogService_GetVisibleBlogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisibleBlogs" />
+  </wsdl:message>
+  <wsdl:message name="IObjectBlogService_GetVisibleBlogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisibleBlogsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IObjectBlogService">
     <wsdl:operation name="CheckAlive">
       <wsdl:input wsaw:Action="http://tempuri.org/IWCFServiceNode/CheckAlive" message="tns:IObjectBlogService_CheckAlive_InputMessage" />
@@ -50,6 +56,10 @@
     <wsdl:operation name="GetBlogDetail">
       <wsdl:input wsaw:Action="http://tempuri.org/IObjectBlogService/GetBlogDetail" message="tns:IObjectBlogService_GetBlogDetail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IObjectBlogService/GetBlogDetailResponse" message="tns:IObjectBlogService_GetBlogDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisibleBlogs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IObjectBlogService/GetVisibleBlogs" message="tns:IObjectBlogService_GetVisibleBlogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IObjectBlogService/GetVisibleBlogsResponse" message="tns:IObjectBlogService_GetVisibleBlogs_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IObjectBlogService" type="tns:IObjectBlogService">
@@ -83,6 +93,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetBlogDetail">
       <soap:operation soapAction="http://tempuri.org/IObjectBlogService/GetBlogDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisibleBlogs">
+      <soap:operation soapAction="http://tempuri.org/IObjectBlogService/GetVisibleBlogs" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

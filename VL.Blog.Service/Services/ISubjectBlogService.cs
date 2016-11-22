@@ -13,5 +13,9 @@ namespace VL.Blog.Service.Services
     {
         [OperationContract]
         Report EditBlog(TBlog blog,string content);
+        [OperationContract]
+        Report ChangeVisibility(Guid blogId,bool isVisible);
+        //[OperationContract]
+        //Report ShowBlog(Guid blogId);
     }
 }

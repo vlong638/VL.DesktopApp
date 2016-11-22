@@ -9,6 +9,7 @@
           <xs:element minOccurs="0" name="BlogId" type="ser:guid" />
           <xs:element minOccurs="0" name="BreviaryContent" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="CreatedTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IsVisible" type="xs:boolean" />
           <xs:element minOccurs="0" name="LastEditTime" type="xs:dateTime" />
           <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />

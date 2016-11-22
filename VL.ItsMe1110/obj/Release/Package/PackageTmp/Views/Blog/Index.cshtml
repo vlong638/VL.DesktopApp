@@ -14,12 +14,20 @@
 </div>
 <div class="row">
     @Html.ValidationSummary("", new { @class = "text-danger" })
-    @foreach (var blog in Model.OrderByDescending(c=>c.CreatedTime))
+    @foreach (var blog in Model.OrderByDescending(c => c.CreatedTime))
     {
         <div class="col-md-4">
             <h2>@blog.Title</h2>
             <p>@blog.BreviaryContent</p>
             <p><a class="btn btn-default" href="@Url.Action("Edit", new { id = blog.BlogId, title = blog.Title })">编辑 &raquo;</a></p>
+            @if (blog.IsVisible)
+            {
+                <p><a class="btn btn-default" href="@Url.Action("Hide", new { id = blog.BlogId, isVisible = false })">隐藏 &raquo;</a></p>
+            }
+            else
+            {
+                <p><a class="btn btn-default" href="@Url.Action("Hide", new { id = blog.BlogId, isVisible = true })">显示 &raquo;</a></p>
+            }
         </div>
     }
 </div>

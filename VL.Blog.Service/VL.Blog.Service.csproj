@@ -56,21 +56,21 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611181721.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Object.1.0.1611211453.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ServiceModel">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611181743.1\lib\net452\System.ServiceModel.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Core.1.0.1611211436.1\lib\net452\System.ServiceModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="VL.Common.Core, Version=1.0.6166.31834, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611181743.1\lib\net452\VL.Common.Core.dll</HintPath>
+    <Reference Include="VL.Common.Core, Version=1.0.6169.26273, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611211436.1\lib\net452\VL.Common.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="VL.Common.Object, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611181721.0\lib\net452\VL.Common.Object.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Object.1.0.1611211453.0\lib\net452\VL.Common.Object.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -94,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <Content Include="log4net.config" />
+    <None Include="log4net.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

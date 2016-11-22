@@ -48,6 +48,7 @@ namespace VL.Blog.Business
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.BreviaryContent, entity.BreviaryContent));
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.CreatedTime, entity.CreatedTime));
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.LastEditTime, entity.LastEditTime));
+            builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.IsVisible, entity.IsVisible));
             query.InsertBuilders.Add(builder);
             return session.GetQueryOperator().Insert<TBlog>(session, query);
         }
@@ -75,6 +76,7 @@ namespace VL.Blog.Business
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.BreviaryContent, entity.BreviaryContent));
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.CreatedTime, entity.CreatedTime));
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.LastEditTime, entity.LastEditTime));
+                builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogProperties.IsVisible, entity.IsVisible));
                 query.InsertBuilders.Add(builder);
             }
             return session.GetQueryOperator().InsertAll<TBlog>(session, query);
@@ -91,6 +93,7 @@ namespace VL.Blog.Business
                 builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.BreviaryContent, entity.BreviaryContent));
                 builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.CreatedTime, entity.CreatedTime));
                 builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.LastEditTime, entity.LastEditTime));
+                builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.IsVisible, entity.IsVisible));
             }
             else
             {
@@ -114,6 +117,10 @@ namespace VL.Blog.Business
                 {
                     builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.LastEditTime, entity.LastEditTime));
                 }
+                if (fields.Contains(TBlogProperties.IsVisible))
+                {
+                    builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.IsVisible, entity.IsVisible));
+                }
             }
             query.UpdateBuilders.Add(builder);
             return session.GetQueryOperator().Update<TBlog>(session, query);
@@ -132,6 +139,7 @@ namespace VL.Blog.Business
                     builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.BreviaryContent, entity.BreviaryContent));
                     builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.CreatedTime, entity.CreatedTime));
                     builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.LastEditTime, entity.LastEditTime));
+                    builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.IsVisible, entity.IsVisible));
                 }
                 else
                 {
@@ -154,6 +162,10 @@ namespace VL.Blog.Business
                     if (fields.Contains(TBlogProperties.LastEditTime))
                     {
                         builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.LastEditTime, entity.LastEditTime));
+                    }
+                    if (fields.Contains(TBlogProperties.IsVisible))
+                    {
+                        builder.ComponentSet.Add(new ComponentValueOfSet(TBlogProperties.IsVisible, entity.IsVisible));
                     }
                 }
                 query.UpdateBuilders.Add(builder);
@@ -186,6 +198,7 @@ namespace VL.Blog.Business
                 builder.ComponentSelect.Add(TBlogProperties.BreviaryContent);
                 builder.ComponentSelect.Add(TBlogProperties.CreatedTime);
                 builder.ComponentSelect.Add(TBlogProperties.LastEditTime);
+                builder.ComponentSelect.Add(TBlogProperties.IsVisible);
             }
             else
             {
@@ -214,6 +227,7 @@ namespace VL.Blog.Business
                 builder.ComponentSelect.Add(TBlogProperties.BreviaryContent);
                 builder.ComponentSelect.Add(TBlogProperties.CreatedTime);
                 builder.ComponentSelect.Add(TBlogProperties.LastEditTime);
+                builder.ComponentSelect.Add(TBlogProperties.IsVisible);
             }
             else
             {
@@ -248,6 +262,7 @@ namespace VL.Blog.Business
                 entity.BreviaryContent = result.BreviaryContent;
                 entity.CreatedTime = result.CreatedTime;
                 entity.LastEditTime = result.LastEditTime;
+                entity.IsVisible = result.IsVisible;
             }
             else
             {
@@ -270,6 +285,10 @@ namespace VL.Blog.Business
                 if (fields.Contains(TBlogProperties.LastEditTime))
                 {
                     entity.LastEditTime = result.LastEditTime;
+                }
+                if (fields.Contains(TBlogProperties.IsVisible))
+                {
+                    entity.IsVisible = result.IsVisible;
                 }
             }
             return true;

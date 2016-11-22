@@ -1,3 +1,4 @@
+Use [VL.Blog];
 /*==============================================================*/
 /* Table: TBlog                                                 */
 /*==============================================================*/
@@ -14,6 +15,7 @@ create table TBlog (
    BreviaryContent      nvarchar(100)        not null,
    CreatedTime          datetime             not null,
    LastEditTime         datetime             not null,
+   IsVisible            numeric(1)           not null default 1,
    constraint PK_TBLOG primary key (BlogId)
 )
 go

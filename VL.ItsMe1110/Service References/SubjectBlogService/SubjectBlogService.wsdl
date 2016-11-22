@@ -28,6 +28,12 @@
   <wsdl:message name="ISubjectBlogService_EditBlog_OutputMessage">
     <wsdl:part name="parameters" element="tns:EditBlogResponse" />
   </wsdl:message>
+  <wsdl:message name="ISubjectBlogService_ChangeVisibility_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeVisibility" />
+  </wsdl:message>
+  <wsdl:message name="ISubjectBlogService_ChangeVisibility_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeVisibilityResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISubjectBlogService">
     <wsdl:operation name="CheckAlive">
       <wsdl:input wsaw:Action="http://tempuri.org/IWCFServiceNode/CheckAlive" message="tns:ISubjectBlogService_CheckAlive_InputMessage" />
@@ -40,6 +46,10 @@
     <wsdl:operation name="EditBlog">
       <wsdl:input wsaw:Action="http://tempuri.org/ISubjectBlogService/EditBlog" message="tns:ISubjectBlogService_EditBlog_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISubjectBlogService/EditBlogResponse" message="tns:ISubjectBlogService_EditBlog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVisibility">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISubjectBlogService/ChangeVisibility" message="tns:ISubjectBlogService_ChangeVisibility_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISubjectBlogService/ChangeVisibilityResponse" message="tns:ISubjectBlogService_ChangeVisibility_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISubjectBlogService" type="tns:ISubjectBlogService">
@@ -64,6 +74,15 @@
     </wsdl:operation>
     <wsdl:operation name="EditBlog">
       <soap:operation soapAction="http://tempuri.org/ISubjectBlogService/EditBlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVisibility">
+      <soap:operation soapAction="http://tempuri.org/ISubjectBlogService/ChangeVisibility" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

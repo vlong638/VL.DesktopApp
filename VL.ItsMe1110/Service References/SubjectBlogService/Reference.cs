@@ -32,6 +32,12 @@ namespace VL.ItsMe1110.SubjectBlogService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectBlogService/EditBlog", ReplyAction="http://tempuri.org/ISubjectBlogService/EditBlogResponse")]
         System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> EditBlogAsync(VL.Common.Object.VL.Blog.TBlog blog, string content);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectBlogService/ChangeVisibility", ReplyAction="http://tempuri.org/ISubjectBlogService/ChangeVisibilityResponse")]
+        VL.Common.Object.Protocol.Report ChangeVisibility(System.Guid blogId, bool isVisible);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectBlogService/ChangeVisibility", ReplyAction="http://tempuri.org/ISubjectBlogService/ChangeVisibilityResponse")]
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> ChangeVisibilityAsync(System.Guid blogId, bool isVisible);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +89,14 @@ namespace VL.ItsMe1110.SubjectBlogService {
         
         public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> EditBlogAsync(VL.Common.Object.VL.Blog.TBlog blog, string content) {
             return base.Channel.EditBlogAsync(blog, content);
+        }
+        
+        public VL.Common.Object.Protocol.Report ChangeVisibility(System.Guid blogId, bool isVisible) {
+            return base.Channel.ChangeVisibility(blogId, isVisible);
+        }
+        
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report> ChangeVisibilityAsync(System.Guid blogId, bool isVisible) {
+            return base.Channel.ChangeVisibilityAsync(blogId, isVisible);
         }
     }
 }

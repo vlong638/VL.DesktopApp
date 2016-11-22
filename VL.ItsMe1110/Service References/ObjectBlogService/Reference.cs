@@ -38,6 +38,12 @@ namespace VL.ItsMe1110.ObjectBlogService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogDetail", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogDetailResponse")]
         System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail>> GetBlogDetailAsync(System.Guid blogId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetVisibleBlogs", ReplyAction="http://tempuri.org/IObjectBlogService/GetVisibleBlogsResponse")]
+        VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetVisibleBlogs();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetVisibleBlogs", ReplyAction="http://tempuri.org/IObjectBlogService/GetVisibleBlogsResponse")]
+        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetVisibleBlogsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,6 +103,14 @@ namespace VL.ItsMe1110.ObjectBlogService {
         
         public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail>> GetBlogDetailAsync(System.Guid blogId) {
             return base.Channel.GetBlogDetailAsync(blogId);
+        }
+        
+        public VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetVisibleBlogs() {
+            return base.Channel.GetVisibleBlogs();
+        }
+        
+        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetVisibleBlogsAsync() {
+            return base.Channel.GetVisibleBlogsAsync();
         }
     }
 }

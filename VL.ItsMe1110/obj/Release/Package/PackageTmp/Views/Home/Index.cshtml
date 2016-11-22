@@ -9,10 +9,10 @@
         这里有我制作的一些作品实例<br />
     </p>
     <p>
-        <a href="http://asp.net" class="btn btn-primary btn-lg">我的博客 &raquo;</a>
-        <a href="http://asp.net" class="btn btn-primary btn-lg">我的独立游戏 &raquo;</a>
-        <a href="http://asp.net" class="btn btn-primary btn-lg">她的博客 &raquo;</a>
-        <a href="http://asp.net" class="btn btn-primary btn-lg">她的地盘这儿 &raquo;</a>
+        @Html.ActionLink("我的博客 >", "List", "Blog", new { @class = "btn btn-primary btn-lg" })
+        @Html.ActionLink("我的独立游戏 >", "List", "Blog", new { @class = "btn btn-primary btn-lg" })
+        @Html.ActionLink("她的博客 >", "List", "Blog", new { @class = "btn btn-primary btn-lg" })
+        @Html.ActionLink("她的地盘 >", "List", "Blog", new { @class = "btn btn-primary btn-lg" })
     </p>
 </div>
 <div class="row">

@@ -52,4 +52,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetVisibleBlogs">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVisibleBlogsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="GetVisibleBlogsResult" nillable="true" type="q5:ReportOfArrayOfTBlog7FqCaaR8" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -21,6 +21,9 @@ namespace VL.ItsMe1110.Models
 
         [Display(Name = "最后编辑时间")]
         public DateTime LastEditTime { get; set; }
+
+        [Display(Name = "是否可见")]
+        public bool IsVisible { get; set; }
     }
     public class BlogListViewModel : List<BlogListViewItem>
     {

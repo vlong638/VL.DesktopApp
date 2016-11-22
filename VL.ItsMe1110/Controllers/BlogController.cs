@@ -57,6 +57,7 @@ namespace VL.ItsMe1110.Controllers
                     BreviaryContent = blog.BreviaryContent,
                     CreatedTime = blog.CreatedTime,
                     LastEditTime = blog.LastEditTime,
+                    IsVisible = blog.IsVisible,
                 });
             }
             return View(model);
@@ -88,12 +89,12 @@ namespace VL.ItsMe1110.Controllers
         [HttpPost]
         [VLAuthorize(Users = VESTEDUSERSTRING)]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(BlogEditModel model)
+        public async Task<ActionResult> Edit(BlogEditModel model)
         {
             if (!ModelState.IsValid)
                 return View(model);
 
-            var result = SubjectBlogClient.EditBlog(new TBlog(model.BlogId) { UserName = User.Identity.Name, Title = model.Title }, model.Content);
+            var result = await SubjectBlogClient.EditBlogAsync(new TBlog(model.BlogId) { UserName = User.Identity.Name, Title = model.Title }, model.Content);
             if (result.Code == CProtocol.CReport.CSuccess)
             {
                 return RedirectToAction(nameof(BlogController.Index), PAGENAME_BLOG);
@@ -112,6 +113,24 @@ namespace VL.ItsMe1110.Controllers
                         });
                 return View(model);
             }
+        }
+
+        [HttpPost]
+        [VLAuthorize(Users = VESTEDUSERSTRING)]
+        public async Task<bool> ChangeVisibility(Guid id, bool isVisible)
+        {
+            var result = await SubjectBlogClient.ChangeVisibilityAsync(id,isVisible);
+            if (result.Code != CProtocol.CReport.CSuccess)
+            {
+                //AddMessages(result.Code, new KeyValueCollection {
+                //            new KeyValue(2, "系统内部异常") ,
+                //            new KeyValue(11, "Id不可为空") ,
+                //            new KeyValue(12, "主体更新失败") ,
+                //        });
+                return false;
+            }
+            return true;
+            //return RedirectToAction(nameof(BlogController.Index), PAGENAME_BLOG);
         }
     }
 }

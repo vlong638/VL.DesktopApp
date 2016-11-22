@@ -25,7 +25,7 @@
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
                     @if (User != null && User.Identity.Name == "vlong638")
                     {
-                        <li>@Html.ActionLink("博客管理", "Index", "Blog", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        <li>@Html.ActionLink("博客管理", "Index", "Blog")</li>
                     }
                     <li>@Html.ActionLink("关于", "About", "Home")</li>
                     <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
