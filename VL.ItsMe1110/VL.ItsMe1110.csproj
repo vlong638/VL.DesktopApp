@@ -167,6 +167,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\VLCustom.css" />
+    <Compile Include="Custom\HtmlHelperEx.cs" />
     <Content Include="Global.asax" />
     <Content Include="lib\net452\System.Runtime.Serialization.dll" />
     <Content Include="Properties\DataSources\VL.Common.Protocol.IService.DependencyResult.datasource" />

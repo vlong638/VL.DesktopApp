@@ -6,12 +6,6 @@
         @Model.Title
     </div>
     <div class="ParagraphBody">
-        @Model.Content
+        @Html.RawText(Model.Content)
     </div>
 </div>
-
-
-@*<h2>@Model.Title</h2>
-    <p>创建于@Model.CreatedTime</p>
-    <p>最后编辑于@Model.LastEditTime</p>
-    <p>@Model.Content</p>*@
