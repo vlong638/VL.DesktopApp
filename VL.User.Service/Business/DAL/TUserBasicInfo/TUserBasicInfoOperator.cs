@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using VL.Common.DAS;
+using VL.Common.Core.DAS;
+using VL.Common.Core.ORM;
+using VL.Common.Core.Protocol;
 using VL.Common.Object.VL.User;
-using VL.Common.Object.ORM;
-using VL.Common.ORM;
-using VL.Common.Protocol;
 
 namespace VL.User.Business
 {
@@ -34,6 +33,10 @@ namespace VL.User.Business
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.UserName));
             }
+            if (entity.UserName.Length > 20)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.UserName), entity.UserName.Length, 20));
+            }
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.UserName, entity.UserName));
             if (entity.Birthday.HasValue)
             {
@@ -47,10 +50,18 @@ namespace VL.User.Business
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.Email));
             }
+            if (entity.Email.Length > 32)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.Email), entity.Email.Length, 32));
+            }
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.Email, entity.Email));
             if (entity.IdCardNumber == null)
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.IdCardNumber));
+            }
+            if (entity.IdCardNumber.Length > 18)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.IdCardNumber), entity.IdCardNumber.Length, 18));
             }
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.IdCardNumber, entity.IdCardNumber));
             query.InsertBuilders.Add(builder);
@@ -66,6 +77,10 @@ namespace VL.User.Business
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.UserName));
             }
+            if (entity.UserName.Length > 20)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.UserName), entity.UserName.Length, 20));
+            }
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.UserName, entity.UserName));
                 if (entity.Birthday.HasValue)
                 {
@@ -79,10 +94,18 @@ namespace VL.User.Business
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.Email));
             }
+            if (entity.Email.Length > 32)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.Email), entity.Email.Length, 32));
+            }
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.Email, entity.Email));
             if (entity.IdCardNumber == null)
             {
                 throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.IdCardNumber));
+            }
+            if (entity.IdCardNumber.Length > 18)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.IdCardNumber), entity.IdCardNumber.Length, 18));
             }
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TUserBasicInfoProperties.IdCardNumber, entity.IdCardNumber));
                 query.InsertBuilders.Add(builder);

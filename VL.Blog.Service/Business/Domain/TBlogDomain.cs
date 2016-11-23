@@ -1,9 +1,9 @@
 using System;
+using System.Collections.Generic;
 using VL.Blog.Service.Utilities;
-using VL.Common.DAS;
-using VL.Common.Object.Protocol;
+using VL.Common.Core.DAS;
+using VL.Common.Core.Protocol;
 using VL.Common.Object.VL.Blog;
-using VL.Common.Protocol;
 
 namespace VL.Blog.Business
 {
@@ -26,10 +26,12 @@ namespace VL.Blog.Business
             内容不可为空,
             内容新建失败,
             主体新建失败,
+            标签新建失败,
             内容更新失败,
             主体更新失败,
+            标签更新失败,
         }
-        public static Report Edit(this TBlog blog, DbSession session, string content)
+        public static Report Edit(this TBlog blog, DbSession session, string content, List<string> tags)
         {
             if (string.IsNullOrEmpty(blog.UserName))
                 return ReportHelper.GetReport(nameof(Edit), (int)ECode_Edit.用户名不可为空);
@@ -49,6 +51,9 @@ namespace VL.Blog.Business
                     return new Report(CProtocol.CReport.CSuccess);
                 else
                     return ReportHelper.GetReport(nameof(Edit), (int)ECode_Edit.主体更新失败);
+
+
+
             }
             else
             {
@@ -60,6 +65,11 @@ namespace VL.Blog.Business
                     return new Report(CProtocol.CReport.CSuccess);
                 else
                     return ReportHelper.GetReport(nameof(Edit), (int)ECode_Edit.主体新建失败);
+                //TODO
+                //foreach (var tag in tags)
+                //{
+                //    new TTag()
+                //}
             }
         }
         #endregion

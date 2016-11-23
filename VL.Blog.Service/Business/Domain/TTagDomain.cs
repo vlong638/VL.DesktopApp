@@ -1,18 +1,19 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using VL.Common.DAS;
-using VL.Common.Object.Protocol;
+using VL.Common.Core.DAS;
+using VL.Common.Core.ORM;
+using VL.Common.Core.Protocol;
 using VL.Common.Object.VL.Blog;
-using VL.Common.ORM;
-using VL.Common.Protocol;
 
 namespace VL.Blog.Business
 {
     public static class TTagDomain
     {
-        //public void Create(DbSession session, TTag tTag)
-        //{
-        //}
+        public static bool CheckExistance(this TTag tag,DbSession session, string userName,string tagName)
+        {
+            var query = session.GetDbQueryBuilder().SelectBuilder;
+            query.ComponentSelect.Add("1");
+            query.ComponentWhere.Add(TTagProperties.UserName, userName, LocateType.Equal);
+            throw new NotImplementedException();
+        }
     }
 }

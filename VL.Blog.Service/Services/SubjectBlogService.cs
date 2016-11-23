@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using VL.Blog.Business;
 using VL.Blog.Service.Utilities;
-using VL.Common.Object.Protocol;
+using VL.Common.Core.Protocol;
 using VL.Common.Object.VL.Blog;
-using VL.Common.Protocol;
 using VL.User.Service.Utilities;
 
 namespace VL.Blog.Service.Services
@@ -26,26 +26,19 @@ namespace VL.Blog.Service.Services
 
         #endregion
 
-        public Report EditBlog(TBlog blog, string content)
+        public Report EditBlog(TBlog blog, string content, List<string> tags)
         {
             return ServiceBase.ServiceContext.ServiceDelegator.HandleTransactionEvent(DbConfigOfBlog.DbName, (session) =>
             {
-                return blog.Edit(session, content);
+                return blog.Edit(session, content, tags);
             });
         }
-        public Report ChangeVisibility(Guid blogId,bool isVisible)
+        public Report ChangeVisibility(Guid blogId, bool isVisible)
         {
             return ServiceBase.ServiceContext.ServiceDelegator.HandleTransactionEvent(DbConfigOfBlog.DbName, (session) =>
             {
                 return new TBlog(blogId) { IsVisible = isVisible }.ChangeVisibility(session);
             });
         }
-        //public Report HideBlog(Guid blogId)
-        //{
-        //    return ServiceBase.ServiceContext.ServiceDelegator.HandleTransactionEvent(DbConfigOfBlog.DbName, (session) =>
-        //    {
-        //        return new TBlog(blogId) { IsVisible = false }.ChangeVisibility(session);
-        //    });
-        //}
     }
 }

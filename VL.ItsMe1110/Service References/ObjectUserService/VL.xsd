@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" />
+  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" />
   <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" />
   <xs:element name="CheckAlive">
     <xs:complexType>
@@ -22,7 +22,7 @@
   <xs:element name="CheckNodeReferencesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="CheckNodeReferencesResult" nillable="true" type="q1:DependencyResult" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="CheckNodeReferencesResult" nillable="true" type="q1:DependencyResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -34,7 +34,7 @@
   <xs:element name="GetAllUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q2:ReportOfArrayOfTUserD4WZmo3i" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q2:ReportOfArrayOfTUserD4WZmo3i" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,7 +49,7 @@
   <xs:element name="CheckUserInRoleResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" minOccurs="0" name="CheckUserInRoleResult" nillable="true" type="q5:Report" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="CheckUserInRoleResult" nillable="true" type="q5:Report" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

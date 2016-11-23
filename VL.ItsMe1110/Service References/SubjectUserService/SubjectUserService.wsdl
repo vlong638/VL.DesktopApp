@@ -4,9 +4,9 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.Protocol" />
+      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" />
       <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" />
-      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.ORM" />
+      <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.ORM" />
       <xsd:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.SubjectUserService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>

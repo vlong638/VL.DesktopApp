@@ -57,5 +57,8 @@ namespace VL.ItsMe1110.Models
 
         [Display(Name = "内容")]
         public string Content { get; set; }
+
+        [Display(Name = "标签")]
+        public string  Tags { get; set; }
     }
 }

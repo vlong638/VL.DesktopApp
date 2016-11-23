@@ -1,41 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
-using VL.Common.Object.Protocol;
+using VL.Common.Core.Protocol;
 using VL.Common.Object.VL.Blog;
 using VL.ItsMe1110.Custom.Authentications;
 using VL.ItsMe1110.Models;
-using VL.ItsMe1110.ObjectBlogService;
-using VL.ItsMe1110.SubjectBlogService;
 
 namespace VL.ItsMe1110.Controllers
 {
     public class BlogController : BaseController
     {
         #region 服务
-        private SubjectBlogServiceClient _subjectBlogClient;
-        private ObjectBlogServiceClient _ObjectBlogClient;
-        public SubjectBlogServiceClient SubjectBlogClient
+        private SubjectBlogService.SubjectBlogServiceClient _subjectBlogClient;
+        private ObjectBlogService.ObjectBlogServiceClient _ObjectBlogClient;
+        public SubjectBlogService.SubjectBlogServiceClient SubjectBlogClient
         {
             get
             {
                 if (_subjectBlogClient == null)
                 {
-                    _subjectBlogClient = new SubjectBlogServiceClient();
+                    _subjectBlogClient = new SubjectBlogService.SubjectBlogServiceClient();
                 }
                 return _subjectBlogClient;
             }
         }
-        public ObjectBlogServiceClient ObjectBlogClient
+        public ObjectBlogService.ObjectBlogServiceClient ObjectBlogClient
         {
             get
             {
                 if (_ObjectBlogClient == null)
                 {
-                    _ObjectBlogClient = new ObjectBlogServiceClient();
+                    _ObjectBlogClient = new ObjectBlogService.ObjectBlogServiceClient();
                 }
                 return _ObjectBlogClient;
             }
@@ -95,7 +91,7 @@ namespace VL.ItsMe1110.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var result = await SubjectBlogClient.EditBlogAsync(new TBlog(model.BlogId) { UserName = User.Identity.Name, Title = model.Title }, model.Content);
+            var result = await SubjectBlogClient.EditBlogAsync(new TBlog(model.BlogId) { UserName = User.Identity.Name, Title = model.Title }, model.Content, model.Tags.Split(',').ToList());
             if (result.Code == CProtocol.CReport.CSuccess)
             {
                 return RedirectToAction(nameof(BlogController.Index), PAGENAME_BLOG);

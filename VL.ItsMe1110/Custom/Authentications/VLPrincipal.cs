@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Principal;
 using System.Web.Security;
-using VL.Common.Object.Protocol;
+using VL.Common.Core.Protocol;
 using VL.Common.Object.VL.User;
 
 namespace VL.ItsMe1110.Custom.Authentications

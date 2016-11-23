@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ServiceModel;
-using VL.Common.Object.Protocol;
+using VL.Common.Core.Protocol;
 using VL.Common.Object.VL.User;
-using VL.Common.Protocol;
 
 namespace VL.User.Service.Services
 {

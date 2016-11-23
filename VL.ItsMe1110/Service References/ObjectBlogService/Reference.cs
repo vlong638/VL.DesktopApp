@@ -9,7 +9,389 @@
 //------------------------------------------------------------------------------
 
 namespace VL.ItsMe1110.ObjectBlogService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DependencyResult", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
+    [System.SerializableAttribute()]
+    public partial class DependencyResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<VL.ItsMe1110.ObjectBlogService.DependencyDetail> DependencyDetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<VL.ItsMe1110.ObjectBlogService.DependencyResult> DependencyResultsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsAllDependenciesAvailableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UnitNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<VL.ItsMe1110.ObjectBlogService.DependencyDetail> DependencyDetails {
+            get {
+                return this.DependencyDetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DependencyDetailsField, value) != true)) {
+                    this.DependencyDetailsField = value;
+                    this.RaisePropertyChanged("DependencyDetails");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<VL.ItsMe1110.ObjectBlogService.DependencyResult> DependencyResults {
+            get {
+                return this.DependencyResultsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DependencyResultsField, value) != true)) {
+                    this.DependencyResultsField = value;
+                    this.RaisePropertyChanged("DependencyResults");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsAllDependenciesAvailable {
+            get {
+                return this.IsAllDependenciesAvailableField;
+            }
+            set {
+                if ((this.IsAllDependenciesAvailableField.Equals(value) != true)) {
+                    this.IsAllDependenciesAvailableField = value;
+                    this.RaisePropertyChanged("IsAllDependenciesAvailable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UnitName {
+            get {
+                return this.UnitNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UnitNameField, value) != true)) {
+                    this.UnitNameField = value;
+                    this.RaisePropertyChanged("UnitName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DependencyDetail", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
+    [System.SerializableAttribute()]
+    public partial class DependencyDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DependencyNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private VL.ItsMe1110.ObjectBlogService.DependencyType DependencyTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsDependencyAvailableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DependencyName {
+            get {
+                return this.DependencyNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DependencyNameField, value) != true)) {
+                    this.DependencyNameField = value;
+                    this.RaisePropertyChanged("DependencyName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public VL.ItsMe1110.ObjectBlogService.DependencyType DependencyType {
+            get {
+                return this.DependencyTypeField;
+            }
+            set {
+                if ((this.DependencyTypeField.Equals(value) != true)) {
+                    this.DependencyTypeField = value;
+                    this.RaisePropertyChanged("DependencyType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsDependencyAvailable {
+            get {
+                return this.IsDependencyAvailableField;
+            }
+            set {
+                if ((this.IsDependencyAvailableField.Equals(value) != true)) {
+                    this.IsDependencyAvailableField = value;
+                    this.RaisePropertyChanged("IsDependencyAvailable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DependencyType", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
+    public enum DependencyType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Config = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Database = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Service = 2,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.ItsMe1110.ObjectBlogService.ReportOfTBlog7FqCaaR8))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.ItsMe1110.ObjectBlogService.ReportOfTBlogDetail7FqCaaR8))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8))]
+    public partial class Report : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<string> MessagesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Code {
+            get {
+                return this.CodeField;
+            }
+            set {
+                if ((this.CodeField.Equals(value) != true)) {
+                    this.CodeField = value;
+                    this.RaisePropertyChanged("Code");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<string> Messages {
+            get {
+                return this.MessagesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
+                    this.MessagesField = value;
+                    this.RaisePropertyChanged("Messages");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOfTBlog7FqCaaR8", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
+    [System.SerializableAttribute()]
+    public partial class ReportOfTBlog7FqCaaR8 : VL.ItsMe1110.ObjectBlogService.Report {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private VL.Common.Object.VL.Blog.TBlog DataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public VL.Common.Object.VL.Blog.TBlog Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOfTBlogDetail7FqCaaR8", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
+    [System.SerializableAttribute()]
+    public partial class ReportOfTBlogDetail7FqCaaR8 : VL.ItsMe1110.ObjectBlogService.Report {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private VL.Common.Object.VL.Blog.TBlogDetail DataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public VL.Common.Object.VL.Blog.TBlogDetail Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOfArrayOfTBlog7FqCaaR8", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
+    [System.SerializableAttribute()]
+    public partial class ReportOfArrayOfTBlog7FqCaaR8 : VL.ItsMe1110.ObjectBlogService.Report {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog> DataField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog> Data {
+            get {
+                return this.DataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DataField, value) != true)) {
+                    this.DataField = value;
+                    this.RaisePropertyChanged("Data");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="IPDMTBase", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.ORM")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.Common.Object.VL.Blog.TBlogDetail))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.Common.Object.VL.Blog.TBlog))]
+    public partial class IPDMTBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ObjectBlogService.IObjectBlogService")]
@@ -22,34 +404,34 @@ namespace VL.ItsMe1110.ObjectBlogService {
         System.Threading.Tasks.Task<bool> CheckAliveAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences", ReplyAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse")]
-        VL.Common.Object.Protocol.DependencyResult CheckNodeReferences();
+        VL.ItsMe1110.ObjectBlogService.DependencyResult CheckNodeReferences();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences", ReplyAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse")]
-        System.Threading.Tasks.Task<VL.Common.Object.Protocol.DependencyResult> CheckNodeReferencesAsync();
+        System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.DependencyResult> CheckNodeReferencesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetAllBlogs", ReplyAction="http://tempuri.org/IObjectBlogService/GetAllBlogsResponse")]
-        VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetAllBlogs();
+        VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8 GetAllBlogs();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetAllBlogs", ReplyAction="http://tempuri.org/IObjectBlogService/GetAllBlogsResponse")]
-        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetAllBlogsAsync();
+        System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8> GetAllBlogsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogBody", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogBodyResponse")]
-        VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlog> GetBlogBody(System.Guid blogId);
+        VL.ItsMe1110.ObjectBlogService.ReportOfTBlog7FqCaaR8 GetBlogBody(System.Guid blogId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogBody", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogBodyResponse")]
-        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlog>> GetBlogBodyAsync(System.Guid blogId);
+        System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.ReportOfTBlog7FqCaaR8> GetBlogBodyAsync(System.Guid blogId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogDetail", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogDetailResponse")]
-        VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail> GetBlogDetail(System.Guid blogId);
+        VL.ItsMe1110.ObjectBlogService.ReportOfTBlogDetail7FqCaaR8 GetBlogDetail(System.Guid blogId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetBlogDetail", ReplyAction="http://tempuri.org/IObjectBlogService/GetBlogDetailResponse")]
-        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail>> GetBlogDetailAsync(System.Guid blogId);
+        System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.ReportOfTBlogDetail7FqCaaR8> GetBlogDetailAsync(System.Guid blogId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetVisibleBlogs", ReplyAction="http://tempuri.org/IObjectBlogService/GetVisibleBlogsResponse")]
-        VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetVisibleBlogs();
+        VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8 GetVisibleBlogs();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IObjectBlogService/GetVisibleBlogs", ReplyAction="http://tempuri.org/IObjectBlogService/GetVisibleBlogsResponse")]
-        System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetVisibleBlogsAsync();
+        System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8> GetVisibleBlogsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -87,43 +469,43 @@ namespace VL.ItsMe1110.ObjectBlogService {
             return base.Channel.CheckAliveAsync();
         }
         
-        public VL.Common.Object.Protocol.DependencyResult CheckNodeReferences() {
+        public VL.ItsMe1110.ObjectBlogService.DependencyResult CheckNodeReferences() {
             return base.Channel.CheckNodeReferences();
         }
         
-        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.DependencyResult> CheckNodeReferencesAsync() {
+        public System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.DependencyResult> CheckNodeReferencesAsync() {
             return base.Channel.CheckNodeReferencesAsync();
         }
         
-        public VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetAllBlogs() {
+        public VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8 GetAllBlogs() {
             return base.Channel.GetAllBlogs();
         }
         
-        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetAllBlogsAsync() {
+        public System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8> GetAllBlogsAsync() {
             return base.Channel.GetAllBlogsAsync();
         }
         
-        public VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlog> GetBlogBody(System.Guid blogId) {
+        public VL.ItsMe1110.ObjectBlogService.ReportOfTBlog7FqCaaR8 GetBlogBody(System.Guid blogId) {
             return base.Channel.GetBlogBody(blogId);
         }
         
-        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlog>> GetBlogBodyAsync(System.Guid blogId) {
+        public System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.ReportOfTBlog7FqCaaR8> GetBlogBodyAsync(System.Guid blogId) {
             return base.Channel.GetBlogBodyAsync(blogId);
         }
         
-        public VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail> GetBlogDetail(System.Guid blogId) {
+        public VL.ItsMe1110.ObjectBlogService.ReportOfTBlogDetail7FqCaaR8 GetBlogDetail(System.Guid blogId) {
             return base.Channel.GetBlogDetail(blogId);
         }
         
-        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<VL.Common.Object.VL.Blog.TBlogDetail>> GetBlogDetailAsync(System.Guid blogId) {
+        public System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.ReportOfTBlogDetail7FqCaaR8> GetBlogDetailAsync(System.Guid blogId) {
             return base.Channel.GetBlogDetailAsync(blogId);
         }
         
-        public VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>> GetVisibleBlogs() {
+        public VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8 GetVisibleBlogs() {
             return base.Channel.GetVisibleBlogs();
         }
         
-        public System.Threading.Tasks.Task<VL.Common.Object.Protocol.Report<System.Collections.Generic.List<VL.Common.Object.VL.Blog.TBlog>>> GetVisibleBlogsAsync() {
+        public System.Threading.Tasks.Task<VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8> GetVisibleBlogsAsync() {
             return base.Channel.GetVisibleBlogsAsync();
         }
     }

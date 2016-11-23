@@ -1,0 +1,206 @@
+﻿/*分组处理*/
+.FormGroup {
+    margin-bottom: 15px;
+    width: 100%;
+}
+    .FormGroup:before,
+    .FormGroup:after {
+        display: table;
+        content: " ";
+        clear: both;
+    }
+
+.Paragraph {
+    padding: 2% 8% 5% 8%;
+    border: 1px solid LightGrey;
+}
+.ParagraphHead {
+    border-bottom: 2px LightGrey solid;
+    margin-bottom: 20px;
+    width: 98%;
+    font-size: 16px;
+    font-family: initial;
+    font-weight: bold;
+    color: #222222;
+}
+.ParagraphBody {
+    line-height: 2;
+    font-size: 16px;
+    font-family: initial;
+    color: #444444;
+}
+.HeadSpace {
+    height:40px;
+}
+
+
+.Column {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/*文本显示*/
+.TextDanger {
+    color: #b94a48;
+}
+.TextRight {
+    text-align: right;
+}
+
+/*12分制 宽度处理*/
+.FloatLeft {
+    float: left;
+}
+
+.Wd1 {
+    width: 8.333333333333332%;
+}
+
+.Wd2 {
+    width: 16.666666666666664%;
+}
+
+.Wd3 {
+    width: 25%;
+}
+
+.Wd4 {
+    width: 33.33333333333333%;
+}
+
+.Wd5 {
+    width: 41.66666666666667%;
+}
+
+.Wd6 {
+    width: 50%;
+}
+
+.Wd7 {
+    width: 58.333333333333336%;
+}
+
+.Wd8 {
+    width: 66.66666666666666%;
+}
+
+.Wd9 {
+    width: 75%;
+}
+
+.Wd10 {
+    width: 83.33333333333334%;
+}
+
+.Wd11 {
+    width: 91.66666666666666%;
+}
+
+.Wd12 {
+    width: 100%;
+}
+
+.Off1 {
+    margin-left: 8.333333333333332%;
+}
+
+.Off2 {
+    margin-left: 16.666666666666664%;
+}
+
+.Off3 {
+    margin-left: 25%;
+}
+
+.Off4 {
+    margin-left: 33.33333333333333%;
+}
+
+.Off5 {
+    margin-left: 41.66666666666667%;
+}
+
+.Off6 {
+    margin-left: 50%;
+}
+
+.Off7 {
+    margin-left: 58.333333333333336%;
+}
+
+.Off8 {
+    margin-left: 66.66666666666666%;
+}
+
+.Off9 {
+    margin-left: 75%;
+}
+
+.Off10 {
+    margin-left: 83.33333333333334%;
+}
+
+.Off11 {
+    margin-left: 91.66666666666666%;
+}
+
+/*控件*/
+.Label {
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.TextLine {
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    height: 34px;
+}
+
+.TextParagraph {
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    height: 510px;
+}
+
+.Button {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #cccccc;
+    display: inline-block;
+    padding: 6px 12px;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+    .Button:hover,
+    .Button:focus,
+    .Button:active,
+    .Button.active {
+        color: #333333;
+        background-color: #ebebeb;
+        border-color: #adadad;
+    }
+
+    .Button:active,
+    .Button.active {
+        background-image: none;
+    }

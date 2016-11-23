@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml.Linq;
-using VL.Common.DAS;
+﻿using System.Collections.Generic;
+using VL.Common.Core.DAS;
 
 namespace VL.User.Service.Utilities
 {

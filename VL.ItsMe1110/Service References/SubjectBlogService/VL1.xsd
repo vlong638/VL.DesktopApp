@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.ORM" />
+  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.ORM" />
   <xs:complexType name="TBlog">
     <xs:complexContent mixed="false">
-      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Object.ORM" base="q1:IPDMTBase">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Core.ORM" base="q1:IPDMTBase">
         <xs:sequence>
           <xs:element minOccurs="0" name="BlogId" type="ser:guid" />
           <xs:element minOccurs="0" name="BreviaryContent" nillable="true" type="xs:string" />

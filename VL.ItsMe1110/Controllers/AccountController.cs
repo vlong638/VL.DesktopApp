@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using VL.Common.Object.Protocol;
+using VL.Common.Core.Protocol;
 using VL.Common.Object.VL.User;
 using VL.ItsMe1110.Custom.Authentications;
 using VL.ItsMe1110.Models;

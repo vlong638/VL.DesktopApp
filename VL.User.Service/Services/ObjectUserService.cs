@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using VL.Common.Object.Protocol;
+using VL.Common.Core.Protocol;
 using VL.Common.Object.VL.User;
-using VL.Common.Protocol;
 using VL.User.Business;
 using VL.User.Service.Utilities;
 

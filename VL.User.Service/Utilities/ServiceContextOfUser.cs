@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using VL.Common.Object.Protocol;
-using VL.Common.DAS;
+using VL.Common.Core.DAS;
+using VL.Common.Core.Protocol;
 using VL.Common.Logger;
-using VL.Common.Protocol;
 
 namespace VL.User.Service.Utilities
 {
