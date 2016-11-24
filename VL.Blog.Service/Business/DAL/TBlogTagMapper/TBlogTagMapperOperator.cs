@@ -4,7 +4,7 @@ using System.Linq;
 using VL.Common.Core.DAS;
 using VL.Common.Core.ORM;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.Blog;
+using VL.Common.Core.Object.VL.Blog;
 
 namespace VL.Blog.Business
 {
@@ -15,23 +15,31 @@ namespace VL.Blog.Business
         public static bool DbDelete(this TBlogTagMapper entity, DbSession session)
         {
             var query = session.GetDbQueryBuilder();
-            query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, entity.TagId, LocateType.Equal));
             query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.BlogId, entity.BlogId, LocateType.Equal));
+            query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagName, entity.TagName, LocateType.Equal));
             return session.GetQueryOperator().Delete<TBlogTagMapper>(query);
         }
         public static bool DbDelete(this List<TBlogTagMapper> entities, DbSession session)
         {
             var query = session.GetDbQueryBuilder();
-            var Ids = entities.Select(c =>c.TagId );
-            query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, Ids, LocateType.In));
+            var Ids = entities.Select(c =>c.BlogId );
+            query.DeleteBuilder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.BlogId, Ids, LocateType.In));
             return session.GetQueryOperator().Delete<TBlogTagMapper>(query);
         }
         public static bool DbInsert(this TBlogTagMapper entity, DbSession session)
         {
             var query = session.GetDbQueryBuilder();
             InsertBuilder builder = new InsertBuilder();
-            builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogTagMapperProperties.TagId, entity.TagId));
             builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogTagMapperProperties.BlogId, entity.BlogId));
+            if (entity.TagName == null)
+            {
+                throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.TagName));
+            }
+            if (entity.TagName.Length > 20)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.TagName), entity.TagName.Length, 20));
+            }
+            builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogTagMapperProperties.TagName, entity.TagName));
             query.InsertBuilders.Add(builder);
             return session.GetQueryOperator().Insert<TBlogTagMapper>(query);
         }
@@ -41,8 +49,16 @@ namespace VL.Blog.Business
             foreach (var entity in entities)
             {
                 InsertBuilder builder = new InsertBuilder();
-                builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogTagMapperProperties.TagId, entity.TagId));
                 builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogTagMapperProperties.BlogId, entity.BlogId));
+            if (entity.TagName == null)
+            {
+                throw new NotImplementedException("缺少必填的参数项值, 参数项: " + nameof(entity.TagName));
+            }
+            if (entity.TagName.Length > 20)
+            {
+                throw new NotImplementedException(string.Format("参数项:{0}长度:{1}超过额定限制:{2}", nameof(entity.TagName), entity.TagName.Length, 20));
+            }
+                builder.ComponentInsert.Add(new ComponentValueOfInsert(TBlogTagMapperProperties.TagName, entity.TagName));
                 query.InsertBuilders.Add(builder);
             }
             return session.GetQueryOperator().InsertAll<TBlogTagMapper>(query);
@@ -51,8 +67,8 @@ namespace VL.Blog.Business
         {
             var query = session.GetDbQueryBuilder();
             UpdateBuilder builder = new UpdateBuilder();
-            builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, entity.TagId, LocateType.Equal));
             builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.BlogId, entity.BlogId, LocateType.Equal));
+            builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagName, entity.TagName, LocateType.Equal));
             if (fields==null|| fields.Length==0)
             {
             }
@@ -68,8 +84,8 @@ namespace VL.Blog.Business
             foreach (var entity in entities)
             {
                 UpdateBuilder builder = new UpdateBuilder();
-                builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, entity.TagId, LocateType.Equal));
                 builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.BlogId, entity.BlogId, LocateType.Equal));
+                builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagName, entity.TagName, LocateType.Equal));
                 if (fields==null|| fields.Length==0)
                 {
                 }
@@ -100,20 +116,20 @@ namespace VL.Blog.Business
             SelectBuilder builder = new SelectBuilder();
             if (fields.Count() == 0)
             {
-                builder.ComponentSelect.Add(TBlogTagMapperProperties.TagId);
                 builder.ComponentSelect.Add(TBlogTagMapperProperties.BlogId);
+                builder.ComponentSelect.Add(TBlogTagMapperProperties.TagName);
             }
             else
             {
-                builder.ComponentSelect.Add(TBlogTagMapperProperties.TagId);
                 builder.ComponentSelect.Add(TBlogTagMapperProperties.BlogId);
+                builder.ComponentSelect.Add(TBlogTagMapperProperties.TagName);
                 foreach (var field in fields)
                 {
                     builder.ComponentSelect.Add(field);
                 }
             }
-            builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, entity.TagId, LocateType.Equal));
             builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.BlogId, entity.BlogId, LocateType.Equal));
+            builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagName, entity.TagName, LocateType.Equal));
             query.SelectBuilders.Add(builder);
             return session.GetQueryOperator().Select<TBlogTagMapper>(query);
         }
@@ -126,22 +142,22 @@ namespace VL.Blog.Business
             SelectBuilder builder = new SelectBuilder();
             if (fields.Count() == 0)
             {
-                builder.ComponentSelect.Add(TBlogTagMapperProperties.TagId);
                 builder.ComponentSelect.Add(TBlogTagMapperProperties.BlogId);
+                builder.ComponentSelect.Add(TBlogTagMapperProperties.TagName);
             }
             else
             {
-                builder.ComponentSelect.Add(TBlogTagMapperProperties.TagId);
                 builder.ComponentSelect.Add(TBlogTagMapperProperties.BlogId);
+                builder.ComponentSelect.Add(TBlogTagMapperProperties.TagName);
                 foreach (var field in fields)
                 {
                     builder.ComponentSelect.Add(field);
                 }
             }
-            var Ids = entities.Select(c =>c.TagId );
+            var Ids = entities.Select(c =>c.BlogId );
             if (Ids.Count() != 0)
             {
-                builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.TagId, Ids, LocateType.In));
+                builder.ComponentWhere.Add(new ComponentValueOfWhere(TBlogTagMapperProperties.BlogId, Ids, LocateType.In));
             }
             query.SelectBuilders.Add(builder);
             return session.GetQueryOperator().SelectAll<TBlogTagMapper>(query);

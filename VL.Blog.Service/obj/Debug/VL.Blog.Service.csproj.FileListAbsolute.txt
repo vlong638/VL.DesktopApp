@@ -13,4 +13,3 @@ D:\GitProjects\VL.DesktopApp\VL.Blog.Service\bin\Debug\Newtonsoft.Json.xml
 D:\GitProjects\VL.DesktopApp\VL.Blog.Service\obj\Debug\VL.Blog.Service.dll
 D:\GitProjects\VL.DesktopApp\VL.Blog.Service\obj\Debug\VL.Blog.Service.pdb
 D:\GitProjects\VL.DesktopApp\VL.Blog.Service\bin\Debug\System.ServiceModel.dll
-D:\GitProjects\VL.DesktopApp\VL.Blog.Service\bin\Debug\VL.Common.Object.dll

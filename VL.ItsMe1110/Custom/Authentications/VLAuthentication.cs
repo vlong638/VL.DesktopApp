@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Web;
 using System.Web.Security;
-using VL.Common.Object.VL.User;
+using VL.Common.Core.Object.VL.User;
 using VL.ItsMe1110.Custom.VerficationCodes;
-using VL.ItsMe1110.SubjectUserService;
 
 namespace VL.ItsMe1110.Custom.Authentications
 {

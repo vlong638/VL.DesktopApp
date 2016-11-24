@@ -18,7 +18,6 @@
     <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
     <ReferencedAssemblies>
       <ReferencedAssembly AssemblyName="VL.Common.Core" />
-      <ReferencedAssembly AssemblyName="VL.Common.Object" />
     </ReferencedAssemblies>
     <ReferencedDataContractTypes />
     <ServiceContractMappings />

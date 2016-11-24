@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" />
-  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" />
+  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Object.VL.User" />
   <xs:element name="CheckAlive">
     <xs:complexType>
       <xs:sequence />
@@ -34,15 +34,15 @@
   <xs:element name="GetAllUsersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q2:ReportOfArrayOfTUserD4WZmo3i" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q2:ReportOfArrayOfTUseru9Tm3K_PD" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CheckUserInRole">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" minOccurs="0" name="user" nillable="true" type="q3:TUser" />
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" minOccurs="0" name="roles" nillable="true" type="q4:ArrayOfERole" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/VL.Common.Core.Object.VL.User" minOccurs="0" name="user" nillable="true" type="q3:TUser" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VL.Common.Core.Object.VL.User" minOccurs="0" name="roles" nillable="true" type="q4:ArrayOfERole" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

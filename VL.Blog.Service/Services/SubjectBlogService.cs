@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using VL.Blog.Business;
 using VL.Blog.Service.Utilities;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.Blog;
+using VL.Common.Core.Object.VL.Blog;
 using VL.User.Service.Utilities;
 
 namespace VL.Blog.Service.Services
@@ -26,11 +26,11 @@ namespace VL.Blog.Service.Services
 
         #endregion
 
-        public Report EditBlog(TBlog blog, string content, List<string> tags)
+        public Report EditBlog(TBlog blog, string content, List<string> addTags, List<string> deleteTags)
         {
             return ServiceBase.ServiceContext.ServiceDelegator.HandleTransactionEvent(DbConfigOfBlog.DbName, (session) =>
             {
-                return blog.Edit(session, content, tags);
+                return blog.Edit(session, content, addTags, deleteTags);
             });
         }
         public Report ChangeVisibility(Guid blogId, bool isVisible)

@@ -19,25 +19,25 @@ namespace VL.ItsMe1110
         public void ConfigureAuth(IAppBuilder app)
         {
             #region 配置用户服务
-            var result1 = new SubjectUserService.SubjectUserServiceClient().CheckNodeReferences();
-            if (!result1.IsAllDependenciesAvailable)
+            var result = new SubjectUserService.SubjectUserServiceClient().CheckNodeReferences();
+            if (!result.IsAllDependenciesAvailable)
             {
-                throw new NotImplementedException(result1.Message);
+                throw new NotImplementedException(result.Message);
             }
-            var result2 = new ObjectBlogService.ObjectBlogServiceClient().CheckNodeReferences();
-            if (!result2.IsAllDependenciesAvailable)
+            result = new ObjectBlogService.ObjectBlogServiceClient().CheckNodeReferences();
+            if (!result.IsAllDependenciesAvailable)
             {
-                throw new NotImplementedException(result2.Message);
+                throw new NotImplementedException(result.Message);
             }
-            var result3 = new SubjectBlogService.SubjectBlogServiceClient().CheckNodeReferences();
-            if (!result3.IsAllDependenciesAvailable)
+            result = new SubjectBlogService.SubjectBlogServiceClient().CheckNodeReferences();
+            if (!result.IsAllDependenciesAvailable)
             {
-                throw new NotImplementedException(result3.Message);
+                throw new NotImplementedException(result.Message);
             }
-            var result4 = new ObjectBlogService.ObjectBlogServiceClient().CheckNodeReferences();
-            if (!result4.IsAllDependenciesAvailable)
+            result = new ObjectBlogService.ObjectBlogServiceClient().CheckNodeReferences();
+            if (!result.IsAllDependenciesAvailable)
             {
-                throw new NotImplementedException(result4.Message);
+                throw new NotImplementedException(result.Message);
             }
             #endregion
 

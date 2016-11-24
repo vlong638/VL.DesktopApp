@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ServiceModel;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.Blog;
+using VL.Common.Core.Object.VL.Blog;
 
 namespace VL.Blog.Service.Services
 {
@@ -11,7 +11,7 @@ namespace VL.Blog.Service.Services
     public interface ISubjectBlogService: IWCFServiceNode
     {
         [OperationContract]
-        Report EditBlog(TBlog blog,string content,List<string> tags);
+        Report EditBlog(TBlog blog,string content, List<string> addTags, List<string> deleteTags);
         [OperationContract]
         Report ChangeVisibility(Guid blogId,bool isVisible);
     }

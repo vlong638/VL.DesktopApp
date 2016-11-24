@@ -102,11 +102,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611231738.0\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Core.1.0.1611241526.1\lib\net452\System.Runtime.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.ServiceModel">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611231738.1\lib\net452\System.ServiceModel.dll</HintPath>
+    <Reference Include="System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611241526.1\lib\net452\System.ServiceModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
@@ -129,12 +129,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="VL.Common.Core, Version=1.0.6171.31741, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611231738.1\lib\net452\VL.Common.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="VL.Common.Object, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Object.1.0.1611231738.0\lib\net452\VL.Common.Object.dll</HintPath>
+    <Reference Include="VL.Common.Core, Version=1.0.6172.27803, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611241526.1\lib\net452\VL.Common.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -170,6 +166,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\VLCustom.css" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Custom\HtmlHelperEx.cs" />
     <Content Include="Global.asax" />
     <Content Include="lib\net452\System.Runtime.Serialization.dll" />
@@ -178,13 +175,20 @@
     <Content Include="Properties\DataSources\VL.Common.Protocol.IService.Report.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Protocol.DependencyResult.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Protocol.Report.datasource" />
-    <Content Include="log4net.config" />
     <Content Include="Properties\DataSources\VL.Common.Constraints.Protocol.DependencyResult.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Object.Protocol.DependencyResult.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Object.Protocol.Report.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Object.VL.Blog.TBlog.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Object.VL.Blog.TBlogDetail.datasource" />
     <Content Include="Properties\DataSources\VL.Common.Object.VL.User.TUser.datasource" />
+    <Content Include="Properties\DataSources\VL.Common.Core.Protocol.DependencyResult.datasource" />
+    <Content Include="Properties\DataSources\VL.Common.Core.Protocol.Report.datasource" />
+    <Content Include="Properties\DataSources\VL.Common.Core.Protocol.DependencyResult1.datasource" />
+    <Content Include="Properties\DataSources\VL.Common.Core.Object.VL.Blog.TBlog.datasource" />
+    <Content Include="Properties\DataSources\VL.Common.Core.Object.VL.Blog.TBlogDetail.datasource" />
+    <Content Include="Properties\DataSources\VL.Common.Core.Object.VL.User.TUser.datasource" />
+    <Content Include="Properties\DataSources\VL.Common.Core.Object.VL.Blog.TBlogTagMapper.datasource" />
+    <Content Include="log4net.config" />
     <None Include="Properties\PublishProfiles\ItsMe.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -194,18 +198,6 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <None Include="Service References\ObjectBlogService\ObjectBlogService.wsdl" />
-    <Content Include="Service References\ObjectBlogService\VL.ItsMe1110.ObjectBlogService.DependencyResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ObjectBlogService\VL.ItsMe1110.ObjectBlogService.ReportOfArrayOfTBlog7FqCaaR8.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ObjectBlogService\VL.ItsMe1110.ObjectBlogService.ReportOfTBlog7FqCaaR8.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ObjectBlogService\VL.ItsMe1110.ObjectBlogService.ReportOfTBlogDetail7FqCaaR8.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\ObjectBlogService\VL.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -225,15 +217,14 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ObjectUserService\ObjectUserService.wsdl" />
-    <Content Include="Service References\ObjectUserService\VL.ItsMe1110.ObjectUserService.DependencyResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ObjectUserService\VL.ItsMe1110.ObjectUserService.Report.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\ObjectUserService\VL.ItsMe1110.ObjectUserService.ReportOfArrayOfTUserD4WZmo3i.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <None Include="Service References\ObjectBlogService\VL.disco" />
+    <None Include="Service References\ObjectBlogService\configuration91.svcinfo" />
+    <None Include="Service References\ObjectBlogService\configuration.svcinfo" />
+    <None Include="Service References\ObjectBlogService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ObjectUserService\VL.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -253,13 +244,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\SubjectBlogService\SubjectBlogService.wsdl" />
-    <None Include="Service References\ObjectBlogService\VL.disco" />
-    <None Include="Service References\ObjectBlogService\configuration91.svcinfo" />
-    <None Include="Service References\ObjectBlogService\configuration.svcinfo" />
-    <None Include="Service References\ObjectBlogService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\ObjectUserService\VL.disco" />
     <None Include="Service References\ObjectUserService\configuration91.svcinfo" />
     <None Include="Service References\ObjectUserService\configuration.svcinfo" />
@@ -267,12 +251,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Service References\SubjectBlogService\VL.ItsMe1110.SubjectBlogService.DependencyResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\SubjectBlogService\VL.ItsMe1110.SubjectBlogService.Report.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\SubjectBlogService\VL.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -315,7 +293,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
-    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\ValidateCodeController.cs" />
     <Compile Include="Custom\Authentications\VLAuthorizeAttribute.cs" />
     <Compile Include="Custom\0.Test_Attribute\CustomAuthAttribute.cs" />
@@ -357,15 +334,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Service References\SubjectUserService\VL.ItsMe1110.SubjectUserService.DependencyResult.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\SubjectUserService\VL.ItsMe1110.SubjectUserService.Report.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\SubjectUserService\VL.ItsMe1110.SubjectUserService.ReportOfESignInStatusD4WZmo3i.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\SubjectUserService\VL.xsd">
       <SubType>Designer</SubType>
     </None>

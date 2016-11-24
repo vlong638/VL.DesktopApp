@@ -6,20 +6,19 @@
     <file relUrl="bin/Newtonsoft.Json.xml" publishTime="03/22/2016 16:21:50" />
     <file relUrl="bin/log4net.dll" publishTime="12/14/2015 15:57:18" />
     <file relUrl="bin\Configs/ProtocolConfig.config" publishTime="11/18/2016 16:33:49" />
-    <file relUrl="数据库/建表.sql" publishTime="11/21/2016 16:11:05" />
+    <file relUrl="数据库/建表.sql" publishTime="11/24/2016 15:20:43" />
     <file relUrl="bin/log4net.xml" publishTime="12/14/2015 15:57:18" />
-    <file relUrl="bin/VL.Blog.Service.pdb" publishTime="11/23/2016 17:47:14" />
-    <file relUrl="VL.Blog.Service.Services.SubjectBlogService.svc" publishTime="11/23/2016 17:47:15" />
+    <file relUrl="bin/VL.Blog.Service.pdb" publishTime="11/24/2016 16:04:20" />
+    <file relUrl="VL.Blog.Service.Services.SubjectBlogService.svc" publishTime="11/24/2016 16:04:23" />
     <file relUrl="bin\Configs/DbConnections.config" publishTime="11/18/2016 15:51:58" />
     <file relUrl="bin/Newtonsoft.Json.dll" publishTime="03/22/2016 16:21:50" />
-    <file relUrl="lib\net452/System.Runtime.Serialization.dll" publishTime="11/23/2016 17:39:26" />
-    <file relUrl="bin/VL.Common.Object.dll" publishTime="11/23/2016 17:38:52" />
+    <file relUrl="lib\net452/System.Runtime.Serialization.dll" publishTime="11/24/2016 15:27:14" />
+    <file relUrl="VL.Blog.Service.Services.ObjectBlogService.svc" publishTime="11/24/2016 16:04:23" />
     <file relUrl="bin/MySql.Data.dll" publishTime="02/22/2016 14:41:52" />
-    <file relUrl="lib\net452/System.ServiceModel.dll" publishTime="11/23/2016 17:39:22" />
-    <file relUrl="bin/System.Runtime.Serialization.dll" publishTime="11/23/2016 17:39:26" />
-    <file relUrl="bin/VL.Common.Core.dll" publishTime="11/23/2016 17:38:44" />
-    <file relUrl="bin/VL.Blog.Service.dll" publishTime="11/23/2016 17:47:14" />
-    <file relUrl="VL.Blog.Service.Services.ObjectBlogService.svc" publishTime="11/23/2016 17:47:15" />
-    <file relUrl="bin/System.ServiceModel.dll" publishTime="11/23/2016 17:39:22" />
+    <file relUrl="lib\net452/System.ServiceModel.dll" publishTime="11/24/2016 15:27:14" />
+    <file relUrl="bin/System.Runtime.Serialization.dll" publishTime="11/24/2016 15:27:14" />
+    <file relUrl="bin/VL.Common.Core.dll" publishTime="11/24/2016 15:26:56" />
+    <file relUrl="bin/VL.Blog.Service.dll" publishTime="11/24/2016 16:04:20" />
+    <file relUrl="bin/System.ServiceModel.dll" publishTime="11/24/2016 15:27:14" />
   </publishTarget>
 </publishData>

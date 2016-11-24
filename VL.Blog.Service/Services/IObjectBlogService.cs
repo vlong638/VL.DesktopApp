@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ServiceModel;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.Blog;
+using VL.Common.Core.Object.VL.Blog;
 
 namespace VL.Blog.Service.Services
 {
@@ -16,6 +16,8 @@ namespace VL.Blog.Service.Services
         Report<TBlog> GetBlogBody(Guid blogId);
         [OperationContract]
         Report<TBlogDetail> GetBlogDetail(Guid blogId);
+        [OperationContract]
+        Report<List<TBlogTagMapper>> GetBlogTags(Guid blogId);
         [OperationContract]
         Report<List<TBlog>> GetVisibleBlogs();
     }

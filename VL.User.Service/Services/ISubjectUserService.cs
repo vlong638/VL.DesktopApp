@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.User;
+using VL.Common.Core.Object.VL.User;
 
 namespace VL.User.Service.Services
 {

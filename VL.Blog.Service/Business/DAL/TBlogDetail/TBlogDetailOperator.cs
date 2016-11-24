@@ -4,7 +4,7 @@ using System.Linq;
 using VL.Common.Core.DAS;
 using VL.Common.Core.ORM;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.Blog;
+using VL.Common.Core.Object.VL.Blog;
 
 namespace VL.Blog.Business
 {

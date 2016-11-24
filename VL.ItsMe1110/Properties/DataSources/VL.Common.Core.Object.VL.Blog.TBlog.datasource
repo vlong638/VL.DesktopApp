@@ -5,6 +5,6 @@
     Renaming the file extension or editing the content of this file may   
     cause the file to be unrecognizable by the program.
 -->
-<GenericObjectDataSource DisplayName="DependencyResult" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>VL.ItsMe1110.SubjectUserService.DependencyResult, Service References.SubjectUserService.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+<GenericObjectDataSource DisplayName="TBlog" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <TypeInfo>VL.Common.Core.Object.VL.Blog.TBlog, VL.Common.Core, Version=1.0.6172.20918, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

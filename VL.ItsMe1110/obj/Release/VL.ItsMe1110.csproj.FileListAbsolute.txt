@@ -37,7 +37,6 @@ D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\System.Web.Webpages.Deployment.dll
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\System.Web.Webpages.dll
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\System.Web.Webpages.Razor.dll
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\VL.Common.Core.dll
-D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\VL.Common.Object.dll
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\WebGrease.dll
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\Antlr3.Runtime.pdb
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\log4net.xml
@@ -66,3 +65,4 @@ D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\zh-Hans\System.Web.Mvc.resources.d
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\obj\Release\VL.ItsMe1110.dll
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\obj\Release\VL.ItsMe1110.pdb
 D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\obj\Release\VL.ItsMe1110.csprojResolveAssemblyReference.cache
+D:\GitProjects\VL.DesktopApp\VL.ItsMe1110\bin\System.ServiceModel.dll

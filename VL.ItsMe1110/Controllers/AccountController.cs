@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using VL.Common.Core.Object.VL.User;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.User;
 using VL.ItsMe1110.Custom.Authentications;
 using VL.ItsMe1110.Models;
-using VL.ItsMe1110.SubjectUserService;
 
 namespace VL.ItsMe1110.Controllers
 {
     public class AccountController : BaseController
     {
-        private SubjectUserServiceClient _subjectUserService;
-        public SubjectUserServiceClient SubjectUserService
+        private SubjectUserService.SubjectUserServiceClient _subjectUserService;
+        public SubjectUserService.SubjectUserServiceClient SubjectUserService
         {
             get
             {
                 if (_subjectUserService == null)
                 {
-                    _subjectUserService = new SubjectUserServiceClient();
+                    _subjectUserService = new SubjectUserService.SubjectUserServiceClient();
                 }
                 return _subjectUserService;
             }

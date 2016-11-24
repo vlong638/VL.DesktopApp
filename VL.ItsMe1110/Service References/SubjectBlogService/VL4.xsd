@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" />
-  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" />
+  <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Object.VL.Blog" />
   <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:import schemaLocation="http://dcwl027:8003/VL.Blog.Service.Services.SubjectBlogService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:element name="CheckAlive">
@@ -31,23 +31,24 @@
   <xs:element name="EditBlog">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.Blog" minOccurs="0" name="blog" nillable="true" type="q2:TBlog" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Core.Object.VL.Blog" minOccurs="0" name="blog" nillable="true" type="q2:TBlog" />
         <xs:element minOccurs="0" name="content" nillable="true" type="xs:string" />
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="tags" nillable="true" type="q3:ArrayOfstring" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="addTags" nillable="true" type="q3:ArrayOfstring" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="deleteTags" nillable="true" type="q4:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="EditBlogResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="EditBlogResult" nillable="true" type="q4:Report" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="EditBlogResult" nillable="true" type="q5:Report" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ChangeVisibility">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="blogId" type="q5:guid" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="blogId" type="q6:guid" />
         <xs:element minOccurs="0" name="isVisible" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
@@ -55,7 +56,7 @@
   <xs:element name="ChangeVisibilityResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="ChangeVisibilityResult" nillable="true" type="q6:Report" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="ChangeVisibilityResult" nillable="true" type="q7:Report" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

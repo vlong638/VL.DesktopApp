@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using VL.Common.Core.DAS;
 using VL.Common.Core.ORM;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.User;
+using VL.Common.Core.Object.VL.User;
 
 namespace VL.User.Business
 {

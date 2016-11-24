@@ -4,7 +4,7 @@ using System.Linq;
 using VL.Common.Core.DAS;
 using VL.Common.Core.ORM;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.User;
+using VL.Common.Core.Object.VL.User;
 using VL.User.Service.Utilities;
 
 namespace VL.User.Business
@@ -54,7 +54,7 @@ namespace VL.User.Business
                 return ReportHelper.GetReport(ESignInStatus.Failure, nameof(Create), (int)ECode_Authenticate.用户名不可为空);
             if (!user.CheckExistance(session))
                 return ReportHelper.GetReport(ESignInStatus.Failure, nameof(Create), (int)ECode_Authenticate.用户不存在);
-            //TODO
+            //TODO Authenticate
             //ESignInStatus.LockedOut
             //ESignInStatus.RequiresVerification
             if (string.IsNullOrEmpty(user.Password))

@@ -4,7 +4,7 @@ using VL.Blog.Business;
 using VL.Blog.Service.Utilities;
 using VL.Common.Core.ORM;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.Blog;
+using VL.Common.Core.Object.VL.Blog;
 using VL.User.Service.Utilities;
 
 namespace VL.Blog.Service.Services
@@ -52,6 +52,18 @@ namespace VL.Blog.Service.Services
                 if (data == null)
                     return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CError);
                 return TBlogDomain.ReportHelper.GetReport(data, nameof(GetAllBlogs), CProtocol.CReport.CSuccess);
+            });
+        }
+        public Report<List<TBlogTagMapper>> GetBlogTags(Guid blogId)
+        {
+            return ServiceBase.ServiceContext.ServiceDelegator.HandleEvent(DbConfigOfBlog.DbName, (session) =>
+            {
+                var query = session.GetDbQueryBuilder().SelectBuilder;
+                query.ComponentWhere.Add(TBlogTagMapperProperties.BlogId == blogId);
+                var data = session.GetQueryOperator().SelectAll<TBlogTagMapper>(query);
+                if (data == null)
+                    return TBlogDomain.ReportHelper.GetReport(data, nameof(GetBlogTags), CProtocol.CReport.CError);
+                return TBlogDomain.ReportHelper.GetReport(data, nameof(GetBlogTags), CProtocol.CReport.CSuccess);
             });
         }
         public Report<List<TBlog>> GetVisibleBlogs()

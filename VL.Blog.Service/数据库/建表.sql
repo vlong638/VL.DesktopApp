@@ -44,9 +44,9 @@ if exists (select 1
    drop table TBlogTagMapper
 go
 create table TBlogTagMapper (
-   TagId                uniqueidentifier     not null,
    BlogId               uniqueidentifier     not null,
-   constraint PK_TBLOGTAGMAPPER primary key (TagId, BlogId)
+   TagName              nvarchar(20)         not null,
+   constraint PK_TBLOGTAGMAPPER primary key (BlogId, TagName)
 )
 go
 /*==============================================================*/
@@ -60,8 +60,7 @@ if exists (select 1
 go
 create table TTag (
    UserName             nvarchar(20)         not null,
-   TagId                uniqueidentifier     not null,
-   Name                 nvarchar(20)         not null,
-   constraint PK_TTAG primary key (TagId)
+   TagName              nvarchar(20)         not null,
+   constraint PK_TTAG primary key (UserName, TagName)
 )
 go

@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="Report" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>VL.ItsMe1110.ObjectUserService.Report, Service References.ObjectUserService.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>VL.Common.Core.Protocol.Report, VL.Common.Core, Version=1.0.6172.16532, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

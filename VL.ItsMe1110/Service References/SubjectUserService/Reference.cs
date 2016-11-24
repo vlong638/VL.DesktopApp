@@ -9,340 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace VL.ItsMe1110.SubjectUserService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DependencyResult", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
-    [System.SerializableAttribute()]
-    public partial class DependencyResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<VL.ItsMe1110.SubjectUserService.DependencyDetail> DependencyDetailsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<VL.ItsMe1110.SubjectUserService.DependencyResult> DependencyResultsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsAllDependenciesAvailableField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UnitNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<VL.ItsMe1110.SubjectUserService.DependencyDetail> DependencyDetails {
-            get {
-                return this.DependencyDetailsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DependencyDetailsField, value) != true)) {
-                    this.DependencyDetailsField = value;
-                    this.RaisePropertyChanged("DependencyDetails");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<VL.ItsMe1110.SubjectUserService.DependencyResult> DependencyResults {
-            get {
-                return this.DependencyResultsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DependencyResultsField, value) != true)) {
-                    this.DependencyResultsField = value;
-                    this.RaisePropertyChanged("DependencyResults");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsAllDependenciesAvailable {
-            get {
-                return this.IsAllDependenciesAvailableField;
-            }
-            set {
-                if ((this.IsAllDependenciesAvailableField.Equals(value) != true)) {
-                    this.IsAllDependenciesAvailableField = value;
-                    this.RaisePropertyChanged("IsAllDependenciesAvailable");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UnitName {
-            get {
-                return this.UnitNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UnitNameField, value) != true)) {
-                    this.UnitNameField = value;
-                    this.RaisePropertyChanged("UnitName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DependencyDetail", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
-    [System.SerializableAttribute()]
-    public partial class DependencyDetail : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DependencyNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private VL.ItsMe1110.SubjectUserService.DependencyType DependencyTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool IsDependencyAvailableField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DependencyName {
-            get {
-                return this.DependencyNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DependencyNameField, value) != true)) {
-                    this.DependencyNameField = value;
-                    this.RaisePropertyChanged("DependencyName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public VL.ItsMe1110.SubjectUserService.DependencyType DependencyType {
-            get {
-                return this.DependencyTypeField;
-            }
-            set {
-                if ((this.DependencyTypeField.Equals(value) != true)) {
-                    this.DependencyTypeField = value;
-                    this.RaisePropertyChanged("DependencyType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool IsDependencyAvailable {
-            get {
-                return this.IsDependencyAvailableField;
-            }
-            set {
-                if ((this.IsDependencyAvailableField.Equals(value) != true)) {
-                    this.IsDependencyAvailableField = value;
-                    this.RaisePropertyChanged("IsDependencyAvailable");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DependencyType", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
-    public enum DependencyType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Config = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Database = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service = 2,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IPDMTBase", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.ORM")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.Common.Object.VL.User.TUser))]
-    public partial class IPDMTBase : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Report", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(VL.ItsMe1110.SubjectUserService.ReportOfESignInStatusD4WZmo3i))]
-    public partial class Report : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<string> MessagesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Code {
-            get {
-                return this.CodeField;
-            }
-            set {
-                if ((this.CodeField.Equals(value) != true)) {
-                    this.CodeField = value;
-                    this.RaisePropertyChanged("Code");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<string> Messages {
-            get {
-                return this.MessagesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessagesField, value) != true)) {
-                    this.MessagesField = value;
-                    this.RaisePropertyChanged("Messages");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReportOfESignInStatusD4WZmo3i", Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol")]
-    [System.SerializableAttribute()]
-    public partial class ReportOfESignInStatusD4WZmo3i : VL.ItsMe1110.SubjectUserService.Report {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private VL.Common.Object.VL.User.ESignInStatus DataField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public VL.Common.Object.VL.User.ESignInStatus Data {
-            get {
-                return this.DataField;
-            }
-            set {
-                if ((this.DataField.Equals(value) != true)) {
-                    this.DataField = value;
-                    this.RaisePropertyChanged("Data");
-                }
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SubjectUserService.ISubjectUserService")]
@@ -355,22 +22,23 @@ namespace VL.ItsMe1110.SubjectUserService {
         System.Threading.Tasks.Task<bool> CheckAliveAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences", ReplyAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse")]
-        VL.ItsMe1110.SubjectUserService.DependencyResult CheckNodeReferences();
+        VL.Common.Core.Protocol.DependencyResult CheckNodeReferences();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCFServiceNode/CheckNodeReferences", ReplyAction="http://tempuri.org/IWCFServiceNode/CheckNodeReferencesResponse")]
-        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.DependencyResult> CheckNodeReferencesAsync();
+        System.Threading.Tasks.Task<VL.Common.Core.Protocol.DependencyResult> CheckNodeReferencesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/CreateUser", ReplyAction="http://tempuri.org/ISubjectUserService/CreateUserResponse")]
-        VL.ItsMe1110.SubjectUserService.Report CreateUser(VL.Common.Object.VL.User.TUser user);
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(VL.Common.Core.Protocol.Report<VL.Common.Core.Object.VL.User.ESignInStatus>))]
+        VL.Common.Core.Protocol.Report CreateUser(VL.Common.Core.Object.VL.User.TUser user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/CreateUser", ReplyAction="http://tempuri.org/ISubjectUserService/CreateUserResponse")]
-        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> CreateUserAsync(VL.Common.Object.VL.User.TUser user);
+        System.Threading.Tasks.Task<VL.Common.Core.Protocol.Report> CreateUserAsync(VL.Common.Core.Object.VL.User.TUser user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/AuthenticateUser", ReplyAction="http://tempuri.org/ISubjectUserService/AuthenticateUserResponse")]
-        VL.ItsMe1110.SubjectUserService.ReportOfESignInStatusD4WZmo3i AuthenticateUser(VL.Common.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout);
+        VL.Common.Core.Protocol.Report<VL.Common.Core.Object.VL.User.ESignInStatus> AuthenticateUser(VL.Common.Core.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISubjectUserService/AuthenticateUser", ReplyAction="http://tempuri.org/ISubjectUserService/AuthenticateUserResponse")]
-        System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.ReportOfESignInStatusD4WZmo3i> AuthenticateUserAsync(VL.Common.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout);
+        System.Threading.Tasks.Task<VL.Common.Core.Protocol.Report<VL.Common.Core.Object.VL.User.ESignInStatus>> AuthenticateUserAsync(VL.Common.Core.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -408,27 +76,27 @@ namespace VL.ItsMe1110.SubjectUserService {
             return base.Channel.CheckAliveAsync();
         }
         
-        public VL.ItsMe1110.SubjectUserService.DependencyResult CheckNodeReferences() {
+        public VL.Common.Core.Protocol.DependencyResult CheckNodeReferences() {
             return base.Channel.CheckNodeReferences();
         }
         
-        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.DependencyResult> CheckNodeReferencesAsync() {
+        public System.Threading.Tasks.Task<VL.Common.Core.Protocol.DependencyResult> CheckNodeReferencesAsync() {
             return base.Channel.CheckNodeReferencesAsync();
         }
         
-        public VL.ItsMe1110.SubjectUserService.Report CreateUser(VL.Common.Object.VL.User.TUser user) {
+        public VL.Common.Core.Protocol.Report CreateUser(VL.Common.Core.Object.VL.User.TUser user) {
             return base.Channel.CreateUser(user);
         }
         
-        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.Report> CreateUserAsync(VL.Common.Object.VL.User.TUser user) {
+        public System.Threading.Tasks.Task<VL.Common.Core.Protocol.Report> CreateUserAsync(VL.Common.Core.Object.VL.User.TUser user) {
             return base.Channel.CreateUserAsync(user);
         }
         
-        public VL.ItsMe1110.SubjectUserService.ReportOfESignInStatusD4WZmo3i AuthenticateUser(VL.Common.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout) {
+        public VL.Common.Core.Protocol.Report<VL.Common.Core.Object.VL.User.ESignInStatus> AuthenticateUser(VL.Common.Core.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout) {
             return base.Channel.AuthenticateUser(user, rememberMe, shouldLockout);
         }
         
-        public System.Threading.Tasks.Task<VL.ItsMe1110.SubjectUserService.ReportOfESignInStatusD4WZmo3i> AuthenticateUserAsync(VL.Common.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout) {
+        public System.Threading.Tasks.Task<VL.Common.Core.Protocol.Report<VL.Common.Core.Object.VL.User.ESignInStatus>> AuthenticateUserAsync(VL.Common.Core.Object.VL.User.TUser user, bool rememberMe, bool shouldLockout) {
             return base.Channel.AuthenticateUserAsync(user, rememberMe, shouldLockout);
         }
     }

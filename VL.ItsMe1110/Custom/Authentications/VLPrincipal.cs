@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Security.Principal;
 using System.Web.Security;
+using VL.Common.Core.Object.VL.User;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.User;
 
 namespace VL.ItsMe1110.Custom.Authentications
 {

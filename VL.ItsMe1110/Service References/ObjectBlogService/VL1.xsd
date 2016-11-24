@@ -34,7 +34,7 @@
   <xs:element name="GetAllBlogsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetAllBlogsResult" nillable="true" type="q2:ReportOfArrayOfTBlog7FqCaaR8" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetAllBlogsResult" nillable="true" type="q2:ReportOfArrayOfTBlog_P8KHyEK5" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -48,7 +48,7 @@
   <xs:element name="GetBlogBodyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetBlogBodyResult" nillable="true" type="q4:ReportOfTBlog7FqCaaR8" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetBlogBodyResult" nillable="true" type="q4:ReportOfTBlog_P8KHyEK5" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,7 +62,21 @@
   <xs:element name="GetBlogDetailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetBlogDetailResult" nillable="true" type="q6:ReportOfTBlogDetail7FqCaaR8" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetBlogDetailResult" nillable="true" type="q6:ReportOfTBlogDetail_P8KHyEK5" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlogTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="blogId" type="q7:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBlogTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetBlogTagsResult" nillable="true" type="q8:ReportOfArrayOfTBlogTagMapper_P8KHyEK5" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -74,7 +88,7 @@
   <xs:element name="GetVisibleBlogsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetVisibleBlogsResult" nillable="true" type="q7:ReportOfArrayOfTBlog7FqCaaR8" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" minOccurs="0" name="GetVisibleBlogsResult" nillable="true" type="q9:ReportOfArrayOfTBlog_P8KHyEK5" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

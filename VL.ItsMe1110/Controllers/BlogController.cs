@@ -1,30 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using VL.Common.Core.Object.VL.Blog;
 using VL.Common.Core.Protocol;
-using VL.Common.Object.VL.Blog;
 using VL.ItsMe1110.Custom.Authentications;
 using VL.ItsMe1110.Models;
 
 namespace VL.ItsMe1110.Controllers
 {
-    public class BlogController : BaseController
+    public partial class BlogController : BaseController
     {
-        #region 服务
-        private SubjectBlogService.SubjectBlogServiceClient _subjectBlogClient;
+        #region ObjectBlogServiceClient
         private ObjectBlogService.ObjectBlogServiceClient _ObjectBlogClient;
-        public SubjectBlogService.SubjectBlogServiceClient SubjectBlogClient
-        {
-            get
-            {
-                if (_subjectBlogClient == null)
-                {
-                    _subjectBlogClient = new SubjectBlogService.SubjectBlogServiceClient();
-                }
-                return _subjectBlogClient;
-            }
-        }
         public ObjectBlogService.ObjectBlogServiceClient ObjectBlogClient
         {
             get
@@ -34,6 +23,20 @@ namespace VL.ItsMe1110.Controllers
                     _ObjectBlogClient = new ObjectBlogService.ObjectBlogServiceClient();
                 }
                 return _ObjectBlogClient;
+            }
+        }
+        #endregion
+        #region SubjectBlogServiceClient
+        private SubjectBlogService.SubjectBlogServiceClient _subjectBlogClient;
+        public SubjectBlogService.SubjectBlogServiceClient SubjectBlogClient
+        {
+            get
+            {
+                if (_subjectBlogClient == null)
+                {
+                    _subjectBlogClient = new SubjectBlogService.SubjectBlogServiceClient();
+                }
+                return _subjectBlogClient;
             }
         }
         #endregion
@@ -69,20 +72,30 @@ namespace VL.ItsMe1110.Controllers
                 return View(new BlogEditModel() { BlogId = id });
             }
 
-            var result = await ObjectBlogClient.GetBlogDetailAsync(id);
-            if (result.Code == CProtocol.CReport.CSuccess)
+            var result = new BlogEditModel() { BlogId = id, Title = title };
+            var detailTask = ObjectBlogClient.GetBlogDetailAsync(id);
+            var tagTask = ObjectBlogClient.GetBlogTagsAsync(id);
+            var detailResult = await detailTask;
+            if (detailResult.Code == CProtocol.CReport.CSuccess)
             {
-                return View(new BlogEditModel() { BlogId = id, Title = title, Content = result.Data.Content });
+                result.Content = detailResult.Data.Content;
             }
             else
             {
-                AddMessages(result.Code, new KeyValueCollection {
-                            new KeyValue(2, "系统内部异常") ,
-                        });
-                return View(new BlogEditModel() { BlogId = id });
+                ModelState.AddModelError("", "加载Detail内容出错");
             }
+            var tagResult = await tagTask;
+            if (tagResult.Code == CProtocol.CReport.CSuccess)
+            {
+                result.StartTags = string.Join(",", tagResult.Data.Select(c=>c.TagName));
+                result.EndTags = result.StartTags;
+            }
+            else
+            {
+                ModelState.AddModelError("", "加载Detail内容出错");
+            }
+            return View(result);
         }
-
         [HttpPost]
         [VLAuthorize(Users = VESTEDUSERSTRING)]
         [ValidateAntiForgeryToken]
@@ -91,7 +104,13 @@ namespace VL.ItsMe1110.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var result = await SubjectBlogClient.EditBlogAsync(new TBlog(model.BlogId) { UserName = User.Identity.Name, Title = model.Title }, model.Content, model.Tags.Split(',').ToList());
+            var startTags = model.StartTags == null ? new List<string>() : model.StartTags.Split(',').ToList();
+            startTags.RemoveAll(c => c == "");
+            var endTags = model.EndTags == null ? new List<string>() : model.EndTags.Split(',').ToList();
+            endTags.RemoveAll(c => c == "");
+            var addTags = endTags.Where(c => !startTags.Contains(c)).ToList();
+            var deleteTags = startTags.Where(c => !endTags.Contains(c)).ToList();
+            var result = await SubjectBlogClient.EditBlogAsync(new TBlog() { BlogId = model.BlogId, UserName = User.Identity.Name, Title = model.Title }, model.Content, addTags, deleteTags);
             if (result.Code == CProtocol.CReport.CSuccess)
             {
                 return RedirectToAction(nameof(BlogController.Index), PAGENAME_BLOG);
@@ -107,7 +126,13 @@ namespace VL.ItsMe1110.Controllers
                             new KeyValue(15, "主体新建失败") ,
                             new KeyValue(16, "内容更新失败") ,
                             new KeyValue(17, "主体更新失败") ,
+                            new KeyValue(18, "标签新建失败") ,
+                            new KeyValue(19, "标签删除失败") ,
+                            new KeyValue(20, "关联加载失败") ,
+                            new KeyValue(21, "关联新建失败") ,
+                            new KeyValue(22, "关联删除失败") ,
                         });
+
                 return View(model);
             }
         }

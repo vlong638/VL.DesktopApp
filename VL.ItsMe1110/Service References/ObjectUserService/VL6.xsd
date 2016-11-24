@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" />
+  <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Object.VL.User" />
   <xs:import schemaLocation="http://dcwl027:8001/VL.User.Service.Services.ObjectUserService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="DependencyResult">
     <xs:sequence>
@@ -41,23 +41,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfDependencyResult" nillable="true" type="tns:ArrayOfDependencyResult" />
-  <xs:complexType name="ReportOfArrayOfTUserD4WZmo3i">
+  <xs:complexType name="ReportOfArrayOfTUseru9Tm3K_PD">
     <xs:annotation>
       <xs:appinfo>
         <GenericType Name="ReportOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Protocol" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
-          <GenericParameter Name="ArrayOfTUser" Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" />
+          <GenericParameter Name="ArrayOfTUser" Namespace="http://schemas.datacontract.org/2004/07/VL.Common.Core.Object.VL.User" />
         </GenericType>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Report">
         <xs:sequence>
-          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Object.VL.User" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfTUser" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/VL.Common.Core.Object.VL.User" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfTUser" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ReportOfArrayOfTUserD4WZmo3i" nillable="true" type="tns:ReportOfArrayOfTUserD4WZmo3i" />
+  <xs:element name="ReportOfArrayOfTUseru9Tm3K_PD" nillable="true" type="tns:ReportOfArrayOfTUseru9Tm3K_PD" />
   <xs:complexType name="Report">
     <xs:sequence>
       <xs:element minOccurs="0" name="Code" type="xs:int" />

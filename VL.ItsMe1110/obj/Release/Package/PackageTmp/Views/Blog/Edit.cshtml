@@ -11,6 +11,11 @@
         @Html.TextAreaFor(m => m.Title, new { @class = "FloatLeft Wd8 Column TextLine" })
     </div>
     <div class="FormGroup">
+        @Html.HiddenFor(m=>m.StartTags)
+        @Html.LabelFor(m => m.EndTags, new { @class = "FloatLeft Wd2 Column Label TextRight" })
+        @Html.TextAreaFor(m => m.EndTags, new { @class = "FloatLeft Wd8 Column TextLine" })
+    </div>
+    <div class="FormGroup">
         @Html.LabelFor(m => m.Content, new { @class = "FloatLeft Wd2 Column Label TextRight" })
         @Html.TextAreaFor(m => m.Content, new { @class = "FloatLeft Wd8 Column TextParagraph" })
     </div>
