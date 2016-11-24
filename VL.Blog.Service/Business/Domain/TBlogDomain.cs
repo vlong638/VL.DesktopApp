@@ -99,12 +99,12 @@ namespace VL.Blog.Business
             }
             else
             {
+                blog.BlogId = Guid.NewGuid();
+                blog.CreatedTime = DateTime.Now;
                 //Detail
                 if (!new TBlogDetail(blog.BlogId) { Content = content }.DbInsert(session))
                     return ReportHelper.GetReport(nameof(Edit), (int)ECode_Edit.内容新建失败);
                 //Body
-                blog.BlogId = Guid.NewGuid();
-                blog.CreatedTime = DateTime.Now;
                 if (!blog.DbInsert(session))
                     return ReportHelper.GetReport(nameof(Edit), (int)ECode_Edit.主体新建失败);
                 foreach (var tagName in addTags)

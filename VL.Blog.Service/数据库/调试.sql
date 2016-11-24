@@ -10,3 +10,8 @@ select * from TTag where UserName=@UserName and TagId in (select TagId from TBlo
 select t.* from TBlogTagMapper b,TTag t where b.BlogId=@BlogId and b.TagId=t.TagId
 
 -- Çå¿Õ±êÇ©
+delete from TTag;
+delete from TBlogTagMapper;
+
+
+select BlogId,Content from TBlogDetail where BlogId ='d8aecbb1-33f4-4b39-839d-3618f383a234'

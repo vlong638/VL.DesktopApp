@@ -56,17 +56,17 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611241526.1\lib\net452\System.Runtime.Serialization.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Core.1.0.1611241708.1\lib\net452\System.Runtime.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ServiceModel">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611241526.1\lib\net452\System.ServiceModel.dll</HintPath>
+      <HintPath>..\packages\VL.Common.Core.1.0.1611241708.1\lib\net452\System.ServiceModel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="VL.Common.Core, Version=1.0.6172.27803, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\VL.Common.Core.1.0.1611241526.1\lib\net452\VL.Common.Core.dll</HintPath>
+    <Reference Include="VL.Common.Core, Version=1.0.6172.30846, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\VL.Common.Core.1.0.1611241708.1\lib\net452\VL.Common.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

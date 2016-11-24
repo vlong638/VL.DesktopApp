@@ -1,0 +1,4 @@
+--------------
+执行时间:2016/11/24 16:22:35
+执行语句:select BlogId,Content from TBlogDetail where BlogId = @BlogId
+参数名:BlogId=d8aecbb1-33f4-4b39-839d-3618f383a234
