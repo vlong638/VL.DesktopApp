@@ -1,0 +1,70 @@
+﻿
+.ParagraphOutline {
+    padding: 2% 2% 2% 2%;
+    border: 1px solid LightGrey;
+}
+.ParagraphBlock {
+    padding: 2% 2% 2% 2%;
+    border: 1px solid LightGrey;
+    margin: 2px;
+}
+.ParagraphBlock a {
+    color: #47634E;
+}
+.ParagraphBlock a:hover {
+    color: #509C63;
+    text-decoration: none;
+}
+
+
+.LeadingSpace {
+    height: 40px;
+}
+
+.ParagraphHead {
+    border-bottom: 2px LightGrey solid;
+    margin-bottom: 20px;
+    width: 98%;
+    font-size: 16px;
+    font-family: initial;
+    font-weight: bold;
+    color: #222222;
+}
+
+.ParagraphBody {
+    line-height: 2;
+    font-size: 16px;
+    font-family: initial;
+    color: #444444;
+}
+
+.TextLine {
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    height: 34px;
+}
+
+.TextHead{
+    font-size:20px;
+    height:30px;
+    border-bottom: 2px LightGrey solid;
+    margin-left: -10px;
+}
+
+.TextBreviary{
+    height:80px;
+    width:320px;
+    font-size: 62.5%;
+}
+
+.TextParagraph {
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    height: 510px;
+}

@@ -2,9 +2,8 @@
 @{
     ViewBag.Title = "List";
 }
-<div class="jumbotron">
-    <h1>文章列表</h1>
-    <ul>
+<h1>文章列表</h1>
+@*<ul>
         @foreach (var blog in Model.OrderByDescending(c => c.CreatedTime))
         {
             <li>
@@ -12,5 +11,17 @@
                 <p>@blog.BreviaryContent</p>
             </li>
         }
-    </ul>
+    </ul>*@
+
+
+<div class="row">
+    @foreach (var blog in Model.OrderByDescending(c => c.CreatedTime))
+    {
+        <div class="FloatLeft Wd3+ ParagraphBlock">
+            <a href="@Url.Action("Detail", new { id = blog.BlogId })">
+                <p class="TextHead" href="@Url.Action("Detail", new { id = blog.BlogId })">@blog.Title</p>
+                <p class="TextBreviary">@blog.BreviaryContent</p>
+            </a>
+        </div>
+    }
 </div>

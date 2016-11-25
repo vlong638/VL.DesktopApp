@@ -15,3 +15,5 @@ delete from TBlogTagMapper;
 
 
 select BlogId,Content from TBlogDetail where BlogId ='d8aecbb1-33f4-4b39-839d-3618f383a234'
+
+update TBlogDetail  set BlogId='D8AECBB1-33F4-4B39-839D-3618F383A234' where BlogId='00000000-0000-0000-0000-000000000000'

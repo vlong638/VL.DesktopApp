@@ -165,9 +165,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Content\VLCustom.css" />
+    <Content Include="Custom\CSS\VLCustom.css" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Custom\HtmlHelperEx.cs" />
+    <Content Include="Custom\CSS\VLParagraph.css" />
     <Content Include="Global.asax" />
     <Content Include="lib\net452\System.Runtime.Serialization.dll" />
     <Content Include="lib\net452\System.ServiceModel.dll" />

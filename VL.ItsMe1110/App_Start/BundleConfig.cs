@@ -29,9 +29,12 @@ namespace VL.ItsMe1110
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css",
-                      "~/Content/VLCustom.css"));
+                      "~/Content/bootstrap.css"
+                      , "~/Content/site.css"
+                      //自定制CSS
+                      , "~/Custom/CSS/VLCustom.css"
+                      , "~/Custom/CSS/VLParagraph.css"
+                      ));
         }
     }
 }

@@ -18,7 +18,7 @@
     {
         <div class="col-md-4">
             <h2>@blog.Title</h2>
-            <p>@blog.BreviaryContent</p>
+            <p class="TextBreviary">@blog.BreviaryContent</p>
             <a class="btn btn-default" href="@Url.Action("Edit", new { id = blog.BlogId, title = blog.Title })">编辑 »</a>
             @{
                 var value = blog.IsVisible ? "隐藏" : "显示";
